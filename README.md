@@ -145,7 +145,7 @@ Cada entrada se organiza así:
 }
 ```
 
-# Autores (orden alfabético)
+# Autores 
 - [Alain "Str1ien" Villagrasa](https://github.com/Str1ien)
 - [Daniel "Kifixo" Huici](https://github.com/danielhuici)
 - [Razvan "Razvi" Raducu](https://github.com/RazviOverflow)
