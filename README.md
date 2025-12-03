@@ -1,5 +1,13 @@
 # **Parecidómetro** – Detección de similitud entre ficheros para combatir el cibercrimen
 
+█ ▄▄  ██   █▄▄▄▄ ▄███▄   ▄█▄    ▄█ ██▄   ████▄ █▀▄▀█ ▄███▄     ▄▄▄▄▀ █▄▄▄▄ ████▄
+█   █ █ █  █  ▄▀ █▀   ▀  █▀ ▀▄  ██ █  █  █   █ █ █ █ █▀   ▀ ▀▀▀ █    █  ▄▀ █   █
+█▀▀▀  █▄▄█ █▀▀▌  ██▄▄    █   ▀  ██ █   █ █   █ █ ▄ █ ██▄▄       █    █▀▀▌  █   █
+█     █  █ █  █  █▄   ▄▀ █▄  ▄▀ ▐█ █  █  ▀████ █   █ █▄   ▄▀   █     █  █  ▀████
+ █       █   █   ▀███▀   ▀███▀   ▐ ███▀           █  ▀███▀    ▀        █        
+  ▀     █   ▀                                    ▀                    ▀         
+       ▀                                                                        
+
 Parecidómetro es una herramienta diseñada para **analizar ficheros y detectar similitudes entre ellos** utilizando *similarity hashing*, una técnica ampliamente utilizada en análisis de malware, forense digital y respuesta ante incidentes.
 
 A diferencia de los hashes tradicionales (como SHA-256 o MD5), que cambian por completo ante la mínima modificación, los *hashes de similitud permiten medir “cuán parecido es un fichero a otro”*, incluso aunque hayan sido recompilados, alterados o ligeramente modificados.
@@ -104,6 +112,17 @@ Excelente para documentos, scripts, PDF, y binarios medianos.
   
 </details>
 
+# **Ejemplo de uso** (PENDENTIE DE REESCRIBIR)
+
+## Despliegue
+
+## Crear base de datos
+
+```bash
+python3 similarityscan.py samples/
+```
+
+Procesa todos los ficheros del directorio.
 
 # **Cómo funciona** (PENDIENTE DE REESCRIBIR)
 
@@ -140,18 +159,6 @@ Cada entrada se organiza así:
   }
 }
 ```
-
-# **Ejemplo de uso** (PENDENTIE DE REESCRIBIR)
-
-## Despliegue
-
-## Crear base de datos
-
-```bash
-python3 similarityscan.py samples/
-```
-
-Procesa todos los ficheros del directorio.
 
 # **Por qué este proyecto importa**
 
