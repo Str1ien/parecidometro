@@ -49,6 +49,13 @@ Cualquier universidad, centro de investigación o analista puede usarlo para:
 
 # **¿Qué es un hash de similitud?**
 
+Un hash de similitud es una técnica que permite comparar ficheros por su parecido, no por igualdad exacta.
+A diferencia de SHA-256, que cambia completamente si alteramos un solo byte, algoritmos como SSDEEP o TLSH pueden detectar cuando dos archivos son esencialmente la misma cosa, aunque hayan sido modificados.
+Esto es fundamental para detectar variantes de malware, analizar campañas, correlacionar artefactos forenses y comprender la evolución de amenazas en ciberseguridad.
+
+<details>
+  <summary>Más información acerca de hashes de similitud</summary>
+  
 Un **hash de similitud** (*similarity hash*) es una representación de un fichero diseñada para que **archivos parecidos generen hashes también parecidos**.
 
 Esto contrasta con un hash criptográfico como SHA-256:
@@ -84,6 +91,9 @@ Muy usado en análisis de malware.
 
 Divide el fichero en bloques y genera un hash sensible a cambios.
 Excelente para documentos, scripts, PDF, y binarios medianos.
+  
+</details>
+
 
 # **Cómo funciona** (PENDIENTE DE REESCRIBIR)
 
@@ -142,3 +152,5 @@ Es simple, portable y poderosa: perfecta para equipos de seguridad, investigador
 - [Alain "Str1ien" Villagrasa](https://github.com/Str1ien)
 - [Daniel "Kifixo" Huici](https://github.com/danielhuici)
 - [Razvan "Razvi" Raducu](https://github.com/RazviOverflow)
+
+Este proyecto se ha desarrollado durante el [Hackathon Cyber Arena](https://eupt.unizar.es/noticia/hackaton-de-incibe) organizado como parte del Proyecto Estratégico C077.23 de INCIBE, desarrollado junto a la Universidad de Zaragoza y financiado por los fondos Next Generation EU.
