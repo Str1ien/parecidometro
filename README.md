@@ -115,6 +115,16 @@ Excelente para documentos, scripts, PDF, y binarios medianos.
 # **Cómo usar Parecidómetro** (PENDENTIE DE REESCRIBIR)
 
 ## Despliegue
+Para desplegar la aplicación es necesario primero instalar las dependencias. Para ello:
+```
+$ pip install -r requirements.txt
+```
+Acto seguido, se debe usar flask para levantar el servicio web. Desde el directorio raíz del repositorio:
+```
+$ flask run
+```
+Esto levantará el servicio por defecto en el puerto 5000. (localhost:5000 o 127.0.0.1:5000)
+
 
 ## Generar base de datos
 Para generar una base de datos nueva (fichero `file_db.json`) se debe usar el script [`json_parser.py`](./db/json_parser.py). Para ello, se debe lanzar el script y pasar como parámetro el directorio donde se encuentran los ficheros que compondrán la nueva base de datos. Por ejemplo:
