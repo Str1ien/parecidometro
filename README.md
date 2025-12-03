@@ -103,13 +103,15 @@ $ python3 db/json_parser.py test_files/
 
 Este comando procesa todos los ficheros del directorio `test_files` y genera un nuevo `file_db.json` en el directorio desde el que se ha lanzado.
 
-# **Cómo funciona** (PENDIENTE DE REESCRIBIR)
+# **Cómo funciona**
+Una vez que se genera una base de datos contra la que comparar los ficheros que se suban al servicio, el flujo de trabajo es el siguiente:
 
-1. Ejecutar el script de generación de base de datos, pasándole ficheros o directorios.
-2. La base de datos se guarda en `file_db.json`.
-3. Ejecutar la herramienta y acceder a la aplicación web, por defecto `localhost:5000`
-
-Cuando se sube un fichero a la aplicación, automáticamente realizará la comparación con respecto a los hashes de similitud ya existentes en la base de datos, devolviendo aquellos artefactos que sean más similares para dicha solicitud.
+1. Cuando la aplicación recibe el fichero, se genera su SHA256 (hash tradicional) y se comprueba si ya existe en la base de datos.
+2. Si existe, se devuelve la información de este fichero pues la coincidencia es del 100%.
+3. Si no existe, se calculan sus hashes de similitud TLSH y ssdeep.
+4. Estos hashes de similitud son comparados con los hashes de similitud de la base de datos.
+5. Si el fichero que se está buscando es similar (en base al cálculo de similitud de los hashes) a uno o más ficheros de la base de datos, se muestran hasta los cinco más similares por cada hash.
+6. La información del nuevo fichero es incorporada en la base de datos.
 
 # **Contenido del repositorio**
 - [`db`](./db): Script Python para generar base de datos y fichero .JSON a modo de ejemplo de base de datos.
