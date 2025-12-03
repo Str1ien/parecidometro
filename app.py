@@ -31,11 +31,11 @@ import os
 import logging
 from managers.file_processor import FileProcessor
 from managers.hash_manager import HashManager
+from db.json_parser import build_similarity_index, load_db, DB_PATH
 
 
 # Configuración
 TOP_MATCHES = 10
-DB_PATH = "file_db.json"
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
 # Configurar logging
@@ -48,42 +48,6 @@ app = Flask(__name__)
 
 database = {}
 similarity_index = {}
-
-def load_db(path: str = DB_PATH) -> dict:
-    """Load the JSON database from disk, or return an empty dict if it doesn't exist."""
-    if not os.path.exists(path):
-        logger.warning(f"Database file {path} not found, starting with empty DB.")
-        return {}
-
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-
-def build_similarity_index(db: dict) -> dict:
-    """
-    Build similarity index from database.
-    Maps hash -> sha256 for O(1) lookup during comparison.
-
-    Why we need BOTH database and similarity_index:
-    - database: Direct access by SHA256 → get full metadata
-    - similarity_index: Fast lookup by hash → find which SHA256 to query
-    """
-    result = {
-        "tlsh": {},
-        "ssdeep": {},
-    }
-
-    for sha256, entry in db.items():
-        hashes = entry.get("hashes", {})
-        tlsh_val = hashes.get("tlsh", "")
-        ssdeep_val = hashes.get("ssdeep", "")
-
-        if tlsh_val:
-            result["tlsh"][tlsh_val] = sha256
-        if ssdeep_val:
-            result["ssdeep"][ssdeep_val] = sha256
-
-    return result
 
 
 def initialize_app():
