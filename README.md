@@ -119,7 +119,7 @@ Excelente para documentos, scripts, PDF, y binarios medianos.
 ## Generar base de datos
 
 ```bash
-python3 similarityscan.py samples/
+python3 app.py samples/
 ```
 
 Procesa todos los ficheros del directorio.
@@ -165,15 +165,6 @@ Cada entrada se organiza así:
   }
 }
 ```
-
-# **Por qué este proyecto importa**
-
-En un ecosistema donde el cibercrimen evoluciona continuamente, no basta con verificar la integridad exacta de un archivo.
-**Necesitamos herramientas que comprendan la similitud, no solo la igualdad.**
-
-SimilarityScan ayuda a **reclasar, correlacionar y descubrir amenazas** que de otra forma pasarían desapercibidas.
-
-Es simple, portable y poderosa: perfecta para equipos de seguridad, investigadores y analistas.
 
 # Autores (orden alfabético)
 - [Alain "Str1ien" Villagrasa](https://github.com/Str1ien)
