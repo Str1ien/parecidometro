@@ -1,4 +1,4 @@
-# **Parecidómetro** – Detección de similitud entre ficheros para combatir el cibercrimen
+# **Parecidómetro** – Detección de similitud entre ficheros
 ```
 █ ▄▄  ██   █▄▄▄▄ ▄███▄   ▄█▄    ▄█ ██▄   ████▄ █▀▄▀█ ▄███▄     ▄▄▄▄▀ █▄▄▄▄ ████▄
 █   █ █ █  █  ▄▀ █▀   ▀  █▀ ▀▄  ██ █  █  █   █ █ █ █ █▀   ▀ ▀▀▀ █    █  ▄▀ █   █
@@ -8,20 +8,19 @@
   ▀     █   ▀                                    ▀                    ▀         
        ▀                                                                        
 ```
-Parecidómetro es una herramienta diseñada para **analizar ficheros y detectar similitudes entre ellos** utilizando *similarity hashing*, una técnica ampliamente utilizada en análisis de malware, forense digital y respuesta ante incidentes.
+Parecidómetro es una herramienta diseñada para **analizar ficheros y detectar similitudes entre ellos** utilizando *hashes de similitud aproximada*, una técnica ampliamente utilizada en análisis de malware, forense digital y respuesta ante incidentes.
 
 A diferencia de los hashes tradicionales (como SHA-256 o MD5), que cambian por completo ante la mínima modificación, los *hashes de similitud permiten medir “cuán parecido es un fichero a otro”*, incluso aunque hayan sido recompilados, alterados o ligeramente modificados.
 
-Esta herramienta proporciona un **servicio sencillo pero potente** para almacenar, analizar y comparar ficheros, facilitando la identificación de variantes maliciosas y patrones ocultos usados por actores de cibercrimen.
+Esta herramienta proporciona un **servicio sencillo pero potente** para almacenar y comparar ficheros, facilitando la identificación de variantes maliciosas y patrones ocultos usados por actores de cibercrimen.
 
 # **¿Para qué sirve esta herramienta?**
 
 Parecidómetro permite:
 
-- Calcular múltiples hashes de un fichero, tanto tradicionales (SHA256, MD5) como de similitud (TLSH, SSDEEP).
+- Calcular múltiples hashes de un fichero, tanto tradicionales (SHA256, MD5) como de similitud (TLSH, ssdeep).
 - Detectar si un fichero ya existe en la base de datos y actualizar su metainformación.
-- Construir una base de datos local con información relevante de cada análisis.
-- Generar un índice de similitud para identificar archivos similares en segundos.
+- Construir una base de datos local con información relevante (metadatos) de cada fichero.
 - Facilitar el trabajo de analistas de malware, equipos DFIR, CERTs/CSIRTs y fuerzas de seguridad.
 
 Es, en esencia, un **motor de correlación de ficheros**, que permite descubrir conexiones que los hashes normales no son capaces de detectar.
@@ -32,38 +31,10 @@ Esta herramienta sirve para **analizar y comparar ficheros utilizando técnicas 
 
 Su propósito principal es **descubrir relaciones entre ficheros que los hashes tradicionales no pueden detectar**, facilitando el análisis, la clasificación y la correlación de artefactos en escenarios de ciberseguridad.
 
-<details>
-  <summary>Más información</summary>
-  
-## **1. Detecta variantes de malware**
-
-Los atacantes cambian pequeñas partes del código para evadir firmas tradicionales.
-Con similarity hashing podemos detectar que un archivo *modificado* es en realidad una variante casi idéntica de uno ya conocido.
-
-## **2. Ayuda a los equipos de respuesta a incidentes (DFIR)**
-
-Un incidente suele generar múltiples artefactos: scripts, binarios, herramientas modificadas…
-La herramienta ayuda a relacionarlos entre sí y a compararlos con muestras anteriores.
-
-## **3. Apoyo a fuerzas de seguridad y laboratorios**
-
-Permite enlazar casos aparentemente aislados:
-diferentes campañas que, gracias a su similitud, podrían pertenecer al *mismo actor o grupo criminal*.
-
-## **4. Útil para empresas con grandes repositorios**
-
-Detecta reutilización de código no autorizada, modificaciones sospechosas o binarios alterados.
-
-## **5. Facilita la investigación y clasificación**
-
-Cualquier universidad, centro de investigación o analista puede usarlo para:
-
-* Clasificar grandes colecciones de malware
-* Analizar evolución temporal de amenazas
-* Crear datasets reproducibles
-  
-</details>
-
+Por tanto, esta herramienta puede ayudar en casos como:
+ * Detectección de variantes de malware
+ * Ayudar a los equipos de respuesta a incidentes (DFIR)
+ * Detectar reutilización de código, modificaciones sospechosas o binarios alterados.
 
 # **¿Qué es un hash de similitud?**
 
@@ -102,17 +73,15 @@ Los algoritmos que usamos:
 
 ### **TLSH (Trend Micro Locality Sensitive Hash)**
 
-Genera un hash robusto para identificar similitud entre binarios.
-Muy usado en análisis de malware.
+Genera un hash robusto para identificar similitud entre binarios. Muy usado en análisis de malware.
 
-### **SSDEEP**
+### **ssdeep**
 
-Divide el fichero en bloques y genera un hash sensible a cambios.
-Excelente para documentos, scripts, PDF, y binarios medianos.
+Divide el fichero en bloques y genera un hash sensible a cambios. Excelente para documentos, scripts, PDF, y binarios medianos.
   
 </details>
 
-# **Cómo usar Parecidómetro** (PENDENTIE DE REESCRIBIR)
+# **Cómo usar Parecidómetro**
 
 ## Despliegue
 Para desplegar la aplicación es necesario primero instalar las dependencias. Para ello:
@@ -136,22 +105,18 @@ Este comando procesa todos los ficheros del directorio `test_files` y genera un 
 
 # **Cómo funciona** (PENDIENTE DE REESCRIBIR)
 
-1. Ejecutas el script pasándole ficheros o directorios.
-2. La herramienta:
+1. Ejecutar el script de generación de base de datos, pasándole ficheros o directorios.
+2. La base de datos se guarda en `file_db.json`.
+3. Ejecutar la herramienta y acceder a la aplicación web, por defecto `localhost:5000`
 
-   * Calcula sus hashes.
-   * Genera su metainformación.
-   * Comprueba si ya existe en la base de datos.
-   * Si existe → solo actualiza el nombre y fecha.
-   * Si no existe → añade una nueva entrada completa.
-3. La base de datos se guarda en `file_db.json`.
-4. Puedes generar un índice de similitud para búsquedas rápidas.
+Cuando se sube un fichero a la aplicación, automáticamente realizará la comparación con respecto a los hashes de similitud ya existentes en la base de datos, devolviendo aquellos artefactos que sean más similares para dicha solicitud.
 
 # **Contenido del repositorio**
 - [`db`](./db): Script Python para generar base de datos y fichero .JSON a modo de ejemplo de base de datos.
-- [`managers`](./managers): Scripts Python auxiliares para gestión de ficheros y generación de hashes.
+- [`managers`](./managers): Código utilizado por la aplicación principal para el análisis de ficheros y cálculo / comparación de hashes
 - [`static`](./static) y [`templates`](./templates): Ficheros relacionados con la interfaz web (*front end*).
 - [`test_files`](./test_files): Ficheros de prueba para verificar el comportamiento de Pareciómetro.
+- [`app.py`](./appy.py): Entry point de la herramienta.
 
 # **Estructura de la base de datos**
 

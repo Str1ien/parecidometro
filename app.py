@@ -31,6 +31,8 @@ from managers.file_processor import FileProcessor
 from managers.hash_manager import HashManager
 from db.json_parser import build_similarity_index, load_db, DB_PATH
 import hashlib
+from datetime import datetime
+from db.json_parser import save_db
 
 
 # Configuración
@@ -173,6 +175,64 @@ def reload_database():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 
+def save_file_to_database(sha256, filename, file_size, file_type, hashes):
+    """
+    Save a new file to the database
+
+    Args:
+        sha256 (str): SHA256 hash of the file
+        filename (str): Original filename
+        file_size (int): Size in bytes
+        file_type (str): MIME type
+        hashes (dict): Dictionary with all hashes (sha256, md5, tlsh, ssdeep)
+
+    Returns:
+        bool: True if saved successfully, False if already exists
+    """
+    global database, similarity_index
+
+    # Check if already exists
+    if sha256 in database:
+        logger.info(f"File already in database: {sha256}")
+        return False
+
+    # Create new entry
+    now_iso = datetime.utcnow().isoformat() + "Z"
+
+    database[sha256] = {
+        "name": [filename],
+        "size": file_size,
+        "file_type": file_type,
+        "first_upload_date": now_iso,
+        "last_upload_date": now_iso,
+        "desc": "",
+        "hashes": {
+            "sha256": hashes.get("sha256", sha256),
+            "md5": hashes.get("md5", ""),
+            "tlsh": hashes.get("tlsh", ""),
+            "ssdeep": hashes.get("ssdeep", ""),
+        },
+    }
+
+    # Save to disk
+    try:
+        save_db(database, DB_PATH)
+        logger.info(f"File saved to database: {sha256} ({filename})")
+
+        # Rebuild similarity index to include new file
+        similarity_index = build_similarity_index(database)
+        logger.info(
+            f"Similarity index rebuilt: {len(similarity_index['tlsh'])} TLSH, {len(similarity_index['ssdeep'])} ssdeep"
+        )
+
+        return True
+    except Exception as e:
+        logger.error(f"Error saving file to database: {e}")
+        # Rollback - remove from in-memory database
+        del database[sha256]
+        return False
+
+
 @app.route("/api/compare", methods=["POST"])
 def compare_binary():
     """Endpoint principal para comparar archivos usando TLSH y ssdeep"""
@@ -185,10 +245,15 @@ def compare_binary():
     if file.filename == "":
         return jsonify({"error": "No file selected"}), 400
 
+    # Check if we should save the file to database (optional parameter)
+    save_to_db = request.form.get("save_to_db", "false").lower() == "true"
+
     file_data = file.read()
     file_size = len(file_data)
 
-    logger.info(f"File upload: {file.filename} ({file_size} bytes)")
+    logger.info(
+        f"File upload: {file.filename} ({file_size} bytes, save_to_db={save_to_db})"
+    )
 
     # Validar tamaño del archivo
     if file_size > MAX_FILE_SIZE:
@@ -260,20 +325,31 @@ def compare_binary():
         f"Similarity hashes calculated - TLSH: {result['tlsh'].get('hash', 'N/A')[:16]}..., ssdeep: {result['ssdeep'].get('hash', 'N/A')[:16]}..."
     )
 
-    # 4. Construir respuesta
+    # Prepare all hashes
+    all_hashes = {
+        "sha256": sha256_hash,
+        "md5": md5_hash,
+        "tlsh": result["tlsh"].get("hash", ""),
+        "ssdeep": result["ssdeep"].get("hash", ""),
+    }
+
+    # 4. Save to database if requested and not already exists
+    saved_to_db = False
+    if save_to_db and not existing_file:
+        saved_to_db = save_file_to_database(
+            sha256_hash, file.filename, file_size, file_type, all_hashes
+        )
+
+    # 5. Construir respuesta
     response = {
         "uploaded_file": {
             "filename": file.filename,
             "file_type": file_type,
             "content_size_bytes": result["content_size"],
             "sha256": sha256_hash,
-            "exists_in_database": existing_file is not None,
-            "hashes": {
-                "sha256": sha256_hash,
-                "md5": md5_hash,
-                "tlsh": result["tlsh"].get("hash"),
-                "ssdeep": result["ssdeep"].get("hash"),
-            },
+            "exists_in_database": existing_file is not None or saved_to_db,
+            "saved_to_database": saved_to_db,
+            "hashes": all_hashes,
         },
         "tlsh": {
             "best_match": None,

@@ -8,6 +8,8 @@ document.getElementById("fileInput").onchange = async function () {
 
   const formData = new FormData();
   formData.append("file", file);
+  // Always save new files to database
+  formData.append("save_to_db", "true");
 
   const status = document.getElementById("status");
   status.textContent = "Uploading and analyzing...";
@@ -31,23 +33,22 @@ document.getElementById("fileInput").onchange = async function () {
     const uploadedFile = data.uploaded_file;
     const sha256 = uploadedFile.sha256;
     const existsInDb = uploadedFile.exists_in_database;
+    const savedToDb = uploadedFile.saved_to_database;
 
-    status.textContent = "Analysis complete! Redirecting...";
-
-    if (existsInDb) {
-      // File exists in database - redirect to its SHA256 page
-      console.log(`File found in database: ${sha256}`);
-      setTimeout(() => {
-        window.location.href = `/visualize/${sha256}`;
-      }, 500);
+    if (savedToDb) {
+      status.textContent = "File saved to database! Redirecting...";
+      console.log(`New file saved to database: ${sha256}`);
+    } else if (existsInDb) {
+      status.textContent = "File already in database! Redirecting...";
+      console.log(`File already exists in database: ${sha256}`);
     } else {
-      // New file - store results and redirect to /visualize/new
-      console.log(`New file uploaded: ${sha256}`);
-      sessionStorage.setItem("comparisonResults", JSON.stringify(data));
-      setTimeout(() => {
-        window.location.href = `/visualize/new`;
-      }, 500);
+      status.textContent = "Analysis complete! Redirecting...";
     }
+
+    // Always redirect to the SHA256 page now (since file is in DB)
+    setTimeout(() => {
+      window.location.href = `/visualize/${sha256}`;
+    }, 500);
   } catch (error) {
     status.textContent = `Error: ${error.message}`;
     status.style.color = "#ff4444";
