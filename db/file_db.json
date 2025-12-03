@@ -1,31 +1,63 @@
 {
+    "043af73e2ec93c6cc75ed480b39a42c8082e08e4b41347d570bd9f90894928c0": {
+        "desc": "",
+        "file_type": "text/plain",
+        "first_upload_date": "2025-12-03T16:36:04.710093Z",
+        "hashes": {
+            "md5": "8d6e40c163357afa804f4621df7c8e6e",
+            "sha256": "043af73e2ec93c6cc75ed480b39a42c8082e08e4b41347d570bd9f90894928c0",
+            "ssdeep": "",
+            "tlsh": "T1C431327820540C8F7163D6ECD943CC4BEA03B1899C5C423D6CEA78D463C9AB9D9E50BB"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.710093Z",
+        "name": [
+            "README.md"
+        ],
+        "size": 1796
+    },
     "1199bfca545cada2d2d388ff4bb381f197d507dd990fb583463836e7a4324d52": {
         "desc": "",
         "file_type": "application/json",
-        "first_upload_date": "2025-12-03T16:02:08.615059Z",
+        "first_upload_date": "2025-12-03T16:36:04.765276Z",
         "hashes": {
             "md5": "7d86a77fc10bfa46718e376f0bc6fb1a",
             "sha256": "1199bfca545cada2d2d388ff4bb381f197d507dd990fb583463836e7a4324d52",
             "ssdeep": "1536:zp8Q0pL2tDiQAej9z6wsfy5Au+182UvUYUsUj6MnRDRmTJMlpgt:d8Q0N2tX5zxsq5Au+/UvUYUsUMSgt",
             "tlsh": "T1B314F069D8740CA3498962B5557E524333A063870EEE3D543F1C899C2F8CD5FACB62AF"
         },
-        "last_upload_date": "2025-12-03T16:02:08.615059Z",
+        "last_upload_date": "2025-12-03T16:36:04.765276Z",
         "name": [
             "6109.json"
         ],
         "size": 196526
     },
+    "123ef1b33eca0544bfedc94f9562b1c724772b0fafcbf8a25d0ab4f332247bbc": {
+        "desc": "",
+        "file_type": "application/vnd.microsoft.portable-executable",
+        "first_upload_date": "2025-12-03T16:36:04.774155Z",
+        "hashes": {
+            "md5": "8d068547e1c9aacee410f0af057dc86b",
+            "sha256": "123ef1b33eca0544bfedc94f9562b1c724772b0fafcbf8a25d0ab4f332247bbc",
+            "ssdeep": "3072:gTzyugw+hweb9UtGXNHmoSW4LR1B4UJz0Iy0MmafNNoXEbg+uAg0FujdDaminD0o:Z9w0bFlmomLR/4Ui0rdJAOiYHh83",
+            "tlsh": "T1F0249D1075D1C432E87315334AF89BB99A3DFD200B6569EB63E40FAE8F706D1AB31526"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.774155Z",
+        "name": [
+            "DeleteFile.exe"
+        ],
+        "size": 220672
+    },
     "22cdca88b1466f6d185da32b4fea792aefe581b8dd3ec96518cb4a3e16b073d5": {
         "desc": "",
         "file_type": "application/json",
-        "first_upload_date": "2025-12-03T16:00:26.637360Z",
+        "first_upload_date": "2025-12-03T16:36:04.771202Z",
         "hashes": {
             "md5": "a36b84b0043ff129ee8e813b3a97a630",
             "sha256": "22cdca88b1466f6d185da32b4fea792aefe581b8dd3ec96518cb4a3e16b073d5",
             "ssdeep": "3072:9IQ0N2Mz4DgwqYtxqa+mzwBueEIJTUEUIUVUEmQpsI:v0v4MHYtX+mMU6xUEUIUVU6j",
             "tlsh": "T1FC244169DCB40C635889A2B5557A624337A0634B0EDE3E143F5C885C1F9C81F69FA3AF"
         },
-        "last_upload_date": "2025-12-03T16:00:26.637360Z",
+        "last_upload_date": "2025-12-03T16:36:04.771202Z",
         "name": [
             "6682.json"
         ],
@@ -34,46 +66,158 @@
     "2801cb83904ff70808c93c5175c4ec2d2aadf31e198b08a8e95fa4e6297553c4": {
         "desc": "",
         "file_type": "application/vnd.microsoft.portable-executable",
-        "first_upload_date": "2025-12-03T15:15:39.842712Z",
+        "first_upload_date": "2025-12-03T16:36:04.473303Z",
         "hashes": {
             "md5": "b3e96dfb416691005593116f6dd2cd4e",
             "sha256": "2801cb83904ff70808c93c5175c4ec2d2aadf31e198b08a8e95fa4e6297553c4",
             "ssdeep": "3072:gqZyBC1dgzZDcmMgvNimL1/6TpTBoZ1URUiJ0JPw00bQ+uAg0FujqDhvej74rP83:cBCwZ+gYmLCp9oZkJcLJAOFYrP83",
             "tlsh": "T1D7249D1075D1C432E87315334AF89BB99A3DFD200B5669EB63D80FAE8F306D1AB31566"
         },
-        "last_upload_date": "2025-12-03T15:15:39.842712Z",
+        "last_upload_date": "2025-12-03T16:36:04.473303Z",
         "name": [
             "CreateFile2.exe"
         ],
         "size": 220672
     },
+    "2ba8d76d2d8dd252fd50c0eae9794745c65e6a7df47ede337b527e3472062811": {
+        "desc": "",
+        "file_type": "application/json",
+        "first_upload_date": "2025-12-03T16:36:04.777081Z",
+        "hashes": {
+            "md5": "0ee1813e245c55858689a937734d7fb6",
+            "sha256": "2ba8d76d2d8dd252fd50c0eae9794745c65e6a7df47ede337b527e3472062811",
+            "ssdeep": "3072:TRQ0N2vz4DgwqYtxqa+wzwBueEIJMUIUxUHUJUaTj:O0A4MHYtX+wMU6SUIUxUHUDP",
+            "tlsh": "T1BC2460A9D8B40CA34989A2B1597B124337A0634B0EDD3E143B5C895C1F9C85F68FB76F"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.777081Z",
+        "name": [
+            "6767.json"
+        ],
+        "size": 228309
+    },
     "2c1a1a89a63bbaa842306f6bfb57f5712de7e48710b317ca5776585a2a7dd995": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T15:15:40.117896Z",
+        "first_upload_date": "2025-12-03T16:36:04.762074Z",
         "hashes": {
             "md5": "76aaa8143dbc3fe599e88b9e624e1b3e",
             "sha256": "2c1a1a89a63bbaa842306f6bfb57f5712de7e48710b317ca5776585a2a7dd995",
             "ssdeep": "96:kaVh9tINfECxgeNDV9fneU0traRF265dgWyTq0a7MDRIHF0g1boZK7QcVkwveCHN:fVh9uN9g8e7traRU6kWydaItIlZoZK7F",
             "tlsh": "T1EFC107373B5023B40BA210C2A74E3FF5A7A9866B236589C45C6D052C328789D677F9EC"
         },
-        "last_upload_date": "2025-12-03T15:15:40.117896Z",
+        "last_upload_date": "2025-12-03T16:36:04.762074Z",
         "name": [
             "drylab.pdf"
         ],
         "size": 1377202
     },
+    "41b6f91617543914c9ace2c4172fd784f9aba36c68b9a01593022c008b4a130d": {
+        "desc": "",
+        "file_type": "application/json",
+        "first_upload_date": "2025-12-03T16:36:04.707855Z",
+        "hashes": {
+            "md5": "47ca36d403fed0d901e30858d3b54a53",
+            "sha256": "41b6f91617543914c9ace2c4172fd784f9aba36c68b9a01593022c008b4a130d",
+            "ssdeep": "3072:ZoQ0N2ZS94CqQxxeUQUQUxUQP7YDtP7YD4OGq:X0n94lWeUQUQUxUQP7YDtP7YDHx",
+            "tlsh": "T13E34CE79E8740C6349C9A2B5557A624337A0A28B0DED3E643B1CC85C1F9CC1FA8B675F"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.707855Z",
+        "name": [
+            "6708_report.json"
+        ],
+        "size": 238625
+    },
+    "44dcd5456dba09f58fe85073112613e47a422669d3775028309bbf365e3501ac": {
+        "desc": "",
+        "file_type": "application/vnd.microsoft.portable-executable",
+        "first_upload_date": "2025-12-03T16:36:04.757005Z",
+        "hashes": {
+            "md5": "20f69c5a167a94e9aa5ff65a55cf9c89",
+            "sha256": "44dcd5456dba09f58fe85073112613e47a422669d3775028309bbf365e3501ac",
+            "ssdeep": "3072:4A8bQQRDtBViuorXyvSkB11zu7MoeXJXtyfbxnzevWvOAg0Fujk3ZQ:h+QYBV+rivSo11zN5XtDAOMZQ",
+            "tlsh": "T1B6047C1475D2C032D873153209F4DBB89A7DB8600BA65DFF67D80F6E4F312D1AA316AA"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.757005Z",
+        "name": [
+            "WriteFile.exe"
+        ],
+        "size": 183808
+    },
+    "46c184ed8a33a88dfb7ceb780cba7c139071c45b078a27ac873e47610bf71bfc": {
+        "desc": "",
+        "file_type": "application/x-executable",
+        "first_upload_date": "2025-12-03T16:36:04.470125Z",
+        "hashes": {
+            "md5": "aca0a6d2c8696c2c2729685b96a56d9e",
+            "sha256": "46c184ed8a33a88dfb7ceb780cba7c139071c45b078a27ac873e47610bf71bfc",
+            "ssdeep": "3072:TZ8ytWvwDTN/OayQiobonFwAazgzdinqZLa8n5:TZ8ytYwDTN2ayQ3boFwVwAYLa85",
+            "tlsh": "T1BAD3E81E6E648F7CF769C73887B78F31A399239232E1C685E17CD2111E6028E541FB69"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.470125Z",
+        "name": [
+            "MALWARE_46c184ed8a33a88dfb7ceb780cba7c139071c45b078a27ac873e47610bf71bfc.elf"
+        ],
+        "size": 132720
+    },
+    "52c91a53fff8c66366c1c45ed8475aa790215ebbd6f3ecef590979fae5b4342b": {
+        "desc": "",
+        "file_type": "application/json",
+        "first_upload_date": "2025-12-03T16:36:04.811134Z",
+        "hashes": {
+            "md5": "24f0a1032fa7bf7cf8b9a19ad090916c",
+            "sha256": "52c91a53fff8c66366c1c45ed8475aa790215ebbd6f3ecef590979fae5b4342b",
+            "ssdeep": "12288:5Eha/tU1USU2UA80Te6jlU7cULgRwaeUXUZgRlp62p6PYsg6gyAsspy4nUDU2I9c:qheL",
+            "tlsh": "T149B57A7DE8284CB395C96274213A66433160B2470DDE3E683B5CC58C6F4CE5FE97A29E"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.811134Z",
+        "name": [
+            "6027.json"
+        ],
+        "size": 2268740
+    },
+    "5400989863e027411d57b3e90f3a42f2ab21cd3c6031fada306c20104139cc76": {
+        "desc": "",
+        "file_type": "application/json",
+        "first_upload_date": "2025-12-03T16:36:04.839391Z",
+        "hashes": {
+            "md5": "64dbb35274bf2a1aefcd6de2aa1bdc3f",
+            "sha256": "5400989863e027411d57b3e90f3a42f2ab21cd3c6031fada306c20104139cc76",
+            "ssdeep": "12288:fsha/eUuUEUwUPUPvuwJUZUcapalUfUxuwq7Hc7HSHpvqv/eJ2pi5cUWUIZGVIiz:Uhe+",
+            "tlsh": "T1F9A5AC79E8384CB39589A274113A66433160B2470DDA3F583B5CC98C5F8CD6FE97A39E"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.839391Z",
+        "name": [
+            "6033.json"
+        ],
+        "size": 2172548
+    },
+    "5875c8fcb2c4ff7551c1c29ee86abb5ab558a47cd2899e30ca19cddf96ffd919": {
+        "desc": "",
+        "file_type": "application/x-executable",
+        "first_upload_date": "2025-12-03T16:36:04.704776Z",
+        "hashes": {
+            "md5": "d45edaf54777b4e7fcddf379e2f5bdd2",
+            "sha256": "5875c8fcb2c4ff7551c1c29ee86abb5ab558a47cd2899e30ca19cddf96ffd919",
+            "ssdeep": "1536:dvnrEn7d4u1g7iu5rVjD96CMa6EcIk7VNtuBYqgqbWHmWZ2rh8EIf:trEnKgutZ9JcVvuqqXyHcIf",
+            "tlsh": "T17F836BD6AA53E4F1F81A027115B7E7338671E4362434FA83E764FE73BC62A81954638C"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.704776Z",
+        "name": [
+            "MALWARE_5875c8fcb2c4ff7551c1c29ee86abb5ab558a47cd2899e30ca19cddf96ffd919.elf"
+        ],
+        "size": 87316
+    },
     "60b30efa1048900833d1758440247fe8ac85a3134f2327388dcb24e07d814c89": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T15:15:40.060501Z",
+        "first_upload_date": "2025-12-03T16:36:04.689175Z",
         "hashes": {
             "md5": "965509571cfbd4fed8c649a37f43b5aa",
             "sha256": "60b30efa1048900833d1758440247fe8ac85a3134f2327388dcb24e07d814c89",
             "ssdeep": "12288:SD+2hCYGoimAbkUAt1SmTY40Qsq+qY2U5:6+2hfGRL1IwmsxQsRqY5",
             "tlsh": "T1CCA4C56327C4233247830191E64BB9DAA73DE078676150E5E8BDC1AD3B53AB4933B7C6"
         },
-        "last_upload_date": "2025-12-03T15:15:40.060501Z",
+        "last_upload_date": "2025-12-03T16:36:04.689175Z",
         "name": [
             "rfc9110.pdf"
         ],
@@ -82,30 +226,62 @@
     "629de29f11595915f5fa833c3a0d42c0e63ac0f91a24910f3d43e6ebaf2aa706": {
         "desc": "",
         "file_type": "application/vnd.microsoft.portable-executable",
-        "first_upload_date": "2025-12-03T15:15:40.130872Z",
+        "first_upload_date": "2025-12-03T16:36:04.848165Z",
         "hashes": {
             "md5": "55c096d02193fbf2a5cc5b646431b8f6",
             "sha256": "629de29f11595915f5fa833c3a0d42c0e63ac0f91a24910f3d43e6ebaf2aa706",
             "ssdeep": "6144:Wp3y0GButrnhlGS2Z3bbNc6/waAOOritdo:WByhBkDhlGS0Ntdo",
             "tlsh": "T121248E1075D1C032D8B315324EF8DBB99A3DBD20076659EF53E80FBE8F246D1A631A66"
         },
-        "last_upload_date": "2025-12-03T15:15:40.130872Z",
+        "last_upload_date": "2025-12-03T16:36:04.848165Z",
         "name": [
             "SuspendThread.exe"
         ],
         "size": 221696
     },
+    "66453e0f90c50a1f7fc6c088c4f6730fdb1274884d015865ffa9fe1da7b017ee": {
+        "desc": "",
+        "file_type": "application/vnd.microsoft.portable-executable",
+        "first_upload_date": "2025-12-03T16:36:04.851140Z",
+        "hashes": {
+            "md5": "af53ac5d01a16063ff9b8833575354e8",
+            "sha256": "66453e0f90c50a1f7fc6c088c4f6730fdb1274884d015865ffa9fe1da7b017ee",
+            "ssdeep": "3072:uFHme1z2rvs/FkEW9bPvqOGw3xGBWmh+I3Ad8m48zQqeguAg0FujMRrstU:eh2o/FD+PtGix6Wmud8We7AOOs2",
+            "tlsh": "T1A3247D1074D1C033D8B315324AF897BD9A3DB920079659EF63E80FBE8F746D1A631666"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.851140Z",
+        "name": [
+            "BCryptEncrypt.exe"
+        ],
+        "size": 223744
+    },
+    "68c01e89f9521acbc8dfee6183906fd277f5b1f47f9fd444316f63de30bc5b22": {
+        "desc": "",
+        "file_type": "application/vnd.microsoft.portable-executable",
+        "first_upload_date": "2025-12-03T16:36:04.479234Z",
+        "hashes": {
+            "md5": "7e87cfa7c1e51ca3369bc2c33ae1bd9d",
+            "sha256": "68c01e89f9521acbc8dfee6183906fd277f5b1f47f9fd444316f63de30bc5b22",
+            "ssdeep": "3072:Ffx3KbXVMkyQEdg6zKEGJ69CBQ81TG3kFACRdUhN01uAg0Fujtddj:zab+kFv6rGI9mQ8JFAaqAOB7j",
+            "tlsh": "T140248D1074D1C033E87315364AF8D7BD9A3DB8200B5659EF63E80F7E8F646D1A631A66"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.479234Z",
+        "name": [
+            "CryptEncrypt.exe"
+        ],
+        "size": 222208
+    },
     "696674099c55a09227c9c9f716bad406bb69686cf45e68f8c972c0766e45616b": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T15:15:40.074874Z",
+        "first_upload_date": "2025-12-03T16:36:04.703594Z",
         "hashes": {
             "md5": "ff1791d62ef20223699dbc2a226ef934",
             "sha256": "696674099c55a09227c9c9f716bad406bb69686cf45e68f8c972c0766e45616b",
             "ssdeep": "",
             "tlsh": "T112F00EE9E58D0BD5EB2200FF50C9F83AC558B87B6D51681D026980CFD4178FD93E095E"
         },
-        "last_upload_date": "2025-12-03T15:15:40.074874Z",
+        "last_upload_date": "2025-12-03T16:36:04.703594Z",
         "name": [
             "invoicesample.pdf"
         ],
@@ -114,62 +290,142 @@
     "6ea9de8a44372d5539a2c8892b8c1637c7a3f3017318c81c0e9aebb053a22fbf": {
         "desc": "",
         "file_type": "application/vnd.microsoft.portable-executable",
-        "first_upload_date": "2025-12-03T15:15:39.846840Z",
+        "first_upload_date": "2025-12-03T16:36:04.476254Z",
         "hashes": {
             "md5": "3f6dce5b5a374c7a0df1520fff9809a9",
             "sha256": "6ea9de8a44372d5539a2c8892b8c1637c7a3f3017318c81c0e9aebb053a22fbf",
             "ssdeep": "3072:Zn5fJ4BiVRc3Zmkq0gvNGmLfaKPpTB01J0JQGSnyaSm/OwHxuAg0Fuj+DhSOx1iW:x5CBiEcygMmLdp901ASnCAOMDiDIv",
             "tlsh": "T165248D1075D0C432D47315334AF89BB99A3DBD200B5669EF63E80FAE8F706D1AB31566"
         },
-        "last_upload_date": "2025-12-03T15:15:39.846840Z",
+        "last_upload_date": "2025-12-03T16:36:04.476254Z",
         "name": [
             "CopyFileEx.exe"
         ],
         "size": 220672
     },
+    "74ed2f6aeb297e1b2a37c442b2eb71b8ddfc1b5ec840b36d848bc46efca1b192": {
+        "desc": "",
+        "file_type": "application/vnd.microsoft.portable-executable",
+        "first_upload_date": "2025-12-03T16:36:04.842389Z",
+        "hashes": {
+            "md5": "08d920ae58897399995e86553d41a0a3",
+            "sha256": "74ed2f6aeb297e1b2a37c442b2eb71b8ddfc1b5ec840b36d848bc46efca1b192",
+            "ssdeep": "3072:lEe6LPWtomGLwnu9oC72DQSNVBriJx9MaZQz3DVuzqdaluAg0FujgXCuJ5lf:DoPaomSkUoE2USNfrinZQzKsAOMPHlf",
+            "tlsh": "T1C0248E1074D1C072E87315334AF89BBD9A3DBD200B6569EF53E80FBE8F246D1A631666"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.842389Z",
+        "name": [
+            "DeleteFileTransacted.exe"
+        ],
+        "size": 221696
+    },
+    "75edb06f6bb1f68d35d3f61ac0df41b70b4b93c8f30f58f9ff11aef215f85a78": {
+        "desc": "",
+        "file_type": "application/x-7z-compressed",
+        "first_upload_date": "2025-12-03T16:36:04.754449Z",
+        "hashes": {
+            "md5": "af2e00e59bf4505024f310726e14444f",
+            "sha256": "75edb06f6bb1f68d35d3f61ac0df41b70b4b93c8f30f58f9ff11aef215f85a78",
+            "ssdeep": "98304:3Ev6kTf0R6XKTbzHk+lHH3hP29HKZ8kts3NUvvDd:0pzXKTbY+l3iHKZGUvDd",
+            "tlsh": "T1F00633853D583FD6415A15A3AAB50ED9D7C87620021ED6484825EBCCB7FC39E08A39FF"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.754449Z",
+        "name": [
+            "test_files.7z"
+        ],
+        "size": 3726900
+    },
     "908d3440b6430a08d91671d25660b9b639b20b84d9d66e883eb506e08abb93fe": {
         "desc": "",
         "file_type": "application/vnd.microsoft.portable-executable",
-        "first_upload_date": "2025-12-03T15:15:40.127881Z",
+        "first_upload_date": "2025-12-03T16:36:04.813662Z",
         "hashes": {
             "md5": "6245956a01fae434d811da3d71a6f132",
             "sha256": "908d3440b6430a08d91671d25660b9b639b20b84d9d66e883eb506e08abb93fe",
             "ssdeep": "3072:IAQxA59QFJ+OjkaUnzmBLcbyBIWUy7EhNsyxKWt4sVOAg0FujzKNIc:xUAKJ+baUzaLcb3y7sAAO3wIc",
             "tlsh": "T137047C1474D2C032D973153209F4DBB89A7DB8600BA65DFF67D80F6E4F312D1AA31AA6"
         },
-        "last_upload_date": "2025-12-03T15:15:40.127881Z",
+        "last_upload_date": "2025-12-03T16:36:04.813662Z",
         "name": [
             "CreateFile.exe"
         ],
         "size": 183808
     },
-    "94c246203b066a6c82b1da52bd1cbbba4376271f8905daab722bd423630304d3": {
+    "9143f29644c3d0898df522d87a5596b3d77e725a62c13c78d69737f3e0a98600": {
         "desc": "",
-        "file_type": "application/x-7z-compressed",
-        "first_upload_date": "2025-12-03T15:15:40.112729Z",
+        "file_type": "application/vnd.microsoft.portable-executable",
+        "first_upload_date": "2025-12-03T16:36:04.779872Z",
         "hashes": {
-            "md5": "92c531f44de425b2d7284ab8616a012d",
-            "sha256": "94c246203b066a6c82b1da52bd1cbbba4376271f8905daab722bd423630304d3",
-            "ssdeep": "98304:HEv6Xhimlqhax1FDi87ooqmqR+obMzvDQ:k7Nhaxvi87oNv6DQ",
-            "tlsh": "T128E5338D9BBBB0F952CB04F318716ED996C9D42153385B0D04A9E6C426F01AF3C7B96E"
+            "md5": "e28539152d22a18e7bf8b494db47ea9e",
+            "sha256": "9143f29644c3d0898df522d87a5596b3d77e725a62c13c78d69737f3e0a98600",
+            "ssdeep": "3072:yy7ksSszs+mdR6roVAiKNzhwOBz8wEo5MdXB1AIPFzeAg0FujDAcj+Wy:3jxmarxi8zWiVl5M+PAOQK+Wy",
+            "tlsh": "T10C147C1174C18433D57325320AE4EABA5A7DB9700BA69DEF63D40F7E4F203D1E631A66"
         },
-        "last_upload_date": "2025-12-03T15:15:40.112729Z",
+        "last_upload_date": "2025-12-03T16:36:04.779872Z",
         "name": [
-            "test_files.7z"
+            "InternetConnect.exe"
         ],
-        "size": 3241986
+        "size": 203776
+    },
+    "9a598c801604aacb47b2cddd1ea34849174777eccafb43f0a713a61072c45aa5": {
+        "desc": "",
+        "file_type": "application/x-executable",
+        "first_upload_date": "2025-12-03T16:36:04.762823Z",
+        "hashes": {
+            "md5": "6ff9d44f697eb15d298c04778978e393",
+            "sha256": "9a598c801604aacb47b2cddd1ea34849174777eccafb43f0a713a61072c45aa5",
+            "ssdeep": "768:1IUP5C6C9ANahcumveeiRRnXcFD/l3jI1DzXhSUfX0APrlagQb4DLJ58+E8q3UIK:fPchhW6nsxN3jIFjjPzPrQivJ5YzK",
+            "tlsh": "T16D23F1D0F581BEF0D7729B3EDDB581A3E0E02E54947838B66539026DDBED588906CC63"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.762823Z",
+        "name": [
+            "MALWARE_9a598c801604aacb47b2cddd1ea34849174777eccafb43f0a713a61072c45aa5.elf"
+        ],
+        "size": 48700
+    },
+    "b9527cfbbc7c89fb1e378db72aa00cd078db99c581b45bf41da4f16bec32af73": {
+        "desc": "",
+        "file_type": "application/x-executable",
+        "first_upload_date": "2025-12-03T16:36:04.468306Z",
+        "hashes": {
+            "md5": "9b048a25e442d2e131e114ec808c5fc1",
+            "sha256": "b9527cfbbc7c89fb1e378db72aa00cd078db99c581b45bf41da4f16bec32af73",
+            "ssdeep": "3072:QLqolg1R7OscR6NLctYns7SeYl/vQ8zVFP:loq1R5jNItV18zL",
+            "tlsh": "T1A5F3E80AEB710FF7ECAFCD3705A91746259C581622A82F727630D46CF68B28F25D3964"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.468306Z",
+        "name": [
+            "MALWARE_b9527cfbbc7c89fb1e378db72aa00cd078db99c581b45bf41da4f16bec32af73.elf"
+        ],
+        "size": 159280
+    },
+    "c104f49ff4c6add20932fa14867565a773911c8a7a6cfc0163efa24dde49a269": {
+        "desc": "",
+        "file_type": "application/vnd.microsoft.portable-executable",
+        "first_upload_date": "2025-12-03T16:36:04.713082Z",
+        "hashes": {
+            "md5": "91fdf3f314edf12b58b505239e2a7900",
+            "sha256": "c104f49ff4c6add20932fa14867565a773911c8a7a6cfc0163efa24dde49a269",
+            "ssdeep": "3072:48n7aA9opH0lUZkHthEd32uLEVBPz96ofNIYkvTt7dPMuAg0Fujnb40g4ast:ZeA9oClKMhY24EfPzfNIHnHAO40grs",
+            "tlsh": "T156248D1074E1C032E87315324EF89BBD9A3DBD21075659EF63E81FBE8F206D1A631566"
+        },
+        "last_upload_date": "2025-12-03T16:36:04.713082Z",
+        "name": [
+            "WriteFileEx.exe"
+        ],
+        "size": 221696
     },
     "d47287f479f3492357ffa9dd5008ecb39730c62c691334c1756313541c906aa5": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T15:15:40.067030Z",
+        "first_upload_date": "2025-12-03T16:36:04.695743Z",
         "hashes": {
             "md5": "d14556f6466ff8ed3473939717251a8e",
             "sha256": "d47287f479f3492357ffa9dd5008ecb39730c62c691334c1756313541c906aa5",
             "ssdeep": "96:4im2Ii9k6OL+f2D/2Wu4O0ZmKypwvjlk8/eHFdMsreJH:q/xL2e+Wumvm8/ejM8ex",
             "tlsh": "T1DA91A372736E53A15E8141CA1A05D3CA9B30A8B843F67BB0526DC17C31436B9933F7E6"
         },
-        "last_upload_date": "2025-12-03T15:15:40.067030Z",
+        "last_upload_date": "2025-12-03T16:36:04.695743Z",
         "name": [
             "20211216_OWASP-MSP_OWASP_Top_Ten_2021.pdf"
         ],
@@ -178,14 +434,14 @@
     "e26281327092ad2481d177d616c57466b74dbf3da38e9aed71b46ddbd904bd7d": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T15:15:40.125351Z",
+        "first_upload_date": "2025-12-03T16:36:04.784185Z",
         "hashes": {
             "md5": "4b19183f0d6c81f7f12431c758333742",
             "sha256": "e26281327092ad2481d177d616c57466b74dbf3da38e9aed71b46ddbd904bd7d",
             "ssdeep": "",
             "tlsh": "T1DFE0F196CD7509127317D07A36107973AFED8CB470344B19080659340489A9C125D4C2"
         },
-        "last_upload_date": "2025-12-03T15:15:40.125351Z",
+        "last_upload_date": "2025-12-03T16:36:04.784185Z",
         "name": [
             "sample_pdf_modified.pdf"
         ],
@@ -194,14 +450,14 @@
     "eaecb0a7bd76cf1ab8886033d37b2bd3b0af747d4a46445f71629e4c58d11850": {
         "desc": "",
         "file_type": "application/vnd.microsoft.portable-executable",
-        "first_upload_date": "2025-12-03T15:15:40.120999Z",
+        "first_upload_date": "2025-12-03T16:36:04.768264Z",
         "hashes": {
             "md5": "237d8daddc7288dba4c8351d034c59a0",
             "sha256": "eaecb0a7bd76cf1ab8886033d37b2bd3b0af747d4a46445f71629e4c58d11850",
             "ssdeep": "3072:UUa/J4ZF+hYlJ0WcsheP2RhqatB0sJ/9NqXO6D4tueuAg0Fuj8Xx54ktS:eiZF6YlKqhk2Xqa30sIXO0AOQByks",
             "tlsh": "T1CB248D1075D1C033E87315324AF89BBD9A3DBD200B5659EF53E80FBE8F246D1A631A66"
         },
-        "last_upload_date": "2025-12-03T15:15:40.120999Z",
+        "last_upload_date": "2025-12-03T16:36:04.768264Z",
         "name": [
             "VirtualProtectEx.exe"
         ],
@@ -210,49 +466,33 @@
     "ebc93d4b8e8a6af18cfaf232704965377a126a5e9183537c81caafbb5062ae3d": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T15:15:40.123267Z",
+        "first_upload_date": "2025-12-03T16:36:04.782122Z",
         "hashes": {
             "md5": "c7ebae18617b47f2821022a1db424de2",
             "sha256": "ebc93d4b8e8a6af18cfaf232704965377a126a5e9183537c81caafbb5062ae3d",
             "ssdeep": "",
             "tlsh": "T144E0F1D7DE750921B317D0797600A933EFED8CB470344B1908075534048DA9D125D5C3"
         },
-        "last_upload_date": "2025-12-03T15:15:40.123267Z",
+        "last_upload_date": "2025-12-03T16:36:04.782122Z",
         "name": [
             "sample_pdf_original.pdf"
         ],
         "size": 56909
     },
-    "efde88690b8911a0aa20d6280615f13588f88c51b6d003ede32c0be779618e75": {
+    "f4da95a7d35913407830c7c0c1e17fcf87ca61f0a2c25cc0fc915241fa32828c": {
         "desc": "",
-        "file_type": "text/plain",
-        "first_upload_date": "2025-12-03T15:58:56.657168Z",
+        "file_type": "application/vnd.microsoft.portable-executable",
+        "first_upload_date": "2025-12-03T16:36:04.845207Z",
         "hashes": {
-            "md5": "d7c7a068ba568dabda320e2b230abec0",
-            "sha256": "efde88690b8911a0aa20d6280615f13588f88c51b6d003ede32c0be779618e75",
-            "ssdeep": "192:4vn2pwV/RrzbrDrO9RKxiUhFv+ljrs5klFKdcm4YLOL5et3nr7c7X6nB/N9hdB1+:4ffZ+UT+ljrs5kPKdV4YLOkt3r7cjm3w",
-            "tlsh": "T144528656DA180403A38A9D9E2AB11E01BA12F447C95C1424BD5C83EC6F7D968FEFF27C"
+            "md5": "8eb81c67818c4a06182d3bab74babe9a",
+            "sha256": "f4da95a7d35913407830c7c0c1e17fcf87ca61f0a2c25cc0fc915241fa32828c",
+            "ssdeep": "3072:GerWAIcpBIACrOqfQWYfJwHB4351QBMLGY6Hu5eAg0Fuj9GjeHz4Cf:B5iXr/QRf+hQ1QBBOoAORq+z4C",
+            "tlsh": "T137148D11B5C1C432D5B315320AE4EABA9A3DB9700B659DEF63E40F7E4F306C1E631A66"
         },
-        "last_upload_date": "2025-12-03T15:58:56.657168Z",
+        "last_upload_date": "2025-12-03T16:36:04.845207Z",
         "name": [
-            "app.py"
+            "InternetOpenUrl.exe"
         ],
-        "size": 13874
-    },
-    "f841938155e1f72133647a737c61d6ddfafa63d278c3eb25d1ed8e0be03cce8b": {
-        "desc": "",
-        "file_type": "text/plain",
-        "first_upload_date": "2025-12-03T15:15:40.076998Z",
-        "hashes": {
-            "md5": "53690736cbb56757778ceba88e566084",
-            "sha256": "f841938155e1f72133647a737c61d6ddfafa63d278c3eb25d1ed8e0be03cce8b",
-            "ssdeep": "",
-            "tlsh": "T174F002240C710A80D061C7B5D2579D4D6803C297C064111578DE82D43FCEBFCE9C51B6"
-        },
-        "last_upload_date": "2025-12-03T15:15:40.076998Z",
-        "name": [
-            "README.md"
-        ],
-        "size": 636
+        "size": 203776
     }
 }
