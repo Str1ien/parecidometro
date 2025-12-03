@@ -1,7 +1,8 @@
 body.landing {
 	margin: 0;
 	font-family: Arial, sans-serif;
-	background: linear-gradient(135deg, #111, #333);
+	/* background: linear-gradient(135deg, #111, #333); */
+	background: radial-gradient(circle at top, #0e1013, #090909);
 	color: #fff;
 	display: flex;
 	justify-content: center;
@@ -28,21 +29,227 @@ h1 {
 
 .cta-button {
 	display: inline-block;
-	padding: 14px 28px;
-	font-size: 1.2rem;
-	background: #00BFFF;
-	color: black;
-	text-decoration: none;
-	border-radius: 8px;
+	padding: 16px 38px;
+	font-size: 1.25rem;
 	font-weight: bold;
+	color: #fff;
+	background: #111;
+	border: 2px solid #0ef;
+	border-radius: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.cta-button::before {
+	content: "";
+	position: absolute;
+	top: -120%;
+	left: 0;
+	width: 100%;
+	height: 300%;
+	background: linear-gradient(120deg,
+			rgba(0, 255, 255, 0) 30%,
+			rgba(0, 255, 255, 0.45) 50%,
+			rgba(0, 255, 255, 0) 70%);
+	transform: rotate(25deg);
+	transition: 0.5s;
+}
+
+.cta-button:hover::before {
+	top: -10%;
 }
 
 .cta-button:hover {
-	background: #1ec0ff;
+	box-shadow: 0 0 12px #0ef, 0 0 24px #0ef inset;
+	border-color: #0ef;
+	transform: translateY(-2px);
 }
 
 .status {
 	margin-top: 20px;
 	font-size: 1rem;
 	opacity: 0.8;
+}
+
+/* PAGE BACKGROUND */
+body.visualization {
+	margin: 0;
+	font-family: "Segoe UI", sans-serif;
+	background: radial-gradient(circle at top, #0e1013, #090909 70%);
+	color: #fff;
+	padding: 30px;
+}
+
+
+.main-container {
+	max-width: 1100px;
+	/* Un poco más ancho */
+	margin: auto;
+}
+
+h2 {
+	color: #0ef;
+	text-align: center;
+	font-size: 1.8rem;
+	margin-bottom: 25px;
+}
+
+.card {
+	background: rgba(0, 0, 0, 0.85);
+	/* Más oscuro */
+	border: 1px solid #0ef5;
+	/* Borde más fino */
+	border-radius: 12px;
+	padding: 30px;
+	margin-bottom: 30px;
+	box-shadow: 0 0 10px #0ef, inset 0 0 8px #0ef2;
+	/* Efecto glow centralizado */
+	transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+	box-shadow: 0 0 20px #0ef, inset 0 0 10px #0ef4;
+}
+
+/* ========================= */
+/* METADATA GRID        */
+/* ========================= */
+
+.metadata-grid {
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	gap: 12px 20px;
+	font-size: 1rem;
+	padding-top: 10px;
+}
+
+.metadata-grid div {
+	padding: 8px 0;
+	border-bottom: 1px dashed #0ef2;
+}
+
+.metadata-grid strong {
+	color: #0ef;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.metadata-grid .value-container {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    cursor: pointer;
+}
+
+.metadata-grid .value-container .value {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: relative;
+}
+
+.metadata-grid .value-container:hover {
+	color: #fff;
+	background: rgba(0, 239, 255, 0.05);
+	border-radius: 4px;
+}
+
+.metadata-grid .value-container:hover::after {
+	content: attr(data-full);
+	position: absolute;
+	top: auto;
+	bottom: calc(100% + 5px);
+	left: 0;
+	z-index: 9999;
+
+	padding: 8px 12px;
+	background: #000;
+	border: 1px solid #0ef;
+	border-radius: 6px;
+	color: #0ef;
+	white-space: normal;
+	word-break: break-all;
+	max-width: 350px;
+	box-shadow: 0 0 15px #0ef;
+	animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(5px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ========================= */
+/* NEON SELECT          */
+/* ========================= */
+
+.neon-select {
+	width: 240px;
+	padding: 12px;
+	font-size: 1.1rem;
+	color: #fff;
+	/* Texto blanco para mejor lectura */
+	background: #000;
+	border: 2px solid #0ef;
+	border-radius: 10px;
+	appearance: none;
+	cursor: pointer;
+	transition: 0.2s;
+	box-shadow: 0 0 5px #0ef;
+	margin: 0 auto;
+	/* Centrar el selector */
+	display: block;
+	text-align: center;
+}
+
+.select-wrapper {
+	/* Mantener flexbox para centrar */
+	display: flex;
+	justify-content: center;
+	margin-bottom: 25px;
+	/* Más cerca del gráfico */
+}
+
+/* Ajuste general del dashboard grid */
+.dashboard-grid {
+	display: grid;
+	/* Columna IZQ: fija, Columna DER: flexible. No necesitamos el span 2 ahora. */
+	grid-template-columns: 350px 1fr;
+	gap: 30px;
+}
+
+/* ========================= */
+/* CHART CONTAINER      */
+/* ========================= */
+
+.chart-container {
+	position: relative;
+	height: 380px;
+	padding: 10px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 8px;
+}
+
+/* ========================= */
+/* DASHBOARD GRID       */
+/* ========================= */
+
+.dashboard-grid {
+	display: grid;
+	grid-template-columns: 350px 1fr;
+	/* Columna Izquierda Fija, Derecha Flexible */
+	gap: 30px;
 }
