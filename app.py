@@ -30,6 +30,7 @@ import logging
 from managers.file_processor import FileProcessor
 from managers.hash_manager import HashManager
 from db.json_parser import build_similarity_index, load_db, DB_PATH
+import hashlib
 
 
 # Configuración
@@ -80,10 +81,7 @@ def visualize(file_id):
 @app.route("/api/file/<file_sha256>")
 def api_file(file_sha256):
     """
-    Obtener información de un archivo por su SHA256
-
-    Este endpoint necesita 'database' (no puede usar solo similarity_index)
-    porque necesita acceso directo por SHA256
+    Obtener información de un archivo por su SHA256 y calcular similitudes
     """
     file_entry = database.get(file_sha256)
 
@@ -92,7 +90,67 @@ def api_file(file_sha256):
         return jsonify({"error": "File not found"}), 404
 
     logger.info(f"File info requested: {file_sha256}")
-    return jsonify({"sha256": file_sha256, **file_entry})
+
+    # Get hashes from database entry
+    hashes = file_entry.get("hashes", {})
+    tlsh_hash = hashes.get("tlsh")
+    ssdeep_hash = hashes.get("ssdeep")
+
+    # Initialize hash manager for comparison
+    hash_manager = HashManager(database, similarity_index)
+
+    # Build similar array by comparing against database
+    similar = []
+
+    # Find TLSH matches if hash exists
+    if tlsh_hash:
+        tlsh_matches = hash_manager.find_matches_tlsh(tlsh_hash, top_n=TOP_MATCHES)
+        for match in tlsh_matches["top_matches"]:
+            # Don't skip self-match anymore - include it!
+            similar_entry = {
+                "sha256": match["sha256"],
+                "name": match["name"],
+                "family": match.get("family", "Unknown"),
+                "file_type": match.get("file_type", "Unknown"),
+                "tags": match.get("tags", []),
+                "tlsh_score": max(0, 100 - match["distance"]),
+                "ssdeep_score": 0,
+            }
+            similar.append(similar_entry)
+
+    # Find ssdeep matches if hash exists and add/update scores
+    if ssdeep_hash:
+        ssdeep_matches = hash_manager.find_matches_ssdeep(
+            ssdeep_hash, top_n=TOP_MATCHES
+        )
+
+        # Create a map for efficient lookup
+        similar_map = {s["sha256"]: s for s in similar}
+
+        for match in ssdeep_matches["top_matches"]:
+            # Don't skip self-match anymore - include it!
+            if match["sha256"] in similar_map:
+                # Update existing entry with ssdeep score
+                similar_map[match["sha256"]]["ssdeep_score"] = match["similarity"]
+            else:
+                # Add new entry
+                similar_entry = {
+                    "sha256": match["sha256"],
+                    "name": match["name"],
+                    "family": match.get("family", "Unknown"),
+                    "file_type": match.get("file_type", "Unknown"),
+                    "tags": match.get("tags", []),
+                    "tlsh_score": 0,
+                    "ssdeep_score": match["similarity"],
+                }
+                similar.append(similar_entry)
+                similar_map[match["sha256"]] = similar_entry
+
+    # Add similar array to response
+    response = {"sha256": file_sha256, **file_entry, "similar": similar}
+
+    logger.info(f"Returning file info with {len(similar)} similar files")
+    return jsonify(response)
 
 
 @app.route("/api/reload", methods=["POST"])
@@ -148,7 +206,16 @@ def compare_binary():
             413,
         )
 
-    # 1. Procesar archivo según tipo
+    # 1. Calculate traditional hashes on RAW data
+    sha256_hash = hashlib.sha256(file_data).hexdigest()
+    md5_hash = hashlib.md5(file_data).hexdigest()
+
+    logger.info(f"Hashes calculated - SHA256: {sha256_hash}, MD5: {md5_hash}")
+
+    # Check if file already exists in database
+    existing_file = database.get(sha256_hash)
+
+    # 2. Procesar archivo según tipo
     processor = FileProcessor(file_data, file.filename)
     file_type = processor.get_file_type()
     logger.info(f"File type detected: {file_type}")
@@ -169,7 +236,7 @@ def compare_binary():
             400,
         )
 
-    # 2. Calcular ambos hashes (TLSH + ssdeep)
+    # 3. Calcular similarity hashes (TLSH + ssdeep) on PROCESSED content
     hash_manager = HashManager(database, similarity_index)
     success, result = hash_manager.compare_file(
         file_content, top_n=TOP_MATCHES, use_ssdeep=True
@@ -190,16 +257,20 @@ def compare_binary():
         )
 
     logger.info(
-        f"Hashes calculated - TLSH: {result['tlsh'].get('hash')[:16]}..., ssdeep: {result['ssdeep'].get('hash', 'N/A')[:16]}..."
+        f"Similarity hashes calculated - TLSH: {result['tlsh'].get('hash', 'N/A')[:16]}..., ssdeep: {result['ssdeep'].get('hash', 'N/A')[:16]}..."
     )
 
-    # 3. Construir respuesta
+    # 4. Construir respuesta
     response = {
         "uploaded_file": {
             "filename": file.filename,
             "file_type": file_type,
             "content_size_bytes": result["content_size"],
+            "sha256": sha256_hash,
+            "exists_in_database": existing_file is not None,
             "hashes": {
+                "sha256": sha256_hash,
+                "md5": md5_hash,
                 "tlsh": result["tlsh"].get("hash"),
                 "ssdeep": result["ssdeep"].get("hash"),
             },

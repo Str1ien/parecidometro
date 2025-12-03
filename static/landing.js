@@ -28,15 +28,26 @@ document.getElementById("fileInput").onchange = async function () {
 
     const data = await res.json();
 
+    const uploadedFile = data.uploaded_file;
+    const sha256 = uploadedFile.sha256;
+    const existsInDb = uploadedFile.exists_in_database;
+
     status.textContent = "Analysis complete! Redirecting...";
 
-    // Store the comparison results in sessionStorage
-    sessionStorage.setItem("comparisonResults", JSON.stringify(data));
-
-    // Redirect to visualize page with special 'new' identifier
-    setTimeout(() => {
-      window.location.href = `/visualize/new`;
-    }, 500);
+    if (existsInDb) {
+      // File exists in database - redirect to its SHA256 page
+      console.log(`File found in database: ${sha256}`);
+      setTimeout(() => {
+        window.location.href = `/visualize/${sha256}`;
+      }, 500);
+    } else {
+      // New file - store results and redirect to /visualize/new
+      console.log(`New file uploaded: ${sha256}`);
+      sessionStorage.setItem("comparisonResults", JSON.stringify(data));
+      setTimeout(() => {
+        window.location.href = `/visualize/new`;
+      }, 500);
+    }
   } catch (error) {
     status.textContent = `Error: ${error.message}`;
     status.style.color = "#ff4444";

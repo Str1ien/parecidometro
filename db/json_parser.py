@@ -3,8 +3,11 @@ import sys
 import os
 import json
 import hashlib
-import mimetypes
 from datetime import datetime
+
+# Import FileProcessor for consistent file handling
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from managers.file_processor import FileProcessor
 
 # Optional external libs:
 #   pip install tlsh ssdeep
@@ -55,35 +58,49 @@ def lookup_by_sha256(db: dict, sha256_value: str):
 def compute_hashes_and_meta(file_path: str) -> dict:
     """
     Compute hashes (sha256, md5, tlsh, ssdeep) and basic metadata for a file.
+    Now uses FileProcessor for consistent file handling.
     """
     with open(file_path, "rb") as f:
-        data = f.read()
+        raw_data = f.read()
 
-    sha256 = hashlib.sha256(data).hexdigest()
-    md5 = hashlib.md5(data).hexdigest()
+    # Use FileProcessor to process the file
+    processor = FileProcessor(raw_data, os.path.basename(file_path))
+    file_type = processor.get_file_type()
 
+    # Process the file (extract text for PDFs/DOCX, or use raw for binaries)
+    success, processed_content = processor.process()
+
+    if not success:
+        print(f"[WARN] Failed to process {file_path}: {processed_content}")
+        # Fall back to raw data if processing fails
+        processed_content = raw_data
+
+    # Calculate traditional hashes on RAW data
+    sha256 = hashlib.sha256(raw_data).hexdigest()
+    md5 = hashlib.md5(raw_data).hexdigest()
+
+    # Calculate similarity hashes on PROCESSED content
     # TLSH
-    if tlsh is not None:
+    if tlsh is not None and len(processed_content) >= 50:
         try:
-            tlsh_hash = tlsh.hash(data)
-        except Exception:
+            tlsh_hash = tlsh.hash(processed_content)
+        except Exception as e:
+            print(f"[WARN] TLSH calculation failed for {file_path}: {e}")
             tlsh_hash = ""
     else:
         tlsh_hash = ""
 
     # ssdeep
-    if ssdeep is not None:
+    if ssdeep is not None and len(processed_content) >= 4096:
         try:
-            ssdeep_hash = ssdeep.hash(data)
-        except Exception:
+            ssdeep_hash = ssdeep.hash(processed_content)
+        except Exception as e:
+            print(f"[WARN] ssdeep calculation failed for {file_path}: {e}")
             ssdeep_hash = ""
     else:
         ssdeep_hash = ""
 
-    size = len(data)
-    file_type, _ = mimetypes.guess_type(file_path)
-    if file_type is None:
-        file_type = "unknown"
+    size = len(raw_data)
 
     return {
         "sha256": sha256,
@@ -92,6 +109,7 @@ def compute_hashes_and_meta(file_path: str) -> dict:
         "ssdeep": ssdeep_hash,
         "size": size,
         "file_type": file_type,
+        "processed_size": len(processed_content),
     }
 
 
@@ -112,7 +130,14 @@ def update_db_with_file(file_path: str, db: dict) -> None:
         print(f"[WARN] Skipping (not a file): {file_path}")
         return
 
-    meta = compute_hashes_and_meta(file_path)
+    print(f"[INFO] Processing: {file_path}")
+
+    try:
+        meta = compute_hashes_and_meta(file_path)
+    except Exception as e:
+        print(f"[ERROR] Failed to process {file_path}: {e}")
+        return
+
     sha256 = meta["sha256"]
     now_iso = datetime.utcnow().isoformat() + "Z"
     base_name = os.path.basename(file_path)
@@ -126,14 +151,22 @@ def update_db_with_file(file_path: str, db: dict) -> None:
 
         if base_name not in existing_entry["name"]:
             existing_entry["name"].append(base_name)
+            print(
+                f"[INFO] Updated existing entry: {sha256[:16]}... (added name: {base_name})"
+            )
 
-        # We *could* also update last_upload_date logically:
         existing_entry["last_upload_date"] = now_iso
-
-        # No other fields are modified according to your requirement
         return
 
     # New entry
+    print(f"[INFO] Creating new entry: {sha256[:16]}... ({base_name})")
+    print(f"       Type: {meta['file_type']}")
+    print(
+        f"       Size: {meta['size']} bytes (processed: {meta['processed_size']} bytes)"
+    )
+    print(f"       TLSH: {meta['tlsh'][:32] if meta['tlsh'] else 'N/A'}...")
+    print(f"       ssdeep: {meta['ssdeep'][:32] if meta['ssdeep'] else 'N/A'}...")
+
     db[sha256] = {
         "name": [base_name],
         "size": meta["size"],
@@ -202,8 +235,7 @@ def load_similarity_index(path: str = DB_PATH) -> dict:
 
 
 # -----------------------------
-# -----------------------------
-# NEW: Expand arguments (files or directories)
+# Expand arguments (files or directories)
 # -----------------------------
 def expand_arguments(args):
     """Expands files and directories into a flat list of file paths."""
@@ -245,16 +277,30 @@ def main(argv=None):
         sys.exit(1)
 
     db = load_db(DB_PATH)
+    print(f"[INFO] Loaded database with {len(db)} existing entries")
+
+    processed_count = 0
+    error_count = 0
 
     for file_path in file_list:
-        update_db_with_file(file_path, db)
+        try:
+            update_db_with_file(file_path, db)
+            processed_count += 1
+        except Exception as e:
+            print(f"[ERROR] Failed to process {file_path}: {e}")
+            error_count += 1
 
     save_db(db, DB_PATH)
-    print(f"[INFO] Updated database saved to {DB_PATH}")
+    print(f"\n[INFO] Database update complete:")
+    print(f"       Total entries: {len(db)}")
+    print(f"       Files processed: {processed_count}")
+    print(f"       Errors: {error_count}")
+    print(f"       Saved to: {DB_PATH}")
 
     sim_index = build_similarity_index(db)
-    print("[INFO] Similarity index (tlsh + ssdeep):")
-    print(json.dumps(sim_index, indent=4))
+    print(f"\n[INFO] Similarity index built:")
+    print(f"       TLSH hashes: {len(sim_index['tlsh'])}")
+    print(f"       ssdeep hashes: {len(sim_index['ssdeep'])}")
 
 
 if __name__ == "__main__":
