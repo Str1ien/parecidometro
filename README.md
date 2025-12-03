@@ -116,7 +116,9 @@ Cuando se sube un fichero a la aplicación, automáticamente realizará la compa
 - [`managers`](./managers): Código utilizado por la aplicación principal para el análisis de ficheros y cálculo / comparación de hashes
 - [`static`](./static) y [`templates`](./templates): Ficheros relacionados con la interfaz web (*front end*).
 - [`test_files`](./test_files): Ficheros de prueba para verificar el comportamiento de Pareciómetro.
+- [`doc`](./doc): Documentación para desarrolladores.
 - [`app.py`](./appy.py): Entry point de la herramienta.
+
 
 # **Estructura de la base de datos**
 
