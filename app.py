@@ -1,3 +1,30 @@
+"""
+═══════════════════════════════════════════════════════════════════════════
+                            PARECIDÓMETRO
+                    Sistema de Detección por Similitud
+                        Hackathon CyberArena 2025
+═══════════════════════════════════════════════════════════════════════════
+
+Descripción:
+    Aplicación web para comparar archivos mediante algoritmos de hashing
+    difuso (TLSH y ssdeep) para detectar binarios, documentos y variantes
+    de malware similares.
+
+Tipos de archivo soportados:
+    • Ejecutables (PE/ELF)
+    • Documentos PDF
+    • Microsoft Word (DOCX)
+    • Archivos genéricos
+
+Autores:
+    - Alain "Str1ien" Villagrasa
+    - Daniel "Kifixo" Huici
+    - Razvan "Razvi" Raducu
+
+Licencia: MIT License
+Fecha: Diciembre 2025
+"""
+
 from flask import Flask, render_template, request, jsonify
 import json
 import os
@@ -19,13 +46,8 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-# Variables globales: SOLO datos
-# Ambas son necesarias por diferentes motivos:
-# - database: acceso directo por SHA256 para metadata completa
-# - similarity_index: búsqueda O(1) por hash durante comparación
 database = {}
 similarity_index = {}
-
 
 def load_db(path: str = DB_PATH) -> dict:
     """Load the JSON database from disk, or return an empty dict if it doesn't exist."""

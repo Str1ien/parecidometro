@@ -7,4 +7,3 @@ pyelftools
 PyPDF2
 python-docx
 pymupdf
-r2pipe
