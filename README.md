@@ -1,5 +1,5 @@
 # **Parecidómetro** – Detección de similitud entre ficheros para combatir el cibercrimen
-
+```
 █ ▄▄  ██   █▄▄▄▄ ▄███▄   ▄█▄    ▄█ ██▄   ████▄ █▀▄▀█ ▄███▄     ▄▄▄▄▀ █▄▄▄▄ ████▄
 █   █ █ █  █  ▄▀ █▀   ▀  █▀ ▀▄  ██ █  █  █   █ █ █ █ █▀   ▀ ▀▀▀ █    █  ▄▀ █   █
 █▀▀▀  █▄▄█ █▀▀▌  ██▄▄    █   ▀  ██ █   █ █   █ █ ▄ █ ██▄▄       █    █▀▀▌  █   █
@@ -7,7 +7,7 @@
  █       █   █   ▀███▀   ▀███▀   ▐ ███▀           █  ▀███▀    ▀        █        
   ▀     █   ▀                                    ▀                    ▀         
        ▀                                                                        
-
+```
 Parecidómetro es una herramienta diseñada para **analizar ficheros y detectar similitudes entre ellos** utilizando *similarity hashing*, una técnica ampliamente utilizada en análisis de malware, forense digital y respuesta ante incidentes.
 
 A diferencia de los hashes tradicionales (como SHA-256 o MD5), que cambian por completo ante la mínima modificación, los *hashes de similitud permiten medir “cuán parecido es un fichero a otro”*, incluso aunque hayan sido recompilados, alterados o ligeramente modificados.
