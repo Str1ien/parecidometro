@@ -116,10 +116,10 @@ Excelente para documentos, scripts, PDF, y binarios medianos.
 
 ## Despliegue
 
-## Crear base de datos
+## Generar base de datos
 
 ```bash
-python3 similarityscan.py samples/
+python3 app.py samples/
 ```
 
 Procesa todos los ficheros del directorio.
@@ -138,11 +138,10 @@ Procesa todos los ficheros del directorio.
 4. Puedes generar un índice de similitud para búsquedas rápidas.
 
 # **Contenido del repositorio**
-- [`src`](./src):
-- [`test`](./test):
-- [`static`](./static):
-- [`templates`](./templates):
-- [`managers`](./managers)
+- [`db`](./db): Script Python y fichero .JSON a modo de base de datos.
+- [`managers`](./managers): Scripts Python auxiliares para gestión de ficheros y generación de hashes.
+- [`static`](./static) y [`templates`](./templates): Ficheros relacionados con la interfaz web (*front end*).
+- [`test_files`](./test_files): Ficheros de prueba para verificar el comportamiento de Pareciómetro.
 
 # **Estructura de la base de datos**
 
@@ -166,15 +165,6 @@ Cada entrada se organiza así:
   }
 }
 ```
-
-# **Por qué este proyecto importa**
-
-En un ecosistema donde el cibercrimen evoluciona continuamente, no basta con verificar la integridad exacta de un archivo.
-**Necesitamos herramientas que comprendan la similitud, no solo la igualdad.**
-
-SimilarityScan ayuda a **reclasar, correlacionar y descubrir amenazas** que de otra forma pasarían desapercibidas.
-
-Es simple, portable y poderosa: perfecta para equipos de seguridad, investigadores y analistas.
 
 # Autores (orden alfabético)
 - [Alain "Str1ien" Villagrasa](https://github.com/Str1ien)
