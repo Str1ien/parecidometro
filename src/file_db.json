@@ -1,0 +1,114 @@
+{
+    "2c1a1a89a63bbaa842306f6bfb57f5712de7e48710b317ca5776585a2a7dd995": {
+        "desc": "",
+        "file_type": "application/pdf",
+        "first_upload_date": "2025-12-03T11:50:28.505934Z",
+        "hashes": {
+            "md5": "76aaa8143dbc3fe599e88b9e624e1b3e",
+            "sha256": "2c1a1a89a63bbaa842306f6bfb57f5712de7e48710b317ca5776585a2a7dd995",
+            "ssdeep": "",
+            "tlsh": ""
+        },
+        "last_upload_date": "2025-12-03T11:59:12.619196Z",
+        "name": [
+            "drylab.pdf"
+        ],
+        "size": 1377202
+    },
+    "60b30efa1048900833d1758440247fe8ac85a3134f2327388dcb24e07d814c89": {
+        "desc": "",
+        "file_type": "application/pdf",
+        "first_upload_date": "2025-12-03T11:50:28.572755Z",
+        "hashes": {
+            "md5": "965509571cfbd4fed8c649a37f43b5aa",
+            "sha256": "60b30efa1048900833d1758440247fe8ac85a3134f2327388dcb24e07d814c89",
+            "ssdeep": "",
+            "tlsh": ""
+        },
+        "last_upload_date": "2025-12-03T11:59:12.639144Z",
+        "name": [
+            "rfc9110.pdf"
+        ],
+        "size": 2858365
+    },
+    "696674099c55a09227c9c9f716bad406bb69686cf45e68f8c972c0766e45616b": {
+        "desc": "",
+        "file_type": "application/pdf",
+        "first_upload_date": "2025-12-03T11:50:28.522914Z",
+        "hashes": {
+            "md5": "ff1791d62ef20223699dbc2a226ef934",
+            "sha256": "696674099c55a09227c9c9f716bad406bb69686cf45e68f8c972c0766e45616b",
+            "ssdeep": "",
+            "tlsh": ""
+        },
+        "last_upload_date": "2025-12-03T11:59:12.621217Z",
+        "name": [
+            "invoicesample.pdf"
+        ],
+        "size": 149568
+    },
+    "d47287f479f3492357ffa9dd5008ecb39730c62c691334c1756313541c906aa5": {
+        "desc": "",
+        "file_type": "application/pdf",
+        "first_upload_date": "2025-12-03T11:50:28.481001Z",
+        "hashes": {
+            "md5": "d14556f6466ff8ed3473939717251a8e",
+            "sha256": "d47287f479f3492357ffa9dd5008ecb39730c62c691334c1756313541c906aa5",
+            "ssdeep": "",
+            "tlsh": ""
+        },
+        "last_upload_date": "2025-12-03T11:59:12.611244Z",
+        "name": [
+            "20211216_OWASP-MSP_OWASP_Top_Ten_2021.pdf"
+        ],
+        "size": 430627
+    },
+    "e26281327092ad2481d177d616c57466b74dbf3da38e9aed71b46ddbd904bd7d": {
+        "desc": "",
+        "file_type": "application/pdf",
+        "first_upload_date": "2025-12-03T11:50:28.587742Z",
+        "hashes": {
+            "md5": "4b19183f0d6c81f7f12431c758333742",
+            "sha256": "e26281327092ad2481d177d616c57466b74dbf3da38e9aed71b46ddbd904bd7d",
+            "ssdeep": "",
+            "tlsh": ""
+        },
+        "last_upload_date": "2025-12-03T11:59:12.640140Z",
+        "name": [
+            "sample_pdf_modified.pdf"
+        ],
+        "size": 51332
+    },
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": {
+        "desc": "",
+        "file_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "first_upload_date": "2025-12-03T11:50:28.587742Z",
+        "hashes": {
+            "md5": "d41d8cd98f00b204e9800998ecf8427e",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "ssdeep": "",
+            "tlsh": ""
+        },
+        "last_upload_date": "2025-12-03T11:59:12.640140Z",
+        "name": [
+            "sample_pdf_original.docx"
+        ],
+        "size": 0
+    },
+    "ebc93d4b8e8a6af18cfaf232704965377a126a5e9183537c81caafbb5062ae3d": {
+        "desc": "",
+        "file_type": "application/pdf",
+        "first_upload_date": "2025-12-03T11:50:28.602701Z",
+        "hashes": {
+            "md5": "c7ebae18617b47f2821022a1db424de2",
+            "sha256": "ebc93d4b8e8a6af18cfaf232704965377a126a5e9183537c81caafbb5062ae3d",
+            "ssdeep": "",
+            "tlsh": ""
+        },
+        "last_upload_date": "2025-12-03T11:59:12.641137Z",
+        "name": [
+            "sample_pdf_original.pdf"
+        ],
+        "size": 56909
+    }
+}
