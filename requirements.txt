@@ -1,3 +1,10 @@
 flask
 py-tlsh
 ssdeep
+python-magic
+pefile
+pyelftools
+PyPDF2
+python-docx
+pymupdf
+r2pipe
