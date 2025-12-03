@@ -85,8 +85,6 @@ Muy usado en análisis de malware.
 Divide el fichero en bloques y genera un hash sensible a cambios.
 Excelente para documentos, scripts, PDF, y binarios medianos.
 
----
-
 # **Cómo funciona** (PENDIENTE DE REESCRIBIR)
 
 1. Ejecutas el script pasándole ficheros o directorios.
@@ -99,8 +97,6 @@ Excelente para documentos, scripts, PDF, y binarios medianos.
    * Si no existe → añade una nueva entrada completa.
 3. La base de datos se guarda en `file_db.json`.
 4. Puedes generar un índice de similitud para búsquedas rápidas.
-
----
 
 # **Estructura de la base de datos**
 
@@ -125,8 +121,6 @@ Cada entrada se organiza así:
 }
 ```
 
----
-
 # **Ejemplo de uso** (PENDENTIE DE REESCRIBIR)
 
 ```bash
@@ -134,8 +128,6 @@ python3 similarityscan.py samples/
 ```
 
 Procesa todos los ficheros del directorio.
-
----
 
 # **Por qué este proyecto importa**
 
