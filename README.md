@@ -20,6 +20,13 @@ Es, en esencia, un **motor de correlación de ficheros**, que permite descubrir 
 
 # **¿Qué aporta? ¿Por qué es útil?**
 
+Esta herramienta sirve para **analizar y comparar ficheros utilizando técnicas de similarity hashing**, lo que permite identificar cuándo dos archivos son similares, incluso aunque hayan sido modificados, recompilados o alterados ligeramente.
+
+Su propósito principal es **descubrir relaciones entre ficheros que los hashes tradicionales no pueden detectar**, facilitando el análisis, la clasificación y la correlación de artefactos en escenarios de ciberseguridad.
+
+<details>
+  <summary>Más información</summary>
+  
 ## **1. Detecta variantes de malware**
 
 Los atacantes cambian pequeñas partes del código para evadir firmas tradicionales.
@@ -46,6 +53,9 @@ Cualquier universidad, centro de investigación o analista puede usarlo para:
 * Clasificar grandes colecciones de malware
 * Analizar evolución temporal de amenazas
 * Crear datasets reproducibles
+  
+</details>
+
 
 # **¿Qué es un hash de similitud?**
 
@@ -132,6 +142,10 @@ Cada entrada se organiza así:
 ```
 
 # **Ejemplo de uso** (PENDENTIE DE REESCRIBIR)
+
+## Despliegue
+
+## Crear base de datos
 
 ```bash
 python3 similarityscan.py samples/
