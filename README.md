@@ -1,12 +1,11 @@
 # **Parecidómetro** – Detección de similitud entre ficheros
 ```
-█ ▄▄  ██   █▄▄▄▄ ▄███▄   ▄█▄    ▄█ ██▄   ████▄ █▀▄▀█ ▄███▄     ▄▄▄▄▀ █▄▄▄▄ ████▄
-█   █ █ █  █  ▄▀ █▀   ▀  █▀ ▀▄  ██ █  █  █   █ █ █ █ █▀   ▀ ▀▀▀ █    █  ▄▀ █   █
-█▀▀▀  █▄▄█ █▀▀▌  ██▄▄    █   ▀  ██ █   █ █   █ █ ▄ █ ██▄▄       █    █▀▀▌  █   █
-█     █  █ █  █  █▄   ▄▀ █▄  ▄▀ ▐█ █  █  ▀████ █   █ █▄   ▄▀   █     █  █  ▀████
- █       █   █   ▀███▀   ▀███▀   ▐ ███▀           █  ▀███▀    ▀        █        
-  ▀     █   ▀                                    ▀                    ▀         
-       ▀                                                                        
+  _____                    _     _                      _             
+ |  __ \                  (_)   | |                    | |            
+ | |__) |_ _ _ __ ___  ___ _  __| | ___  _ __ ___   ___| |_ _ __ ___  
+ |  ___/ _` | '__/ _ \/ __| |/ _` |/ _ \| '_ ` _ \ / _ \ __| '__/ _ \ 
+ | |  | (_| | | |  __/ (__| | (_| | (_) | | | | | |  __/ |_| | | (_) |
+ |_|   \__,_|_|  \___|\___|_|\__,_|\___/|_| |_| |_|\___|\__|_|  \___/ 
 ```
 Parecidómetro es una herramienta diseñada para **analizar ficheros y detectar similitudes entre ellos** utilizando *hashes de similitud aproximada*, una técnica ampliamente utilizada en análisis de malware, forense digital y respuesta ante incidentes.
 
@@ -144,6 +143,11 @@ Cada entrada se organiza así:
   }
 }
 ```
+# Imágenes de la aplicación
+
+![Landing page](./img/landing_page.png)
+
+![Resultados](./img/results.png)
 
 # Autores 
 - [Alain "Str1ien" Villagrasa](https://github.com/Str1ien)
