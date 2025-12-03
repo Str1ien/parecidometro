@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>db.json_parser API documentation</title>
+<meta name="description" content="JSON Database Parser and Generator Module …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>db.json_parser</code></h1>
+</header>
+<section id="section-intro">
+<p>JSON Database Parser and Generator Module</p>
+<p>This module provides functionality to generate and manage a JSON-based file database
+with similarity hashes (TLSH and ssdeep) for file comparison and malware analysis.</p>
+<p>The database stores file metadata, traditional hashes (SHA256, MD5), and similarity
+hashes for efficient file correlation and variant detection.</p>
+<p>Main Functions:
+- load_db: Load database from disk
+- save_db: Save database to disk
+- update_db_with_file: Add or update a file in the database
+- build_similarity_index: Create fast lookup index for similarity searches
+- main: CLI entry point for batch processing</p>
+<p>Database Structure:
+{
+"sha256_hash": {
+"name": ["filename1.exe", "filename2.exe"],
+"size": 12345,
+"file_type": "application/x-dosexec",
+"first_upload_date": "2025-12-03T12:00:00Z",
+"last_upload_date": "2025-12-03T12:30:00Z",
+"desc": "Optional description",
+"hashes": {
+"sha256": "abc123&hellip;",
+"md5": "def456&hellip;",
+"tlsh": "T1ABC&hellip;",
+"ssdeep": "192:&hellip;"
+}
+}
+}</p>
+<h2 id="usage">Usage</h2>
+<h1 id="process-files-in-a-directory">Process files in a directory</h1>
+<p>python3 db/json_parser.py /path/to/files/</p>
+<h1 id="process-specific-files">Process specific files</h1>
+<p>python3 db/json_parser.py file1.exe file2.pdf</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>tlsh: Trend Micro Locality Sensitive Hash (optional)</li>
+<li>ssdeep: Context-triggered piecewise hashing (optional)</li>
+<li>FileProcessor: From managers.file_processor</li>
+</ul>
+<h2 id="authors">Authors</h2>
+<ul>
+<li>Alain "Str1ien" Villagrasa</li>
+<li>Daniel "Kifixo" Huici</li>
+<li>Razvan "Razvi" Raducu</li>
+</ul>
+<p>License: MIT License
+Date: December 2025</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="db.json_parser.build_similarity_index"><code class="name flex">
+<span>def <span class="ident">build_similarity_index</span></span>(<span>db: dict) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def build_similarity_index(db: dict) -&gt; dict:
+    &#34;&#34;&#34;
+    Build an in-memory similarity index for fast hash lookups.
+
+    Creates a reverse index mapping similarity hashes to SHA256 values,
+    enabling fast lookups during similarity searches. This avoids having
+    to iterate through the entire database for each comparison.
+
+    Args:
+        db (dict): Complete file database
+
+    Returns:
+        dict: Similarity index with structure:
+            {
+                &#34;tlsh&#34;: {
+                    &#34;tlsh_hash_1&#34;: &#34;sha256_1&#34;,
+                    &#34;tlsh_hash_2&#34;: &#34;sha256_2&#34;,
+                    ...
+                },
+                &#34;ssdeep&#34;: {
+                    &#34;ssdeep_hash_1&#34;: &#34;sha256_1&#34;,
+                    &#34;ssdeep_hash_2&#34;: &#34;sha256_2&#34;,
+                    ...
+                }
+            }
+
+    Notes:
+        - If multiple files share the same similarity hash, only the last
+          one is kept in the index (hash collision)
+        - Empty hashes are skipped
+        - Files without similarity hashes won&#39;t appear in the index
+
+    Performance:
+        - Time: O(n) where n is number of files in database
+        - Space: O(h) where h is number of unique hashes
+
+    Example:
+        &gt;&gt;&gt; db = load_db()
+        &gt;&gt;&gt; index = build_similarity_index(db)
+        &gt;&gt;&gt; print(f&#34;TLSH index size: {len(index[&#39;tlsh&#39;])}&#34;)
+        &gt;&gt;&gt; print(f&#34;ssdeep index size: {len(index[&#39;ssdeep&#39;])}&#34;)
+        TLSH index size: 145
+        ssdeep index size: 120
+    &#34;&#34;&#34;
+    result = {
+        &#34;tlsh&#34;: {},
+        &#34;ssdeep&#34;: {},
+    }
+
+    for sha256, entry in db.items():
+        hashes = entry.get(&#34;hashes&#34;, {})
+        tlsh_val = hashes.get(&#34;tlsh&#34;, &#34;&#34;)
+        ssdeep_val = hashes.get(&#34;ssdeep&#34;, &#34;&#34;)
+
+        if tlsh_val:
+            result[&#34;tlsh&#34;][tlsh_val] = sha256
+        if ssdeep_val:
+            result[&#34;ssdeep&#34;][ssdeep_val] = sha256
+
+    return result</code></pre>
+</details>
+<div class="desc"><p>Build an in-memory similarity index for fast hash lookups.</p>
+<p>Creates a reverse index mapping similarity hashes to SHA256 values,
+enabling fast lookups during similarity searches. This avoids having
+to iterate through the entire database for each comparison.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>db</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Complete file database</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Similarity index with structure:
+{
+"tlsh": {
+"tlsh_hash_1": "sha256_1",
+"tlsh_hash_2": "sha256_2",
+&hellip;
+},
+"ssdeep": {
+"ssdeep_hash_1": "sha256_1",
+"ssdeep_hash_2": "sha256_2",
+&hellip;
+}
+}</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>If multiple files share the same similarity hash, only the last
+one is kept in the index (hash collision)</li>
+<li>Empty hashes are skipped</li>
+<li>Files without similarity hashes won't appear in the index</li>
+</ul>
+<h2 id="performance">Performance</h2>
+<ul>
+<li>Time: O(n) where n is number of files in database</li>
+<li>Space: O(h) where h is number of unique hashes</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; db = load_db()
+&gt;&gt;&gt; index = build_similarity_index(db)
+&gt;&gt;&gt; print(f&quot;TLSH index size: {len(index['tlsh'])}&quot;)
+&gt;&gt;&gt; print(f&quot;ssdeep index size: {len(index['ssdeep'])}&quot;)
+TLSH index size: 145
+ssdeep index size: 120
+</code></pre></div>
+</dd>
+<dt id="db.json_parser.compute_hashes_and_meta"><code class="name flex">
+<span>def <span class="ident">compute_hashes_and_meta</span></span>(<span>file_path: str) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_hashes_and_meta(file_path: str) -&gt; dict:
+    &#34;&#34;&#34;
+    Compute all hashes and metadata for a file.
+
+    This function performs comprehensive file analysis:
+    1. Reads the raw file data
+    2. Detects file type using FileProcessor
+    3. Processes content (extracts text from PDFs/DOCX, uses raw for binaries)
+    4. Calculates traditional hashes (SHA256, MD5) on raw data
+    5. Calculates similarity hashes (TLSH, ssdeep) on processed content
+
+    The dual-hashing approach ensures:
+    - Traditional hashes identify exact file matches
+    - Similarity hashes detect variants and related files
+
+    Args:
+        file_path (str): Path to the file to analyze
+
+    Returns:
+        dict: Dictionary containing:
+            - sha256 (str): SHA256 hash of raw file
+            - md5 (str): MD5 hash of raw file
+            - tlsh (str): TLSH hash of processed content (empty if unavailable)
+            - ssdeep (str): ssdeep hash of processed content (empty if unavailable)
+            - size (int): Size of raw file in bytes
+            - file_type (str): MIME type detected
+            - processed_size (int): Size of processed content
+
+    Raises:
+        FileNotFoundError: If file_path doesn&#39;t exist
+        PermissionError: If unable to read the file
+
+    Notes:
+        - TLSH requires at least 50 bytes of content
+        - ssdeep works best with files &gt;= 4096 bytes
+        - For PDFs/DOCX, processed content is extracted text
+        - For binaries, processed content equals raw content
+
+    Example:
+        &gt;&gt;&gt; meta = compute_hashes_and_meta(&#34;malware.exe&#34;)
+        &gt;&gt;&gt; print(f&#34;SHA256: {meta[&#39;sha256&#39;]}&#34;)
+        &gt;&gt;&gt; print(f&#34;TLSH: {meta[&#39;tlsh&#39;]}&#34;)
+        &gt;&gt;&gt; print(f&#34;File type: {meta[&#39;file_type&#39;]}&#34;)
+    &#34;&#34;&#34;
+    with open(file_path, &#34;rb&#34;) as f:
+        raw_data = f.read()
+
+    # Use FileProcessor to process the file
+    processor = FileProcessor(raw_data, os.path.basename(file_path))
+    file_type = processor.get_file_type()
+
+    # Process the file (extract text for PDFs/DOCX, or use raw for binaries)
+    success, processed_content = processor.process()
+
+    if not success:
+        print(f&#34;[WARN] Failed to process {file_path}: {processed_content}&#34;)
+        # Fall back to raw data if processing fails
+        processed_content = raw_data
+
+    # Calculate traditional hashes on RAW data
+    sha256 = hashlib.sha256(raw_data).hexdigest()
+    md5 = hashlib.md5(raw_data).hexdigest()
+
+    # Calculate similarity hashes on PROCESSED content
+    # TLSH
+    if tlsh is not None and len(processed_content) &gt;= 50:
+        try:
+            tlsh_hash = tlsh.hash(processed_content)
+        except Exception as e:
+            print(f&#34;[WARN] TLSH calculation failed for {file_path}: {e}&#34;)
+            tlsh_hash = &#34;&#34;
+    else:
+        tlsh_hash = &#34;&#34;
+
+    # ssdeep
+    if ssdeep is not None and len(processed_content) &gt;= 4096:
+        try:
+            ssdeep_hash = ssdeep.hash(processed_content)
+        except Exception as e:
+            print(f&#34;[WARN] ssdeep calculation failed for {file_path}: {e}&#34;)
+            ssdeep_hash = &#34;&#34;
+    else:
+        ssdeep_hash = &#34;&#34;
+
+    size = len(raw_data)
+
+    return {
+        &#34;sha256&#34;: sha256,
+        &#34;md5&#34;: md5,
+        &#34;tlsh&#34;: tlsh_hash,
+        &#34;ssdeep&#34;: ssdeep_hash,
+        &#34;size&#34;: size,
+        &#34;file_type&#34;: file_type,
+        &#34;processed_size&#34;: len(processed_content),
+    }</code></pre>
+</details>
+<div class="desc"><p>Compute all hashes and metadata for a file.</p>
+<p>This function performs comprehensive file analysis:
+1. Reads the raw file data
+2. Detects file type using FileProcessor
+3. Processes content (extracts text from PDFs/DOCX, uses raw for binaries)
+4. Calculates traditional hashes (SHA256, MD5) on raw data
+5. Calculates similarity hashes (TLSH, ssdeep) on processed content</p>
+<p>The dual-hashing approach ensures:
+- Traditional hashes identify exact file matches
+- Similarity hashes detect variants and related files</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the file to analyze</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Dictionary containing:
+- sha256 (str): SHA256 hash of raw file
+- md5 (str): MD5 hash of raw file
+- tlsh (str): TLSH hash of processed content (empty if unavailable)
+- ssdeep (str): ssdeep hash of processed content (empty if unavailable)
+- size (int): Size of raw file in bytes
+- file_type (str): MIME type detected
+- processed_size (int): Size of processed content</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>FileNotFoundError</code></dt>
+<dd>If file_path doesn't exist</dd>
+<dt><code>PermissionError</code></dt>
+<dd>If unable to read the file</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>TLSH requires at least 50 bytes of content</li>
+<li>ssdeep works best with files &gt;= 4096 bytes</li>
+<li>For PDFs/DOCX, processed content is extracted text</li>
+<li>For binaries, processed content equals raw content</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; meta = compute_hashes_and_meta(&quot;malware.exe&quot;)
+&gt;&gt;&gt; print(f&quot;SHA256: {meta['sha256']}&quot;)
+&gt;&gt;&gt; print(f&quot;TLSH: {meta['tlsh']}&quot;)
+&gt;&gt;&gt; print(f&quot;File type: {meta['file_type']}&quot;)
+</code></pre></div>
+</dd>
+<dt id="db.json_parser.expand_arguments"><code class="name flex">
+<span>def <span class="ident">expand_arguments</span></span>(<span>args)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def expand_arguments(args):
+    &#34;&#34;&#34;
+    Expand file paths and directories into a flat list of files.
+
+    Takes a list of paths (files or directories) and expands directories
+    into their contained files. Non-recursive - only processes files directly
+    in the specified directories.
+
+    Args:
+        args (list): List of file paths and/or directory paths
+
+    Returns:
+        list: Flat list of file paths (str)
+
+    Behavior:
+        - Files are added directly to the result
+        - Directories are expanded to include all their files (non-recursive)
+        - Invalid paths generate warnings but don&#39;t stop processing
+        - Subdirectories within directories are skipped
+
+    Example:
+        &gt;&gt;&gt; paths = [&#34;file1.exe&#34;, &#34;/path/to/directory&#34;, &#34;file2.pdf&#34;]
+        &gt;&gt;&gt; files = expand_arguments(paths)
+        &gt;&gt;&gt; print(files)
+        [&#39;file1.exe&#39;, &#39;/path/to/directory/a.exe&#39;,
+         &#39;/path/to/directory/b.exe&#39;, &#39;file2.pdf&#39;]
+    &#34;&#34;&#34;
+    expanded = []
+
+    for arg in args:
+        if os.path.isfile(arg):
+            expanded.append(arg)
+
+        elif os.path.isdir(arg):
+            # Add ALL files inside the directory (non-recursive)
+            for entry in os.listdir(arg):
+                full_path = os.path.join(arg, entry)
+                if os.path.isfile(full_path):
+                    expanded.append(full_path)
+
+        else:
+            print(f&#34;[WARN] Path does not exist: {arg}&#34;)
+
+    return expanded</code></pre>
+</details>
+<div class="desc"><p>Expand file paths and directories into a flat list of files.</p>
+<p>Takes a list of paths (files or directories) and expands directories
+into their contained files. Non-recursive - only processes files directly
+in the specified directories.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>args</code></strong> :&ensp;<code>list</code></dt>
+<dd>List of file paths and/or directory paths</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Flat list of file paths (str)</dd>
+</dl>
+<h2 id="behavior">Behavior</h2>
+<ul>
+<li>Files are added directly to the result</li>
+<li>Directories are expanded to include all their files (non-recursive)</li>
+<li>Invalid paths generate warnings but don't stop processing</li>
+<li>Subdirectories within directories are skipped</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; paths = [&quot;file1.exe&quot;, &quot;/path/to/directory&quot;, &quot;file2.pdf&quot;]
+&gt;&gt;&gt; files = expand_arguments(paths)
+&gt;&gt;&gt; print(files)
+['file1.exe', '/path/to/directory/a.exe',
+ '/path/to/directory/b.exe', 'file2.pdf']
+</code></pre></div>
+</dd>
+<dt id="db.json_parser.load_db"><code class="name flex">
+<span>def <span class="ident">load_db</span></span>(<span>path: str = 'db/file_db.json') ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_db(path: str = DB_PATH) -&gt; dict:
+    &#34;&#34;&#34;
+    Load the JSON database from disk.
+
+    Reads the file database from the specified path and returns it as a
+    Python dictionary. If the file doesn&#39;t exist, returns an empty dictionary.
+
+    Args:
+        path (str): Path to the JSON database file (default: db/file_db.json)
+
+    Returns:
+        dict: Database contents as {sha256: {metadata, hashes, ...}}
+              Returns empty dict {} if file doesn&#39;t exist
+
+    Raises:
+        JSONDecodeError: If the file exists but contains invalid JSON
+
+    Example:
+        &gt;&gt;&gt; db = load_db(&#34;db/file_db.json&#34;)
+        &gt;&gt;&gt; print(f&#34;Database has {len(db)} entries&#34;)
+        Database has 150 entries
+    &#34;&#34;&#34;
+    if not os.path.exists(path):
+        return {}
+    with open(path, &#34;r&#34;, encoding=&#34;utf-8&#34;) as f:
+        return json.load(f)</code></pre>
+</details>
+<div class="desc"><p>Load the JSON database from disk.</p>
+<p>Reads the file database from the specified path and returns it as a
+Python dictionary. If the file doesn't exist, returns an empty dictionary.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the JSON database file (default: db/file_db.json)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Database contents as {sha256: {metadata, hashes, &hellip;}}
+Returns empty dict {} if file doesn't exist</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>JSONDecodeError</code></dt>
+<dd>If the file exists but contains invalid JSON</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; db = load_db(&quot;db/file_db.json&quot;)
+&gt;&gt;&gt; print(f&quot;Database has {len(db)} entries&quot;)
+Database has 150 entries
+</code></pre></div>
+</dd>
+<dt id="db.json_parser.load_similarity_index"><code class="name flex">
+<span>def <span class="ident">load_similarity_index</span></span>(<span>path: str = 'db/file_db.json') ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_similarity_index(path: str = DB_PATH) -&gt; dict:
+    &#34;&#34;&#34;
+    Load database and return only the similarity index.
+
+    Convenience function that combines loading the database from disk
+    and building the similarity index in one call.
+
+    Args:
+        path (str): Path to the database file (default: db/file_db.json)
+
+    Returns:
+        dict: Similarity index (see build_similarity_index for structure)
+
+    Example:
+        &gt;&gt;&gt; index = load_similarity_index()
+        &gt;&gt;&gt; # Ready to use for similarity searches
+    &#34;&#34;&#34;
+    db = load_db(path)
+    return build_similarity_index(db)</code></pre>
+</details>
+<div class="desc"><p>Load database and return only the similarity index.</p>
+<p>Convenience function that combines loading the database from disk
+and building the similarity index in one call.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the database file (default: db/file_db.json)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Similarity index (see build_similarity_index for structure)</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; index = load_similarity_index()
+&gt;&gt;&gt; # Ready to use for similarity searches
+</code></pre></div>
+</dd>
+<dt id="db.json_parser.lookup_by_sha256"><code class="name flex">
+<span>def <span class="ident">lookup_by_sha256</span></span>(<span>db: dict, sha256_value: str)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lookup_by_sha256(db: dict, sha256_value: str):
+    &#34;&#34;&#34;
+    Look up a file entry by its SHA256 hash.
+
+    Performs a direct dictionary lookup to find if a file with the given
+    SHA256 hash exists in the database.
+
+    Args:
+        db (dict): The database dictionary
+        sha256_value (str): SHA256 hash to look up (64-character hex string)
+
+    Returns:
+        dict | None: File entry dictionary if found, None otherwise
+
+    Example:
+        &gt;&gt;&gt; db = load_db()
+        &gt;&gt;&gt; entry = lookup_by_sha256(db, &#34;abc123...&#34;)
+        &gt;&gt;&gt; if entry:
+        ...     print(f&#34;Found: {entry[&#39;name&#39;]}&#34;)
+        ... else:
+        ...     print(&#34;File not in database&#34;)
+    &#34;&#34;&#34;
+    return db.get(sha256_value)</code></pre>
+</details>
+<div class="desc"><p>Look up a file entry by its SHA256 hash.</p>
+<p>Performs a direct dictionary lookup to find if a file with the given
+SHA256 hash exists in the database.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>db</code></strong> :&ensp;<code>dict</code></dt>
+<dd>The database dictionary</dd>
+<dt><strong><code>sha256_value</code></strong> :&ensp;<code>str</code></dt>
+<dd>SHA256 hash to look up (64-character hex string)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict | None</code></dt>
+<dd>File entry dictionary if found, None otherwise</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; db = load_db()
+&gt;&gt;&gt; entry = lookup_by_sha256(db, &quot;abc123...&quot;)
+&gt;&gt;&gt; if entry:
+...     print(f&quot;Found: {entry['name']}&quot;)
+... else:
+...     print(&quot;File not in database&quot;)
+</code></pre></div>
+</dd>
+<dt id="db.json_parser.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>argv=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main(argv=None):
+    &#34;&#34;&#34;
+    Main CLI entry point for batch database generation.
+
+    Processes command-line arguments, expands directories, computes hashes
+    for all files, updates the database, and builds the similarity index.
+
+    Args:
+        argv (list | None): Command-line arguments (default: sys.argv[1:])
+                           If None, uses sys.argv
+
+    Returns:
+        None (exits with status code)
+
+    Exit Codes:
+        0: Success
+        1: Error (no arguments, no valid files, etc.)
+
+    Workflow:
+        1. Parse command-line arguments
+        2. Expand directories to file list
+        3. Load existing database
+        4. Process each file (compute hashes, update database)
+        5. Save updated database to disk
+        6. Build and display similarity index statistics
+
+    Output:
+        Prints progress information to stdout:
+        - Files being processed
+        - New entries created
+        - Existing entries updated
+        - Final statistics (total entries, processed files, errors)
+        - Similarity index statistics
+
+    Example Usage:
+        # Process all files in a directory
+        $ python3 db/json_parser.py /path/to/malware/samples/
+
+        # Process specific files
+        $ python3 db/json_parser.py file1.exe file2.pdf file3.docx
+
+        # Mix files and directories
+        $ python3 db/json_parser.py file1.exe /path/to/dir/ file2.pdf
+
+    Example Output:
+        [INFO] Loaded database with 100 existing entries
+        [INFO] Processing: /path/to/file1.exe
+        [INFO] Creating new entry: abc123... (file1.exe)
+               Type: application/x-dosexec
+               Size: 12345 bytes (processed: 12345 bytes)
+               TLSH: T1ABC...
+               ssdeep: 192:...
+
+        [INFO] Database update complete:
+               Total entries: 101
+               Files processed: 1
+               Errors: 0
+               Saved to: db/file_db.json
+
+        [INFO] Similarity index built:
+               TLSH hashes: 95
+               ssdeep hashes: 85
+    &#34;&#34;&#34;
+    if argv is None:
+        argv = sys.argv[1:]
+
+    if not argv:
+        print(f&#34;Usage: {sys.argv[0]} &lt;file1|dir1&gt; [file2|dir2 ...]&#34;)
+        sys.exit(1)
+
+    # Expand directories → list of files
+    file_list = expand_arguments(argv)
+
+    if not file_list:
+        print(&#34;[ERROR] No valid files found to process.&#34;)
+        sys.exit(1)
+
+    db = load_db(DB_PATH)
+    print(f&#34;[INFO] Loaded database with {len(db)} existing entries&#34;)
+
+    processed_count = 0
+    error_count = 0
+
+    for file_path in file_list:
+        try:
+            update_db_with_file(file_path, db)
+            processed_count += 1
+        except Exception as e:
+            print(f&#34;[ERROR] Failed to process {file_path}: {e}&#34;)
+            error_count += 1
+
+    save_db(db, DB_PATH)
+    print(f&#34;\n[INFO] Database update complete:&#34;)
+    print(f&#34;       Total entries: {len(db)}&#34;)
+    print(f&#34;       Files processed: {processed_count}&#34;)
+    print(f&#34;       Errors: {error_count}&#34;)
+    print(f&#34;       Saved to: {DB_PATH}&#34;)
+
+    sim_index = build_similarity_index(db)
+    print(f&#34;\n[INFO] Similarity index built:&#34;)
+    print(f&#34;       TLSH hashes: {len(sim_index[&#39;tlsh&#39;])}&#34;)
+    print(f&#34;       ssdeep hashes: {len(sim_index[&#39;ssdeep&#39;])}&#34;)</code></pre>
+</details>
+<div class="desc"><p>Main CLI entry point for batch database generation.</p>
+<p>Processes command-line arguments, expands directories, computes hashes
+for all files, updates the database, and builds the similarity index.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>argv</code></strong> :&ensp;<code>list | None</code></dt>
+<dd>Command-line arguments (default: sys.argv[1:])
+If None, uses sys.argv</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None (exits with status code)
+Exit Codes:
+0: Success
+1: Error (no arguments, no valid files, etc.)</p>
+<h2 id="workflow">Workflow</h2>
+<ol>
+<li>Parse command-line arguments</li>
+<li>Expand directories to file list</li>
+<li>Load existing database</li>
+<li>Process each file (compute hashes, update database)</li>
+<li>Save updated database to disk</li>
+<li>Build and display similarity index statistics</li>
+</ol>
+<h2 id="output">Output</h2>
+<p>Prints progress information to stdout:
+- Files being processed
+- New entries created
+- Existing entries updated
+- Final statistics (total entries, processed files, errors)
+- Similarity index statistics</p>
+<p>Example Usage:
+# Process all files in a directory
+$ python3 db/json_parser.py /path/to/malware/samples/</p>
+<pre><code># Process specific files
+$ python3 db/json_parser.py file1.exe file2.pdf file3.docx
+
+# Mix files and directories
+$ python3 db/json_parser.py file1.exe /path/to/dir/ file2.pdf
+</code></pre>
+<p>Example Output:
+[INFO] Loaded database with 100 existing entries
+[INFO] Processing: /path/to/file1.exe
+[INFO] Creating new entry: abc123&hellip; (file1.exe)
+Type: application/x-dosexec
+Size: 12345 bytes (processed: 12345 bytes)
+TLSH: T1ABC&hellip;
+ssdeep: 192:&hellip;</p>
+<pre><code>[INFO] Database update complete:
+       Total entries: 101
+       Files processed: 1
+       Errors: 0
+       Saved to: db/file_db.json
+
+[INFO] Similarity index built:
+       TLSH hashes: 95
+       ssdeep hashes: 85
+</code></pre></div>
+</dd>
+<dt id="db.json_parser.save_db"><code class="name flex">
+<span>def <span class="ident">save_db</span></span>(<span>db: dict, path: str = 'db/file_db.json') ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_db(db: dict, path: str = DB_PATH) -&gt; None:
+    &#34;&#34;&#34;
+    Save the JSON database to disk.
+
+    Writes the database dictionary to disk as formatted JSON with indentation
+    and sorted keys for better readability and version control.
+
+    Args:
+        db (dict): Database dictionary to save
+        path (str): Destination path for the JSON file (default: db/file_db.json)
+
+    Returns:
+        None
+
+    Raises:
+        IOError: If unable to write to the specified path
+        PermissionError: If insufficient permissions to write file
+
+    Side Effects:
+        Creates or overwrites the file at the specified path
+
+    Example:
+        &gt;&gt;&gt; db = {&#34;abc123&#34;: {&#34;name&#34;: [&#34;file.exe&#34;], &#34;size&#34;: 1234}}
+        &gt;&gt;&gt; save_db(db, &#34;db/file_db.json&#34;)
+        # File is written to disk
+    &#34;&#34;&#34;
+    with open(path, &#34;w&#34;, encoding=&#34;utf-8&#34;) as f:
+        json.dump(db, f, indent=4, sort_keys=True)</code></pre>
+</details>
+<div class="desc"><p>Save the JSON database to disk.</p>
+<p>Writes the database dictionary to disk as formatted JSON with indentation
+and sorted keys for better readability and version control.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>db</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Database dictionary to save</dd>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Destination path for the JSON file (default: db/file_db.json)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>IOError</code></dt>
+<dd>If unable to write to the specified path</dd>
+<dt><code>PermissionError</code></dt>
+<dd>If insufficient permissions to write file</dd>
+</dl>
+<p>Side Effects:
+Creates or overwrites the file at the specified path</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; db = {&quot;abc123&quot;: {&quot;name&quot;: [&quot;file.exe&quot;], &quot;size&quot;: 1234}}
+&gt;&gt;&gt; save_db(db, &quot;db/file_db.json&quot;)
+# File is written to disk
+</code></pre></div>
+</dd>
+<dt id="db.json_parser.update_db_with_file"><code class="name flex">
+<span>def <span class="ident">update_db_with_file</span></span>(<span>file_path: str, db: dict) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_db_with_file(file_path: str, db: dict) -&gt; None:
+    &#34;&#34;&#34;
+    Add a file to the database or update if it already exists.
+
+    This function implements smart database updates:
+    1. Computes all hashes for the file
+    2. Checks if SHA256 already exists in database
+    3. If exists: Only updates the filename list and last_upload_date
+    4. If new: Creates a complete new entry with all metadata
+
+    This approach prevents duplicate entries while allowing multiple filenames
+    to be associated with the same file (useful for tracking file distribution).
+
+    Args:
+        file_path (str): Path to the file to add/update
+        db (dict): Database dictionary to modify (modified in-place)
+
+    Returns:
+        None (modifies db in-place)
+
+    Side Effects:
+        - Modifies the db dictionary
+        - Prints progress information to stdout
+
+    Behavior:
+        - Skips non-file paths with warning
+        - Prints detailed info for new entries (hashes, size, type)
+        - Updates existing entries silently (only logs filename addition)
+
+    Example:
+        &gt;&gt;&gt; db = load_db()
+        &gt;&gt;&gt; update_db_with_file(&#34;malware.exe&#34;, db)
+        [INFO] Creating new entry: abc123... (malware.exe)
+               Type: application/x-dosexec
+               Size: 12345 bytes (processed: 12345 bytes)
+               TLSH: T1ABC123...
+               ssdeep: 192:ABC...
+        &gt;&gt;&gt; save_db(db)
+    &#34;&#34;&#34;
+    if not os.path.isfile(file_path):
+        print(f&#34;[WARN] Skipping (not a file): {file_path}&#34;)
+        return
+
+    print(f&#34;[INFO] Processing: {file_path}&#34;)
+
+    try:
+        meta = compute_hashes_and_meta(file_path)
+    except Exception as e:
+        print(f&#34;[ERROR] Failed to process {file_path}: {e}&#34;)
+        return
+
+    sha256 = meta[&#34;sha256&#34;]
+    now_iso = datetime.utcnow().isoformat() + &#34;Z&#34;
+    base_name = os.path.basename(file_path)
+
+    existing_entry = lookup_by_sha256(db, sha256)
+
+    if existing_entry is not None:
+        # SHA256 already exists -&gt; only update the &#39;name&#39; list and last_upload_date
+        if &#34;name&#34; not in existing_entry or not isinstance(existing_entry[&#34;name&#34;], list):
+            existing_entry[&#34;name&#34;] = []
+
+        if base_name not in existing_entry[&#34;name&#34;]:
+            existing_entry[&#34;name&#34;].append(base_name)
+            print(
+                f&#34;[INFO] Updated existing entry: {sha256[:16]}... (added name: {base_name})&#34;
+            )
+
+        existing_entry[&#34;last_upload_date&#34;] = now_iso
+        return
+
+    # New entry
+    print(f&#34;[INFO] Creating new entry: {sha256[:16]}... ({base_name})&#34;)
+    print(f&#34;       Type: {meta[&#39;file_type&#39;]}&#34;)
+    print(
+        f&#34;       Size: {meta[&#39;size&#39;]} bytes (processed: {meta[&#39;processed_size&#39;]} bytes)&#34;
+    )
+    print(f&#34;       TLSH: {meta[&#39;tlsh&#39;][:32] if meta[&#39;tlsh&#39;] else &#39;N/A&#39;}...&#34;)
+    print(f&#34;       ssdeep: {meta[&#39;ssdeep&#39;][:32] if meta[&#39;ssdeep&#39;] else &#39;N/A&#39;}...&#34;)
+
+    db[sha256] = {
+        &#34;name&#34;: [base_name],
+        &#34;size&#34;: meta[&#34;size&#34;],
+        &#34;file_type&#34;: meta[&#34;file_type&#34;],
+        &#34;first_upload_date&#34;: now_iso,
+        &#34;last_upload_date&#34;: now_iso,
+        &#34;desc&#34;: &#34;&#34;,
+        &#34;hashes&#34;: {
+            &#34;sha256&#34;: meta[&#34;sha256&#34;],
+            &#34;md5&#34;: meta[&#34;md5&#34;],
+            &#34;tlsh&#34;: meta[&#34;tlsh&#34;],
+            &#34;ssdeep&#34;: meta[&#34;ssdeep&#34;],
+        },
+    }</code></pre>
+</details>
+<div class="desc"><p>Add a file to the database or update if it already exists.</p>
+<p>This function implements smart database updates:
+1. Computes all hashes for the file
+2. Checks if SHA256 already exists in database
+3. If exists: Only updates the filename list and last_upload_date
+4. If new: Creates a complete new entry with all metadata</p>
+<p>This approach prevents duplicate entries while allowing multiple filenames
+to be associated with the same file (useful for tracking file distribution).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the file to add/update</dd>
+<dt><strong><code>db</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Database dictionary to modify (modified in-place)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None (modifies db in-place)
+Side Effects:
+- Modifies the db dictionary
+- Prints progress information to stdout</p>
+<h2 id="behavior">Behavior</h2>
+<ul>
+<li>Skips non-file paths with warning</li>
+<li>Prints detailed info for new entries (hashes, size, type)</li>
+<li>Updates existing entries silently (only logs filename addition)</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; db = load_db()
+&gt;&gt;&gt; update_db_with_file(&quot;malware.exe&quot;, db)
+[INFO] Creating new entry: abc123... (malware.exe)
+       Type: application/x-dosexec
+       Size: 12345 bytes (processed: 12345 bytes)
+       TLSH: T1ABC123...
+       ssdeep: 192:ABC...
+&gt;&gt;&gt; save_db(db)
+</code></pre></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="db" href="index.html">db</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="db.json_parser.build_similarity_index" href="#db.json_parser.build_similarity_index">build_similarity_index</a></code></li>
+<li><code><a title="db.json_parser.compute_hashes_and_meta" href="#db.json_parser.compute_hashes_and_meta">compute_hashes_and_meta</a></code></li>
+<li><code><a title="db.json_parser.expand_arguments" href="#db.json_parser.expand_arguments">expand_arguments</a></code></li>
+<li><code><a title="db.json_parser.load_db" href="#db.json_parser.load_db">load_db</a></code></li>
+<li><code><a title="db.json_parser.load_similarity_index" href="#db.json_parser.load_similarity_index">load_similarity_index</a></code></li>
+<li><code><a title="db.json_parser.lookup_by_sha256" href="#db.json_parser.lookup_by_sha256">lookup_by_sha256</a></code></li>
+<li><code><a title="db.json_parser.main" href="#db.json_parser.main">main</a></code></li>
+<li><code><a title="db.json_parser.save_db" href="#db.json_parser.save_db">save_db</a></code></li>
+<li><code><a title="db.json_parser.update_db_with_file" href="#db.json_parser.update_db_with_file">update_db_with_file</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

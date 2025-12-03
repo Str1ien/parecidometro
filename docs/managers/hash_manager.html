@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>managers.hash_manager API documentation</title>
+<meta name="description" content="Hash Manager Module …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>managers.hash_manager</code></h1>
+</header>
+<section id="section-intro">
+<p>Hash Manager Module</p>
+<p>This module handles the calculation and comparison of similarity hashes
+(TLSH and ssdeep) for file similarity detection.</p>
+<h2 id="classes">Classes</h2>
+<p>HashManager: Main class for hash computation and database comparison</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>tlsh: Trend Micro Locality Sensitive Hash library</li>
+<li>ssdeep: Context-triggered piecewise hashing library</li>
+</ul>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="managers.hash_manager.HashManager"><code class="flex name class">
+<span>class <span class="ident">HashManager</span></span>
+<span>(</span><span>database, similarity_index)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class HashManager:
+    &#34;&#34;&#34;
+    Manages TLSH/ssdeep hash calculation and database comparison.
+
+    This class provides methods to calculate similarity hashes for files
+    and find similar files in a database by comparing hash values.
+
+    Attributes:
+        database (dict): Complete file database {sha256: {metadata}}
+        similarity_index (dict): Fast lookup index {tlsh: {hash: sha256}, ssdeep: {hash: sha256}}
+    &#34;&#34;&#34;
+
+    def __init__(self, database, similarity_index):
+        &#34;&#34;&#34;
+        Initialize the HashManager.
+
+        Args:
+            database (dict): Complete database with format {sha256: {metadata, hashes, ...}}
+            similarity_index (dict): Similarity index {tlsh: {hash: sha256}, ssdeep: {...}}
+        &#34;&#34;&#34;
+        self.database = database
+        self.similarity_index = similarity_index
+        logger.debug(f&#34;HashManager initialized with {len(database)} entries&#34;)
+
+    def calculate_tlsh(self, content):
+        &#34;&#34;&#34;
+        Calculate TLSH hash on processed content.
+
+        TLSH (Trend Micro Locality Sensitive Hash) is designed to detect
+        similar files even when they have been modified. It requires a
+        minimum of 50 bytes to generate a valid hash.
+
+        Args:
+            content (bytes): Processed file content
+
+        Returns:
+            tuple: (success: bool, tlsh_hash: str | error_message: str)
+                - If successful: (True, &#34;T1ABC123...&#34;)
+                - If failed: (False, &#34;Error message&#34;)
+
+        Raises:
+            No exceptions raised - errors are returned in the tuple
+
+        Example:
+            &gt;&gt;&gt; manager = HashManager(db, index)
+            &gt;&gt;&gt; success, hash_value = manager.calculate_tlsh(file_content)
+            &gt;&gt;&gt; if success:
+            ...     print(f&#34;TLSH: {hash_value}&#34;)
+        &#34;&#34;&#34;
+        content_size = len(content)
+
+        # Validate minimum size
+        if content_size &lt; 50:
+            logger.warning(f&#34;Content too small for TLSH: {content_size} bytes&#34;)
+            return (
+                False,
+                f&#34;Content too small for TLSH (min 50 bytes, got {content_size})&#34;,
+            )
+
+        try:
+            tlsh_hash = tlsh.hash(content)
+            if tlsh_hash is None or tlsh_hash == &#34;&#34;:
+                logger.error(&#34;TLSH returned empty hash&#34;)
+                return False, &#34;TLSH returned empty hash (insufficient randomness)&#34;
+
+            logger.debug(f&#34;TLSH calculated: {tlsh_hash[:16]}...&#34;)
+            return True, tlsh_hash
+
+        except Exception as e:
+            logger.error(f&#34;Error computing TLSH: {e}&#34;)
+            return False, f&#34;Cannot compute TLSH: {str(e)}&#34;
+
+    def calculate_ssdeep(self, content):
+        &#34;&#34;&#34;
+        Calculate ssdeep hash on processed content.
+
+        ssdeep (Context Triggered Piecewise Hashing) is a fuzzy hashing
+        algorithm that can match similar files. It works best with files
+        of at least 4096 bytes.
+
+        Args:
+            content (bytes): Processed file content
+
+        Returns:
+            tuple: (success: bool, ssdeep_hash: str | error_message: str)
+                - If successful: (True, &#34;192:ABC...&#34;)
+                - If failed: (False, &#34;Error message&#34;)
+
+        Example:
+            &gt;&gt;&gt; manager = HashManager(db, index)
+            &gt;&gt;&gt; success, hash_value = manager.calculate_ssdeep(file_content)
+            &gt;&gt;&gt; if success:
+            ...     print(f&#34;ssdeep: {hash_value}&#34;)
+        &#34;&#34;&#34;
+        content_size = len(content)
+
+        # ssdeep works better with files &gt;= 4096 bytes
+        if content_size &lt; 4096:
+            logger.warning(f&#34;Content too small for ssdeep: {content_size} bytes&#34;)
+            return (
+                False,
+                f&#34;Content too small for ssdeep (recommended min 4096 bytes, got {content_size})&#34;,
+            )
+
+        try:
+            ssdeep_hash = ssdeep.hash(content)
+            if ssdeep_hash is None or ssdeep_hash == &#34;&#34;:
+                logger.error(&#34;ssdeep returned empty hash&#34;)
+                return False, &#34;ssdeep returned empty hash&#34;
+
+            logger.debug(f&#34;ssdeep calculated: {ssdeep_hash[:32]}...&#34;)
+            return True, ssdeep_hash
+
+        except Exception as e:
+            logger.error(f&#34;Error computing ssdeep: {e}&#34;)
+            return False, f&#34;Cannot compute ssdeep: {str(e)}&#34;
+
+    def find_matches_tlsh(self, uploaded_hash, top_n=10):
+        &#34;&#34;&#34;
+        Find the closest matches using TLSH distance.
+
+        Compares the uploaded file&#39;s TLSH hash against all TLSH hashes
+        in the database and returns the most similar files. Lower distance
+        means more similar files.
+
+        Args:
+            uploaded_hash (str): TLSH hash of the uploaded file
+            top_n (int): Number of top matches to return (default: 10)
+
+        Returns:
+            dict: TLSH matching results containing:
+                - best_match (dict): Metadata of the best matching file
+                - best_match_sha256 (str): SHA256 of best match
+                - min_distance (int): Distance to best match (0 = identical)
+                - top_matches (list): Top N matches sorted by distance
+                - all_matches_count (int): Total number of matches found
+
+        Example:
+            &gt;&gt;&gt; manager = HashManager(db, index)
+            &gt;&gt;&gt; results = manager.find_matches_tlsh(&#34;T1ABC...&#34;, top_n=5)
+            &gt;&gt;&gt; print(f&#34;Best match distance: {results[&#39;min_distance&#39;]}&#34;)
+            &gt;&gt;&gt; for match in results[&#39;top_matches&#39;]:
+            ...     print(f&#34;{match[&#39;name&#39;]}: distance={match[&#39;distance&#39;]}&#34;)
+        &#34;&#34;&#34;
+        best_match_sha256 = None
+        best_match = None
+        min_distance = float(&#34;inf&#34;)
+        all_matches = []
+
+        # Iterate over all TLSH hashes in the index
+        tlsh_index = self.similarity_index.get(&#34;tlsh&#34;, {})
+        logger.debug(f&#34;Comparing TLSH against {len(tlsh_index)} entries&#34;)
+
+        for db_tlsh, sha256 in tlsh_index.items():
+            try:
+                # Calculate distance (0 = identical, larger = more different)
+                distance = tlsh.diff(uploaded_hash, db_tlsh)
+
+                # Get complete file metadata
+                file_entry = self.database.get(sha256, {})
+
+                match_info = {
+                    &#34;sha256&#34;: sha256,
+                    &#34;name&#34;: file_entry.get(&#34;name&#34;, [&#34;Unknown&#34;]),
+                    &#34;family&#34;: file_entry.get(&#34;family&#34;, &#34;Unknown&#34;),
+                    &#34;file_type&#34;: file_entry.get(&#34;file_type&#34;, &#34;Unknown&#34;),
+                    &#34;tags&#34;: file_entry.get(&#34;tags&#34;, []),
+                    &#34;tlsh&#34;: db_tlsh,
+                    &#34;distance&#34;: distance,
+                }
+
+                all_matches.append(match_info)
+
+                if distance &lt; min_distance:
+                    min_distance = distance
+                    best_match_sha256 = sha256
+                    best_match = file_entry
+
+            except Exception as e:
+                logger.error(f&#34;Error comparing TLSH with {sha256}: {e}&#34;)
+                continue
+
+        # Sort by distance (lower = more similar)
+        all_matches.sort(key=lambda x: x[&#34;distance&#34;])
+        top_matches = all_matches[:top_n]
+
+        if best_match_sha256:
+            logger.info(
+                f&#34;TLSH best match: {best_match_sha256} (distance: {min_distance})&#34;
+            )
+        else:
+            logger.info(&#34;No TLSH matches found&#34;)
+
+        return {
+            &#34;best_match&#34;: best_match,
+            &#34;best_match_sha256&#34;: best_match_sha256,
+            &#34;min_distance&#34;: min_distance if min_distance != float(&#34;inf&#34;) else None,
+            &#34;top_matches&#34;: top_matches,
+            &#34;all_matches_count&#34;: len(all_matches),
+        }
+
+    def find_matches_ssdeep(self, uploaded_hash, top_n=10):
+        &#34;&#34;&#34;
+        Find the closest matches using ssdeep similarity.
+
+        Compares the uploaded file&#39;s ssdeep hash against all ssdeep hashes
+        in the database and returns the most similar files. Higher similarity
+        means more similar files (0-100 scale).
+
+        Args:
+            uploaded_hash (str): ssdeep hash of the uploaded file
+            top_n (int): Number of top matches to return (default: 10)
+
+        Returns:
+            dict: ssdeep matching results containing:
+                - best_match (dict): Metadata of the best matching file
+                - best_match_sha256 (str): SHA256 of best match
+                - max_similarity (int): Similarity to best match (0-100, 100 = identical)
+                - top_matches (list): Top N matches sorted by similarity
+                - all_matches_count (int): Total number of matches found
+
+        Example:
+            &gt;&gt;&gt; manager = HashManager(db, index)
+            &gt;&gt;&gt; results = manager.find_matches_ssdeep(&#34;192:ABC...&#34;, top_n=5)
+            &gt;&gt;&gt; print(f&#34;Best match similarity: {results[&#39;max_similarity&#39;]}%&#34;)
+            &gt;&gt;&gt; for match in results[&#39;top_matches&#39;]:
+            ...     print(f&#34;{match[&#39;name&#39;]}: {match[&#39;similarity&#39;]}%&#34;)
+        &#34;&#34;&#34;
+        best_match_sha256 = None
+        best_match = None
+        max_similarity = 0
+        all_matches = []
+
+        # Iterate over all ssdeep hashes in the index
+        ssdeep_index = self.similarity_index.get(&#34;ssdeep&#34;, {})
+        logger.debug(f&#34;Comparing ssdeep against {len(ssdeep_index)} entries&#34;)
+
+        for db_ssdeep, sha256 in ssdeep_index.items():
+            try:
+                # ssdeep.compare() returns a value 0-100 (100 = identical)
+                similarity = ssdeep.compare(uploaded_hash, db_ssdeep)
+
+                # Only consider if there&#39;s any similarity
+                if similarity == 0:
+                    continue
+
+                # Get complete file metadata
+                file_entry = self.database.get(sha256, {})
+
+                match_info = {
+                    &#34;sha256&#34;: sha256,
+                    &#34;name&#34;: file_entry.get(&#34;name&#34;, [&#34;Unknown&#34;]),
+                    &#34;family&#34;: file_entry.get(&#34;family&#34;, &#34;Unknown&#34;),
+                    &#34;file_type&#34;: file_entry.get(&#34;file_type&#34;, &#34;Unknown&#34;),
+                    &#34;tags&#34;: file_entry.get(&#34;tags&#34;, []),
+                    &#34;ssdeep&#34;: db_ssdeep,
+                    &#34;similarity&#34;: similarity,
+                }
+
+                all_matches.append(match_info)
+
+                if similarity &gt; max_similarity:
+                    max_similarity = similarity
+                    best_match_sha256 = sha256
+                    best_match = file_entry
+
+            except Exception as e:
+                logger.error(f&#34;Error comparing ssdeep with {sha256}: {e}&#34;)
+                continue
+
+        # Sort by similarity (higher = more similar)
+        all_matches.sort(key=lambda x: x[&#34;similarity&#34;], reverse=True)
+        top_matches = all_matches[:top_n]
+
+        if best_match_sha256:
+            logger.info(
+                f&#34;ssdeep best match: {best_match_sha256} (similarity: {max_similarity}%)&#34;
+            )
+        else:
+            logger.info(&#34;No ssdeep matches found&#34;)
+
+        return {
+            &#34;best_match&#34;: best_match,
+            &#34;best_match_sha256&#34;: best_match_sha256,
+            &#34;max_similarity&#34;: max_similarity if max_similarity &gt; 0 else None,
+            &#34;top_matches&#34;: top_matches,
+            &#34;all_matches_count&#34;: len(all_matches),
+        }
+
+    def compare_file(self, content, top_n=10, use_ssdeep=True):
+        &#34;&#34;&#34;
+        Complete pipeline: calculate TLSH/ssdeep and find matches.
+
+        This is the main method that orchestrates the entire hash comparison
+        process. It calculates both TLSH and ssdeep hashes (if requested)
+        and finds similar files in the database.
+
+        Args:
+            content (bytes): Processed file content
+            top_n (int): Number of top matches to return (default: 10)
+            use_ssdeep (bool): Whether to also calculate ssdeep (default: True)
+
+        Returns:
+            tuple: (success: bool, result: dict | error_message: str)
+                - If successful: (True, {content_size, tlsh, ssdeep})
+                - If failed: (False, &#34;Error message&#34;)
+
+        Result Dictionary Structure:
+            {
+                &#39;content_size&#39;: int,
+                &#39;tlsh&#39;: {
+                    &#39;hash&#39;: str,
+                    &#39;matches&#39;: {
+                        &#39;best_match&#39;: dict,
+                        &#39;best_match_sha256&#39;: str,
+                        &#39;min_distance&#39;: int,
+                        &#39;top_matches&#39;: list,
+                        &#39;all_matches_count&#39;: int
+                    }
+                },
+                &#39;ssdeep&#39;: {
+                    &#39;hash&#39;: str,
+                    &#39;matches&#39;: { ... } or &#39;error&#39;: str
+                }
+            }
+
+        Example:
+            &gt;&gt;&gt; manager = HashManager(db, index)
+            &gt;&gt;&gt; success, result = manager.compare_file(file_content, top_n=5)
+            &gt;&gt;&gt; if success:
+            ...     print(f&#34;TLSH hash: {result[&#39;tlsh&#39;][&#39;hash&#39;]}&#34;)
+            ...     print(f&#34;Best match: {result[&#39;tlsh&#39;][&#39;matches&#39;][&#39;best_match&#39;]}&#34;)
+        &#34;&#34;&#34;
+        logger.info(
+            f&#34;Starting hash comparison (content size: {len(content)} bytes, top_n: {top_n})&#34;
+        )
+
+        result = {&#34;content_size&#34;: len(content), &#34;tlsh&#34;: {}, &#34;ssdeep&#34;: {}}
+
+        # Calculate TLSH
+        success_tlsh, tlsh_result = self.calculate_tlsh(content)
+
+        if not success_tlsh:
+            logger.error(f&#34;TLSH calculation failed: {tlsh_result}&#34;)
+            return False, tlsh_result  # Error in TLSH
+
+        uploaded_tlsh = tlsh_result
+        result[&#34;tlsh&#34;][&#34;hash&#34;] = uploaded_tlsh
+
+        # Find TLSH matches
+        tlsh_matches = self.find_matches_tlsh(uploaded_tlsh, top_n)
+        result[&#34;tlsh&#34;][&#34;matches&#34;] = tlsh_matches
+
+        # Calculate ssdeep (optional)
+        if use_ssdeep:
+            success_ssdeep, ssdeep_result = self.calculate_ssdeep(content)
+
+            if success_ssdeep:
+                uploaded_ssdeep = ssdeep_result
+                result[&#34;ssdeep&#34;][&#34;hash&#34;] = uploaded_ssdeep
+
+                # Find ssdeep matches
+                ssdeep_matches = self.find_matches_ssdeep(uploaded_ssdeep, top_n)
+                result[&#34;ssdeep&#34;][&#34;matches&#34;] = ssdeep_matches
+            else:
+                logger.warning(f&#34;ssdeep calculation failed: {ssdeep_result}&#34;)
+                result[&#34;ssdeep&#34;][&#34;error&#34;] = ssdeep_result
+
+        logger.info(&#34;Hash comparison completed successfully&#34;)
+        return True, result</code></pre>
+</details>
+<div class="desc"><p>Manages TLSH/ssdeep hash calculation and database comparison.</p>
+<p>This class provides methods to calculate similarity hashes for files
+and find similar files in a database by comparing hash values.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>database</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Complete file database {sha256: {metadata}}</dd>
+<dt><strong><code>similarity_index</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Fast lookup index {tlsh: {hash: sha256}, ssdeep: {hash: sha256}}</dd>
+</dl>
+<p>Initialize the HashManager.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>database</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Complete database with format {sha256: {metadata, hashes, &hellip;}}</dd>
+<dt><strong><code>similarity_index</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Similarity index {tlsh: {hash: sha256}, ssdeep: {&hellip;}}</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="managers.hash_manager.HashManager.calculate_ssdeep"><code class="name flex">
+<span>def <span class="ident">calculate_ssdeep</span></span>(<span>self, content)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculate_ssdeep(self, content):
+    &#34;&#34;&#34;
+    Calculate ssdeep hash on processed content.
+
+    ssdeep (Context Triggered Piecewise Hashing) is a fuzzy hashing
+    algorithm that can match similar files. It works best with files
+    of at least 4096 bytes.
+
+    Args:
+        content (bytes): Processed file content
+
+    Returns:
+        tuple: (success: bool, ssdeep_hash: str | error_message: str)
+            - If successful: (True, &#34;192:ABC...&#34;)
+            - If failed: (False, &#34;Error message&#34;)
+
+    Example:
+        &gt;&gt;&gt; manager = HashManager(db, index)
+        &gt;&gt;&gt; success, hash_value = manager.calculate_ssdeep(file_content)
+        &gt;&gt;&gt; if success:
+        ...     print(f&#34;ssdeep: {hash_value}&#34;)
+    &#34;&#34;&#34;
+    content_size = len(content)
+
+    # ssdeep works better with files &gt;= 4096 bytes
+    if content_size &lt; 4096:
+        logger.warning(f&#34;Content too small for ssdeep: {content_size} bytes&#34;)
+        return (
+            False,
+            f&#34;Content too small for ssdeep (recommended min 4096 bytes, got {content_size})&#34;,
+        )
+
+    try:
+        ssdeep_hash = ssdeep.hash(content)
+        if ssdeep_hash is None or ssdeep_hash == &#34;&#34;:
+            logger.error(&#34;ssdeep returned empty hash&#34;)
+            return False, &#34;ssdeep returned empty hash&#34;
+
+        logger.debug(f&#34;ssdeep calculated: {ssdeep_hash[:32]}...&#34;)
+        return True, ssdeep_hash
+
+    except Exception as e:
+        logger.error(f&#34;Error computing ssdeep: {e}&#34;)
+        return False, f&#34;Cannot compute ssdeep: {str(e)}&#34;</code></pre>
+</details>
+<div class="desc"><p>Calculate ssdeep hash on processed content.</p>
+<p>ssdeep (Context Triggered Piecewise Hashing) is a fuzzy hashing
+algorithm that can match similar files. It works best with files
+of at least 4096 bytes.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>content</code></strong> :&ensp;<code>bytes</code></dt>
+<dd>Processed file content</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>tuple</code></dt>
+<dd>(success: bool, ssdeep_hash: str | error_message: str)
+- If successful: (True, "192:ABC&hellip;")
+- If failed: (False, "Error message")</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; manager = HashManager(db, index)
+&gt;&gt;&gt; success, hash_value = manager.calculate_ssdeep(file_content)
+&gt;&gt;&gt; if success:
+...     print(f&quot;ssdeep: {hash_value}&quot;)
+</code></pre></div>
+</dd>
+<dt id="managers.hash_manager.HashManager.calculate_tlsh"><code class="name flex">
+<span>def <span class="ident">calculate_tlsh</span></span>(<span>self, content)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculate_tlsh(self, content):
+    &#34;&#34;&#34;
+    Calculate TLSH hash on processed content.
+
+    TLSH (Trend Micro Locality Sensitive Hash) is designed to detect
+    similar files even when they have been modified. It requires a
+    minimum of 50 bytes to generate a valid hash.
+
+    Args:
+        content (bytes): Processed file content
+
+    Returns:
+        tuple: (success: bool, tlsh_hash: str | error_message: str)
+            - If successful: (True, &#34;T1ABC123...&#34;)
+            - If failed: (False, &#34;Error message&#34;)
+
+    Raises:
+        No exceptions raised - errors are returned in the tuple
+
+    Example:
+        &gt;&gt;&gt; manager = HashManager(db, index)
+        &gt;&gt;&gt; success, hash_value = manager.calculate_tlsh(file_content)
+        &gt;&gt;&gt; if success:
+        ...     print(f&#34;TLSH: {hash_value}&#34;)
+    &#34;&#34;&#34;
+    content_size = len(content)
+
+    # Validate minimum size
+    if content_size &lt; 50:
+        logger.warning(f&#34;Content too small for TLSH: {content_size} bytes&#34;)
+        return (
+            False,
+            f&#34;Content too small for TLSH (min 50 bytes, got {content_size})&#34;,
+        )
+
+    try:
+        tlsh_hash = tlsh.hash(content)
+        if tlsh_hash is None or tlsh_hash == &#34;&#34;:
+            logger.error(&#34;TLSH returned empty hash&#34;)
+            return False, &#34;TLSH returned empty hash (insufficient randomness)&#34;
+
+        logger.debug(f&#34;TLSH calculated: {tlsh_hash[:16]}...&#34;)
+        return True, tlsh_hash
+
+    except Exception as e:
+        logger.error(f&#34;Error computing TLSH: {e}&#34;)
+        return False, f&#34;Cannot compute TLSH: {str(e)}&#34;</code></pre>
+</details>
+<div class="desc"><p>Calculate TLSH hash on processed content.</p>
+<p>TLSH (Trend Micro Locality Sensitive Hash) is designed to detect
+similar files even when they have been modified. It requires a
+minimum of 50 bytes to generate a valid hash.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>content</code></strong> :&ensp;<code>bytes</code></dt>
+<dd>Processed file content</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>tuple</code></dt>
+<dd>(success: bool, tlsh_hash: str | error_message: str)
+- If successful: (True, "T1ABC123&hellip;")
+- If failed: (False, "Error message")</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<p>No exceptions raised - errors are returned in the tuple</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; manager = HashManager(db, index)
+&gt;&gt;&gt; success, hash_value = manager.calculate_tlsh(file_content)
+&gt;&gt;&gt; if success:
+...     print(f&quot;TLSH: {hash_value}&quot;)
+</code></pre></div>
+</dd>
+<dt id="managers.hash_manager.HashManager.compare_file"><code class="name flex">
+<span>def <span class="ident">compare_file</span></span>(<span>self, content, top_n=10, use_ssdeep=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_file(self, content, top_n=10, use_ssdeep=True):
+    &#34;&#34;&#34;
+    Complete pipeline: calculate TLSH/ssdeep and find matches.
+
+    This is the main method that orchestrates the entire hash comparison
+    process. It calculates both TLSH and ssdeep hashes (if requested)
+    and finds similar files in the database.
+
+    Args:
+        content (bytes): Processed file content
+        top_n (int): Number of top matches to return (default: 10)
+        use_ssdeep (bool): Whether to also calculate ssdeep (default: True)
+
+    Returns:
+        tuple: (success: bool, result: dict | error_message: str)
+            - If successful: (True, {content_size, tlsh, ssdeep})
+            - If failed: (False, &#34;Error message&#34;)
+
+    Result Dictionary Structure:
+        {
+            &#39;content_size&#39;: int,
+            &#39;tlsh&#39;: {
+                &#39;hash&#39;: str,
+                &#39;matches&#39;: {
+                    &#39;best_match&#39;: dict,
+                    &#39;best_match_sha256&#39;: str,
+                    &#39;min_distance&#39;: int,
+                    &#39;top_matches&#39;: list,
+                    &#39;all_matches_count&#39;: int
+                }
+            },
+            &#39;ssdeep&#39;: {
+                &#39;hash&#39;: str,
+                &#39;matches&#39;: { ... } or &#39;error&#39;: str
+            }
+        }
+
+    Example:
+        &gt;&gt;&gt; manager = HashManager(db, index)
+        &gt;&gt;&gt; success, result = manager.compare_file(file_content, top_n=5)
+        &gt;&gt;&gt; if success:
+        ...     print(f&#34;TLSH hash: {result[&#39;tlsh&#39;][&#39;hash&#39;]}&#34;)
+        ...     print(f&#34;Best match: {result[&#39;tlsh&#39;][&#39;matches&#39;][&#39;best_match&#39;]}&#34;)
+    &#34;&#34;&#34;
+    logger.info(
+        f&#34;Starting hash comparison (content size: {len(content)} bytes, top_n: {top_n})&#34;
+    )
+
+    result = {&#34;content_size&#34;: len(content), &#34;tlsh&#34;: {}, &#34;ssdeep&#34;: {}}
+
+    # Calculate TLSH
+    success_tlsh, tlsh_result = self.calculate_tlsh(content)
+
+    if not success_tlsh:
+        logger.error(f&#34;TLSH calculation failed: {tlsh_result}&#34;)
+        return False, tlsh_result  # Error in TLSH
+
+    uploaded_tlsh = tlsh_result
+    result[&#34;tlsh&#34;][&#34;hash&#34;] = uploaded_tlsh
+
+    # Find TLSH matches
+    tlsh_matches = self.find_matches_tlsh(uploaded_tlsh, top_n)
+    result[&#34;tlsh&#34;][&#34;matches&#34;] = tlsh_matches
+
+    # Calculate ssdeep (optional)
+    if use_ssdeep:
+        success_ssdeep, ssdeep_result = self.calculate_ssdeep(content)
+
+        if success_ssdeep:
+            uploaded_ssdeep = ssdeep_result
+            result[&#34;ssdeep&#34;][&#34;hash&#34;] = uploaded_ssdeep
+
+            # Find ssdeep matches
+            ssdeep_matches = self.find_matches_ssdeep(uploaded_ssdeep, top_n)
+            result[&#34;ssdeep&#34;][&#34;matches&#34;] = ssdeep_matches
+        else:
+            logger.warning(f&#34;ssdeep calculation failed: {ssdeep_result}&#34;)
+            result[&#34;ssdeep&#34;][&#34;error&#34;] = ssdeep_result
+
+    logger.info(&#34;Hash comparison completed successfully&#34;)
+    return True, result</code></pre>
+</details>
+<div class="desc"><p>Complete pipeline: calculate TLSH/ssdeep and find matches.</p>
+<p>This is the main method that orchestrates the entire hash comparison
+process. It calculates both TLSH and ssdeep hashes (if requested)
+and finds similar files in the database.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>content</code></strong> :&ensp;<code>bytes</code></dt>
+<dd>Processed file content</dd>
+<dt><strong><code>top_n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of top matches to return (default: 10)</dd>
+<dt><strong><code>use_ssdeep</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to also calculate ssdeep (default: True)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>tuple</code></dt>
+<dd>(success: bool, result: dict | error_message: str)
+- If successful: (True, {content_size, tlsh, ssdeep})
+- If failed: (False, "Error message")</dd>
+</dl>
+<p>Result Dictionary Structure:
+{
+'content_size': int,
+'tlsh': {
+'hash': str,
+'matches': {
+'best_match': dict,
+'best_match_sha256': str,
+'min_distance': int,
+'top_matches': list,
+'all_matches_count': int
+}
+},
+'ssdeep': {
+'hash': str,
+'matches': { &hellip; } or 'error': str
+}
+}</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; manager = HashManager(db, index)
+&gt;&gt;&gt; success, result = manager.compare_file(file_content, top_n=5)
+&gt;&gt;&gt; if success:
+...     print(f&quot;TLSH hash: {result['tlsh']['hash']}&quot;)
+...     print(f&quot;Best match: {result['tlsh']['matches']['best_match']}&quot;)
+</code></pre></div>
+</dd>
+<dt id="managers.hash_manager.HashManager.find_matches_ssdeep"><code class="name flex">
+<span>def <span class="ident">find_matches_ssdeep</span></span>(<span>self, uploaded_hash, top_n=10)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_matches_ssdeep(self, uploaded_hash, top_n=10):
+    &#34;&#34;&#34;
+    Find the closest matches using ssdeep similarity.
+
+    Compares the uploaded file&#39;s ssdeep hash against all ssdeep hashes
+    in the database and returns the most similar files. Higher similarity
+    means more similar files (0-100 scale).
+
+    Args:
+        uploaded_hash (str): ssdeep hash of the uploaded file
+        top_n (int): Number of top matches to return (default: 10)
+
+    Returns:
+        dict: ssdeep matching results containing:
+            - best_match (dict): Metadata of the best matching file
+            - best_match_sha256 (str): SHA256 of best match
+            - max_similarity (int): Similarity to best match (0-100, 100 = identical)
+            - top_matches (list): Top N matches sorted by similarity
+            - all_matches_count (int): Total number of matches found
+
+    Example:
+        &gt;&gt;&gt; manager = HashManager(db, index)
+        &gt;&gt;&gt; results = manager.find_matches_ssdeep(&#34;192:ABC...&#34;, top_n=5)
+        &gt;&gt;&gt; print(f&#34;Best match similarity: {results[&#39;max_similarity&#39;]}%&#34;)
+        &gt;&gt;&gt; for match in results[&#39;top_matches&#39;]:
+        ...     print(f&#34;{match[&#39;name&#39;]}: {match[&#39;similarity&#39;]}%&#34;)
+    &#34;&#34;&#34;
+    best_match_sha256 = None
+    best_match = None
+    max_similarity = 0
+    all_matches = []
+
+    # Iterate over all ssdeep hashes in the index
+    ssdeep_index = self.similarity_index.get(&#34;ssdeep&#34;, {})
+    logger.debug(f&#34;Comparing ssdeep against {len(ssdeep_index)} entries&#34;)
+
+    for db_ssdeep, sha256 in ssdeep_index.items():
+        try:
+            # ssdeep.compare() returns a value 0-100 (100 = identical)
+            similarity = ssdeep.compare(uploaded_hash, db_ssdeep)
+
+            # Only consider if there&#39;s any similarity
+            if similarity == 0:
+                continue
+
+            # Get complete file metadata
+            file_entry = self.database.get(sha256, {})
+
+            match_info = {
+                &#34;sha256&#34;: sha256,
+                &#34;name&#34;: file_entry.get(&#34;name&#34;, [&#34;Unknown&#34;]),
+                &#34;family&#34;: file_entry.get(&#34;family&#34;, &#34;Unknown&#34;),
+                &#34;file_type&#34;: file_entry.get(&#34;file_type&#34;, &#34;Unknown&#34;),
+                &#34;tags&#34;: file_entry.get(&#34;tags&#34;, []),
+                &#34;ssdeep&#34;: db_ssdeep,
+                &#34;similarity&#34;: similarity,
+            }
+
+            all_matches.append(match_info)
+
+            if similarity &gt; max_similarity:
+                max_similarity = similarity
+                best_match_sha256 = sha256
+                best_match = file_entry
+
+        except Exception as e:
+            logger.error(f&#34;Error comparing ssdeep with {sha256}: {e}&#34;)
+            continue
+
+    # Sort by similarity (higher = more similar)
+    all_matches.sort(key=lambda x: x[&#34;similarity&#34;], reverse=True)
+    top_matches = all_matches[:top_n]
+
+    if best_match_sha256:
+        logger.info(
+            f&#34;ssdeep best match: {best_match_sha256} (similarity: {max_similarity}%)&#34;
+        )
+    else:
+        logger.info(&#34;No ssdeep matches found&#34;)
+
+    return {
+        &#34;best_match&#34;: best_match,
+        &#34;best_match_sha256&#34;: best_match_sha256,
+        &#34;max_similarity&#34;: max_similarity if max_similarity &gt; 0 else None,
+        &#34;top_matches&#34;: top_matches,
+        &#34;all_matches_count&#34;: len(all_matches),
+    }</code></pre>
+</details>
+<div class="desc"><p>Find the closest matches using ssdeep similarity.</p>
+<p>Compares the uploaded file's ssdeep hash against all ssdeep hashes
+in the database and returns the most similar files. Higher similarity
+means more similar files (0-100 scale).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>uploaded_hash</code></strong> :&ensp;<code>str</code></dt>
+<dd>ssdeep hash of the uploaded file</dd>
+<dt><strong><code>top_n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of top matches to return (default: 10)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>ssdeep matching results containing:
+- best_match (dict): Metadata of the best matching file
+- best_match_sha256 (str): SHA256 of best match
+- max_similarity (int): Similarity to best match (0-100, 100 = identical)
+- top_matches (list): Top N matches sorted by similarity
+- all_matches_count (int): Total number of matches found</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; manager = HashManager(db, index)
+&gt;&gt;&gt; results = manager.find_matches_ssdeep(&quot;192:ABC...&quot;, top_n=5)
+&gt;&gt;&gt; print(f&quot;Best match similarity: {results['max_similarity']}%&quot;)
+&gt;&gt;&gt; for match in results['top_matches']:
+...     print(f&quot;{match['name']}: {match['similarity']}%&quot;)
+</code></pre></div>
+</dd>
+<dt id="managers.hash_manager.HashManager.find_matches_tlsh"><code class="name flex">
+<span>def <span class="ident">find_matches_tlsh</span></span>(<span>self, uploaded_hash, top_n=10)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_matches_tlsh(self, uploaded_hash, top_n=10):
+    &#34;&#34;&#34;
+    Find the closest matches using TLSH distance.
+
+    Compares the uploaded file&#39;s TLSH hash against all TLSH hashes
+    in the database and returns the most similar files. Lower distance
+    means more similar files.
+
+    Args:
+        uploaded_hash (str): TLSH hash of the uploaded file
+        top_n (int): Number of top matches to return (default: 10)
+
+    Returns:
+        dict: TLSH matching results containing:
+            - best_match (dict): Metadata of the best matching file
+            - best_match_sha256 (str): SHA256 of best match
+            - min_distance (int): Distance to best match (0 = identical)
+            - top_matches (list): Top N matches sorted by distance
+            - all_matches_count (int): Total number of matches found
+
+    Example:
+        &gt;&gt;&gt; manager = HashManager(db, index)
+        &gt;&gt;&gt; results = manager.find_matches_tlsh(&#34;T1ABC...&#34;, top_n=5)
+        &gt;&gt;&gt; print(f&#34;Best match distance: {results[&#39;min_distance&#39;]}&#34;)
+        &gt;&gt;&gt; for match in results[&#39;top_matches&#39;]:
+        ...     print(f&#34;{match[&#39;name&#39;]}: distance={match[&#39;distance&#39;]}&#34;)
+    &#34;&#34;&#34;
+    best_match_sha256 = None
+    best_match = None
+    min_distance = float(&#34;inf&#34;)
+    all_matches = []
+
+    # Iterate over all TLSH hashes in the index
+    tlsh_index = self.similarity_index.get(&#34;tlsh&#34;, {})
+    logger.debug(f&#34;Comparing TLSH against {len(tlsh_index)} entries&#34;)
+
+    for db_tlsh, sha256 in tlsh_index.items():
+        try:
+            # Calculate distance (0 = identical, larger = more different)
+            distance = tlsh.diff(uploaded_hash, db_tlsh)
+
+            # Get complete file metadata
+            file_entry = self.database.get(sha256, {})
+
+            match_info = {
+                &#34;sha256&#34;: sha256,
+                &#34;name&#34;: file_entry.get(&#34;name&#34;, [&#34;Unknown&#34;]),
+                &#34;family&#34;: file_entry.get(&#34;family&#34;, &#34;Unknown&#34;),
+                &#34;file_type&#34;: file_entry.get(&#34;file_type&#34;, &#34;Unknown&#34;),
+                &#34;tags&#34;: file_entry.get(&#34;tags&#34;, []),
+                &#34;tlsh&#34;: db_tlsh,
+                &#34;distance&#34;: distance,
+            }
+
+            all_matches.append(match_info)
+
+            if distance &lt; min_distance:
+                min_distance = distance
+                best_match_sha256 = sha256
+                best_match = file_entry
+
+        except Exception as e:
+            logger.error(f&#34;Error comparing TLSH with {sha256}: {e}&#34;)
+            continue
+
+    # Sort by distance (lower = more similar)
+    all_matches.sort(key=lambda x: x[&#34;distance&#34;])
+    top_matches = all_matches[:top_n]
+
+    if best_match_sha256:
+        logger.info(
+            f&#34;TLSH best match: {best_match_sha256} (distance: {min_distance})&#34;
+        )
+    else:
+        logger.info(&#34;No TLSH matches found&#34;)
+
+    return {
+        &#34;best_match&#34;: best_match,
+        &#34;best_match_sha256&#34;: best_match_sha256,
+        &#34;min_distance&#34;: min_distance if min_distance != float(&#34;inf&#34;) else None,
+        &#34;top_matches&#34;: top_matches,
+        &#34;all_matches_count&#34;: len(all_matches),
+    }</code></pre>
+</details>
+<div class="desc"><p>Find the closest matches using TLSH distance.</p>
+<p>Compares the uploaded file's TLSH hash against all TLSH hashes
+in the database and returns the most similar files. Lower distance
+means more similar files.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>uploaded_hash</code></strong> :&ensp;<code>str</code></dt>
+<dd>TLSH hash of the uploaded file</dd>
+<dt><strong><code>top_n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of top matches to return (default: 10)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>TLSH matching results containing:
+- best_match (dict): Metadata of the best matching file
+- best_match_sha256 (str): SHA256 of best match
+- min_distance (int): Distance to best match (0 = identical)
+- top_matches (list): Top N matches sorted by distance
+- all_matches_count (int): Total number of matches found</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; manager = HashManager(db, index)
+&gt;&gt;&gt; results = manager.find_matches_tlsh(&quot;T1ABC...&quot;, top_n=5)
+&gt;&gt;&gt; print(f&quot;Best match distance: {results['min_distance']}&quot;)
+&gt;&gt;&gt; for match in results['top_matches']:
+...     print(f&quot;{match['name']}: distance={match['distance']}&quot;)
+</code></pre></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="managers" href="index.html">managers</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="managers.hash_manager.HashManager" href="#managers.hash_manager.HashManager">HashManager</a></code></h4>
+<ul class="">
+<li><code><a title="managers.hash_manager.HashManager.calculate_ssdeep" href="#managers.hash_manager.HashManager.calculate_ssdeep">calculate_ssdeep</a></code></li>
+<li><code><a title="managers.hash_manager.HashManager.calculate_tlsh" href="#managers.hash_manager.HashManager.calculate_tlsh">calculate_tlsh</a></code></li>
+<li><code><a title="managers.hash_manager.HashManager.compare_file" href="#managers.hash_manager.HashManager.compare_file">compare_file</a></code></li>
+<li><code><a title="managers.hash_manager.HashManager.find_matches_ssdeep" href="#managers.hash_manager.HashManager.find_matches_ssdeep">find_matches_ssdeep</a></code></li>
+<li><code><a title="managers.hash_manager.HashManager.find_matches_tlsh" href="#managers.hash_manager.HashManager.find_matches_tlsh">find_matches_tlsh</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

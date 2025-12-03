@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>managers.file_processor API documentation</title>
+<meta name="description" content="File Processor Module …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>managers.file_processor</code></h1>
+</header>
+<section id="section-intro">
+<p>File Processor Module</p>
+<p>This module handles the processing of different file types to extract
+content suitable for similarity hashing.</p>
+<h2 id="classes">Classes</h2>
+<p>FileProcessor: Main class for file type detection and content extraction</p>
+<p>Supported File Types:
+- PDF documents (text extraction)
+- Microsoft Word DOCX (text extraction)
+- Binary executables (PE/ELF)
+- Generic files (raw content)</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>python-magic: File type detection</li>
+<li>python-docx: Word document processing</li>
+<li>PyMuPDF (fitz): PDF text extraction</li>
+</ul>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="managers.file_processor.FileProcessor"><code class="flex name class">
+<span>class <span class="ident">FileProcessor</span></span>
+<span>(</span><span>file_data, filename)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FileProcessor:
+    &#34;&#34;&#34;
+    Processes different file types and extracts content for TLSH/ssdeep hashing.
+
+    This class detects file types and extracts appropriate content for similarity
+    hashing. For documents (PDF, DOCX), it extracts text. For binaries and
+    other files, it uses raw content.
+
+    Attributes:
+        file_data (bytes): Raw file content
+        filename (str): Original filename
+        file_type (str): Detected MIME type
+    &#34;&#34;&#34;
+
+    def __init__(self, file_data, filename):
+        &#34;&#34;&#34;
+        Initialize the FileProcessor.
+
+        Args:
+            file_data (bytes): Raw file content
+            filename (str): Original filename (used for logging)
+        &#34;&#34;&#34;
+        self.file_data = file_data
+        self.filename = filename
+        self.file_type = self._detect_file_type()
+
+    def _detect_file_type(self):
+        &#34;&#34;&#34;
+        Detect file type using libmagic.
+
+        Uses python-magic library to detect the MIME type of the file
+        based on its content (not just the extension).
+
+        Returns:
+            str: MIME type (e.g., &#34;application/pdf&#34;, &#34;text/plain&#34;)
+
+        Example:
+            &gt;&gt;&gt; processor = FileProcessor(data, &#34;file.pdf&#34;)
+            &gt;&gt;&gt; mime_type = processor._detect_file_type()
+            &gt;&gt;&gt; print(mime_type)  # &#34;application/pdf&#34;
+        &#34;&#34;&#34;
+        mime = magic.Magic(mime=True)
+        detected_type = mime.from_buffer(self.file_data)
+        logger.debug(f&#34;File type detected for {self.filename}: {detected_type}&#34;)
+        return detected_type
+
+    def get_file_type(self):
+        &#34;&#34;&#34;
+        Get the detected MIME type.
+
+        Returns:
+            str: MIME type of the file
+        &#34;&#34;&#34;
+        return self.file_type
+
+    def process(self):
+        &#34;&#34;&#34;
+        Process the file according to its type.
+
+        This method routes the file to the appropriate processing function
+        based on its detected MIME type:
+        - PDF: Extract text
+        - DOCX: Extract text
+        - Executables: Return raw content
+        - Others: Return raw content
+
+        Returns:
+            tuple: (success: bool, content: bytes | error_message: str)
+                - If successful: (True, processed_content)
+                - If failed: (False, &#34;Error message&#34;)
+
+        Example:
+            &gt;&gt;&gt; processor = FileProcessor(data, &#34;document.pdf&#34;)
+            &gt;&gt;&gt; success, content = processor.process()
+            &gt;&gt;&gt; if success:
+            ...     print(f&#34;Extracted {len(content)} bytes&#34;)
+        &#34;&#34;&#34;
+        logger.info(f&#34;Processing file: {self.filename} (type: {self.file_type})&#34;)
+
+        # PDF
+        if &#34;pdf&#34; in self.file_type:
+            return self._process_pdf()
+
+        # Word
+        elif &#34;word&#34; in self.file_type or &#34;officedocument&#34; in self.file_type:
+            return self._process_docx()
+
+        # Executables and other files: return raw content
+        elif (
+            &#34;x-executable&#34; in self.file_type
+            or &#34;x-dosexec&#34; in self.file_type
+            or &#34;x-sharedlib&#34; in self.file_type
+            or &#34;elf&#34; in self.file_type.lower()
+        ):
+            return self._process_binary()
+
+        # Any other file type: raw content
+        else:
+            return self._process_generic()
+
+    def _process_binary(self):
+        &#34;&#34;&#34;
+        Process binary executables (PE/ELF) - return raw content.
+
+        Binary files (executables, libraries) are used as-is without
+        any text extraction since their structure is important for
+        similarity detection.
+
+        Returns:
+            tuple: (success: bool, content: bytes | error_message: str)
+
+        Example:
+            &gt;&gt;&gt; processor = FileProcessor(exe_data, &#34;malware.exe&#34;)
+            &gt;&gt;&gt; success, content = processor._process_binary()
+            &gt;&gt;&gt; if success:
+            ...     print(f&#34;Binary size: {len(content)} bytes&#34;)
+        &#34;&#34;&#34;
+        size = len(self.file_data)
+        logger.debug(f&#34;Processing binary: {self.filename} ({size} bytes)&#34;)
+
+        if size &lt; 50:
+            logger.warning(f&#34;Binary file too small: {self.filename} ({size} bytes)&#34;)
+            return False, &#34;Binary file too small (min 50 bytes for TLSH)&#34;
+
+        logger.info(f&#34;Binary processed successfully: {self.filename}&#34;)
+        return True, self.file_data
+
+    def _process_generic(self):
+        &#34;&#34;&#34;
+        Process any generic file - return raw content.
+
+        Generic files (text, scripts, unknown types) are processed using
+        their raw content without any special handling.
+
+        Returns:
+            tuple: (success: bool, content: bytes | error_message: str)
+
+        Example:
+            &gt;&gt;&gt; processor = FileProcessor(text_data, &#34;script.py&#34;)
+            &gt;&gt;&gt; success, content = processor._process_generic()
+        &#34;&#34;&#34;
+        size = len(self.file_data)
+        logger.debug(f&#34;Processing generic file: {self.filename} ({size} bytes)&#34;)
+
+        if size &lt; 50:
+            logger.warning(f&#34;Generic file too small: {self.filename} ({size} bytes)&#34;)
+            return False, f&#34;File too small (min 50 bytes for TLSH, got {size})&#34;
+
+        logger.info(f&#34;Generic file processed successfully: {self.filename}&#34;)
+        return True, self.file_data
+
+    def _process_pdf(self):
+        &#34;&#34;&#34;
+        Extract text from PDF documents.
+
+        Uses PyMuPDF (fitz) to extract text from all pages of a PDF document.
+        The extracted text is then used for similarity hashing, which allows
+        detection of similar documents even if they have different formatting.
+
+        Returns:
+            tuple: (success: bool, content: bytes | error_message: str)
+                - If successful: (True, utf8_encoded_text)
+                - If failed: (False, &#34;Error description&#34;)
+
+        Notes:
+            - Scanned PDFs without OCR will have no extractable text
+            - Password-protected PDFs will fail
+            - Corrupted PDFs will return an error
+
+        Example:
+            &gt;&gt;&gt; processor = FileProcessor(pdf_data, &#34;document.pdf&#34;)
+            &gt;&gt;&gt; success, text = processor._process_pdf()
+            &gt;&gt;&gt; if success:
+            ...     print(f&#34;Extracted text: {text.decode(&#39;utf-8&#39;)[:100]}...&#34;)
+        &#34;&#34;&#34;
+        import io
+
+        try:
+            logger.debug(f&#34;Extracting text from PDF: {self.filename}&#34;)
+            doc = fitz.open(stream=self.file_data, filetype=&#34;pdf&#34;)
+            text = &#34;&#34;
+            page_count = len(doc)
+
+            for page in doc:
+                text += page.get_text()
+            doc.close()
+
+            text_length = len(text.strip())
+
+            if not text or text_length &lt; 1:
+                logger.warning(
+                    f&#34;PDF has no extractable text: {self.filename} ({page_count} pages)&#34;
+                )
+                return (
+                    False,
+                    f&#34;PDF has no extractable text ({page_count} pages scanned)&#34;,
+                )
+
+            logger.info(
+                f&#34;PDF processed successfully: {self.filename} ({page_count} pages, {text_length} chars extracted)&#34;
+            )
+            return True, text.encode(&#34;utf-8&#34;)
+
+        except Exception as e:
+            logger.error(f&#34;Error extracting PDF {self.filename}: {e}&#34;, exc_info=True)
+            return (
+                False,
+                f&#34;PDF extraction failed: {str(e)} - file may be corrupted or password-protected&#34;,
+            )
+
+    def _process_docx(self):
+        &#34;&#34;&#34;
+        Extract text from Microsoft Word DOCX documents.
+
+        Uses python-docx to extract text from all paragraphs in a DOCX file.
+        The extracted text is used for similarity hashing.
+
+        Returns:
+            tuple: (success: bool, content: bytes | error_message: str)
+                - If successful: (True, utf8_encoded_text)
+                - If failed: (False, &#34;Error description&#34;)
+
+        Notes:
+            - Only supports .docx (Office 2007+), not old .doc format
+            - Extracts text from paragraphs, not from headers/footers/tables
+            - Password-protected files will fail
+
+        Example:
+            &gt;&gt;&gt; processor = FileProcessor(docx_data, &#34;report.docx&#34;)
+            &gt;&gt;&gt; success, text = processor._process_docx()
+            &gt;&gt;&gt; if success:
+            ...     print(f&#34;Extracted text: {text.decode(&#39;utf-8&#39;)[:100]}...&#34;)
+        &#34;&#34;&#34;
+        import io
+
+        try:
+            logger.debug(f&#34;Extracting text from DOCX: {self.filename}&#34;)
+            doc = Document(io.BytesIO(self.file_data))
+            text = &#34;\n&#34;.join([para.text for para in doc.paragraphs])
+
+            text_length = len(text.strip())
+            para_count = len(doc.paragraphs)
+
+            if not text or text_length &lt; 1:
+                logger.warning(
+                    f&#34;DOCX has no extractable text: {self.filename} ({para_count} paragraphs)&#34;
+                )
+                return (
+                    False,
+                    f&#34;DOCX has no extractable text ({para_count} paragraphs found but all empty)&#34;,
+                )
+
+            logger.info(
+                f&#34;DOCX processed successfully: {self.filename} ({para_count} paragraphs, {text_length} chars extracted)&#34;
+            )
+            return True, text.encode(&#34;utf-8&#34;)
+
+        except Exception as e:
+            logger.error(f&#34;Error extracting DOCX {self.filename}: {e}&#34;, exc_info=True)
+            return (
+                False,
+                f&#34;DOCX extraction failed: {str(e)} - file may be corrupted or unsupported format&#34;,
+            )</code></pre>
+</details>
+<div class="desc"><p>Processes different file types and extracts content for TLSH/ssdeep hashing.</p>
+<p>This class detects file types and extracts appropriate content for similarity
+hashing. For documents (PDF, DOCX), it extracts text. For binaries and
+other files, it uses raw content.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>file_data</code></strong> :&ensp;<code>bytes</code></dt>
+<dd>Raw file content</dd>
+<dt><strong><code>filename</code></strong> :&ensp;<code>str</code></dt>
+<dd>Original filename</dd>
+<dt><strong><code>file_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Detected MIME type</dd>
+</dl>
+<p>Initialize the FileProcessor.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file_data</code></strong> :&ensp;<code>bytes</code></dt>
+<dd>Raw file content</dd>
+<dt><strong><code>filename</code></strong> :&ensp;<code>str</code></dt>
+<dd>Original filename (used for logging)</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="managers.file_processor.FileProcessor.get_file_type"><code class="name flex">
+<span>def <span class="ident">get_file_type</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_file_type(self):
+    &#34;&#34;&#34;
+    Get the detected MIME type.
+
+    Returns:
+        str: MIME type of the file
+    &#34;&#34;&#34;
+    return self.file_type</code></pre>
+</details>
+<div class="desc"><p>Get the detected MIME type.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>MIME type of the file</dd>
+</dl></div>
+</dd>
+<dt id="managers.file_processor.FileProcessor.process"><code class="name flex">
+<span>def <span class="ident">process</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process(self):
+    &#34;&#34;&#34;
+    Process the file according to its type.
+
+    This method routes the file to the appropriate processing function
+    based on its detected MIME type:
+    - PDF: Extract text
+    - DOCX: Extract text
+    - Executables: Return raw content
+    - Others: Return raw content
+
+    Returns:
+        tuple: (success: bool, content: bytes | error_message: str)
+            - If successful: (True, processed_content)
+            - If failed: (False, &#34;Error message&#34;)
+
+    Example:
+        &gt;&gt;&gt; processor = FileProcessor(data, &#34;document.pdf&#34;)
+        &gt;&gt;&gt; success, content = processor.process()
+        &gt;&gt;&gt; if success:
+        ...     print(f&#34;Extracted {len(content)} bytes&#34;)
+    &#34;&#34;&#34;
+    logger.info(f&#34;Processing file: {self.filename} (type: {self.file_type})&#34;)
+
+    # PDF
+    if &#34;pdf&#34; in self.file_type:
+        return self._process_pdf()
+
+    # Word
+    elif &#34;word&#34; in self.file_type or &#34;officedocument&#34; in self.file_type:
+        return self._process_docx()
+
+    # Executables and other files: return raw content
+    elif (
+        &#34;x-executable&#34; in self.file_type
+        or &#34;x-dosexec&#34; in self.file_type
+        or &#34;x-sharedlib&#34; in self.file_type
+        or &#34;elf&#34; in self.file_type.lower()
+    ):
+        return self._process_binary()
+
+    # Any other file type: raw content
+    else:
+        return self._process_generic()</code></pre>
+</details>
+<div class="desc"><p>Process the file according to its type.</p>
+<p>This method routes the file to the appropriate processing function
+based on its detected MIME type:
+- PDF: Extract text
+- DOCX: Extract text
+- Executables: Return raw content
+- Others: Return raw content</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>tuple</code></dt>
+<dd>(success: bool, content: bytes | error_message: str)
+- If successful: (True, processed_content)
+- If failed: (False, "Error message")</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; processor = FileProcessor(data, &quot;document.pdf&quot;)
+&gt;&gt;&gt; success, content = processor.process()
+&gt;&gt;&gt; if success:
+...     print(f&quot;Extracted {len(content)} bytes&quot;)
+</code></pre></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="managers" href="index.html">managers</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="managers.file_processor.FileProcessor" href="#managers.file_processor.FileProcessor">FileProcessor</a></code></h4>
+<ul class="">
+<li><code><a title="managers.file_processor.FileProcessor.get_file_type" href="#managers.file_processor.FileProcessor.get_file_type">get_file_type</a></code></li>
+<li><code><a title="managers.file_processor.FileProcessor.process" href="#managers.file_processor.FileProcessor.process">process</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
