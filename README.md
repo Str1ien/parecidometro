@@ -1,4 +1,4 @@
-# Parecidómetro – Detección de similitud entre ficheros para combatir el cibercrimen**
+# **Parecidómetro** – Detección de similitud entre ficheros para combatir el cibercrimen
 
 Parecidómetro es una herramienta diseñada para **analizar ficheros y detectar similitudes entre ellos** utilizando *similarity hashing*, una técnica ampliamente utilizada en análisis de malware, forense digital y respuesta ante incidentes.
 
@@ -10,11 +10,11 @@ Esta herramienta proporciona un **servicio sencillo pero potente** para almacena
 
 Parecidómetro permite:
 
-✅ Calcular múltiples hashes de un fichero, tanto tradicionales (SHA256, MD5) como de similitud (TLSH, SSDEEP).
-✅ Detectar si un fichero ya existe en la base de datos y actualizar su metainformación.
-✅ Construir una base de datos local con información relevante de cada análisis.
-✅ Generar un índice de similitud para identificar archivos similares en segundos.
-✅ Facilitar el trabajo de analistas de malware, equipos DFIR, CERTs/CSIRTs y fuerzas de seguridad.
+- Calcular múltiples hashes de un fichero, tanto tradicionales (SHA256, MD5) como de similitud (TLSH, SSDEEP).
+- Detectar si un fichero ya existe en la base de datos y actualizar su metainformación.
+- Construir una base de datos local con información relevante de cada análisis.
+- Generar un índice de similitud para identificar archivos similares en segundos.
+- Facilitar el trabajo de analistas de malware, equipos DFIR, CERTs/CSIRTs y fuerzas de seguridad.
 
 Es, en esencia, un **motor de correlación de ficheros**, que permite descubrir conexiones que los hashes normales no son capaces de detectar.
 
@@ -147,6 +147,6 @@ SimilarityScan ayuda a **reclasar, correlacionar y descubrir amenazas** que de o
 Es simple, portable y poderosa: perfecta para equipos de seguridad, investigadores y analistas.
 
 # Autores (orden alfabético)
-- ["Alain 'Str1ien' Villagrasa"](https://github.com/Str1ien)
-- ["Daniel 'Kifixo' Huici"](https://github.com/danielhuici)
-- ["Razvan 'Razvi' Raducu"](https://github.com/RazviOverflow)
+- [Alain "Str1ien" Villagrasa](https://github.com/Str1ien)
+- [Daniel "Kifixo" Huici](https://github.com/danielhuici)
+- [Razvan "Razvi" Raducu](https://github.com/RazviOverflow)
