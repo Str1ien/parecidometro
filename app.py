@@ -66,14 +66,10 @@ def initialize_app():
 # Cargar BD al inicio
 initialize_app()
 
+
 @app.route("/")
 def landing():
     return render_template("landing.html")
-
-
-@app.route("/upload", methods=["POST"])
-def upload_file():
-    pass
 
 
 @app.route("/visualize/<file_id>")
@@ -211,9 +207,6 @@ def compare_binary():
         "tlsh": {
             "best_match": None,
             "similarity_score": result["tlsh"]["matches"]["min_distance"],
-            "interpretation": hash_manager.interpret_tlsh_distance(
-                result["tlsh"]["matches"]["min_distance"]
-            ),
             f"top_{TOP_MATCHES}_matches": result["tlsh"]["matches"]["top_matches"],
             "total_comparisons": result["tlsh"]["matches"]["all_matches_count"],
         },
@@ -235,9 +228,6 @@ def compare_binary():
         response["ssdeep"] = {
             "best_match": None,
             "similarity_score": result["ssdeep"]["matches"]["max_similarity"],
-            "interpretation": hash_manager.interpret_ssdeep_similarity(
-                result["ssdeep"]["matches"]["max_similarity"]
-            ),
             f"top_{TOP_MATCHES}_matches": result["ssdeep"]["matches"]["top_matches"],
             "total_comparisons": result["ssdeep"]["matches"]["all_matches_count"],
         }
