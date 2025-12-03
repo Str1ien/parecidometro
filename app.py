@@ -26,8 +26,6 @@ Fecha: Diciembre 2025
 """
 
 from flask import Flask, render_template, request, jsonify
-import json
-import os
 import logging
 from managers.file_processor import FileProcessor
 from managers.hash_manager import HashManager
@@ -51,7 +49,7 @@ similarity_index = {}
 
 
 def initialize_app():
-    """Initialize/reload database and similarity index"""
+    """Inicialización de la base de datos e índice de similitud"""
     global database, similarity_index
 
     logger.info(f"Loading database from {DB_PATH}...")
@@ -67,7 +65,6 @@ def initialize_app():
 
 # Cargar BD al inicio
 initialize_app()
-
 
 @app.route("/")
 def landing():
@@ -176,7 +173,7 @@ def compare_binary():
             400,
         )
 
-    # 2. Crear HashManager y calcular ambos hashes (TLSH + ssdeep)
+    # 2. Calcular ambos hashes (TLSH + ssdeep)
     hash_manager = HashManager(database, similarity_index)
     success, result = hash_manager.compare_file(
         file_content, top_n=TOP_MATCHES, use_ssdeep=True
