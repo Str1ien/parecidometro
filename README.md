@@ -112,7 +112,7 @@ Excelente para documentos, scripts, PDF, y binarios medianos.
   
 </details>
 
-# **Ejemplo de uso** (PENDENTIE DE REESCRIBIR)
+# **Cómo usar Parecidómetro** (PENDENTIE DE REESCRIBIR)
 
 ## Despliegue
 
@@ -136,6 +136,13 @@ Procesa todos los ficheros del directorio.
    * Si no existe → añade una nueva entrada completa.
 3. La base de datos se guarda en `file_db.json`.
 4. Puedes generar un índice de similitud para búsquedas rápidas.
+
+# **Contenido del repositorio**
+- [`src`](./src):
+- [`test`](./test):
+- [`static`](./static):
+- [`templates`](./templates):
+- [`managers`](./managers)
 
 # **Estructura de la base de datos**
 
