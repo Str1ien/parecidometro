@@ -18,7 +18,7 @@ try:
 except ImportError:
     ssdeep = None
 
-DB_PATH = "file_db.json"
+DB_PATH = "db/file_db.json"
 
 
 # -----------------------------
