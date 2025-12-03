@@ -143,6 +143,10 @@ Cada entrada se organiza así:
 
 # **Ejemplo de uso** (PENDENTIE DE REESCRIBIR)
 
+## Despliegue
+
+## Crear base de datos
+
 ```bash
 python3 similarityscan.py samples/
 ```
