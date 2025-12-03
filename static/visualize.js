@@ -5,26 +5,20 @@ let chart1 = null;
 async function fetchData() {
   // Check if this is a new upload result
   if (fileId === "new") {
-    const storedResults = sessionStorage.getItem("comparisonResults");
-
-    if (!storedResults) {
+    const storedData = sessionStorage.getItem("comparisonResults");
+    if (!storedData) {
       throw new Error(
         "No comparison results found. Please upload a file first."
       );
     }
-
-    // Clear the stored results after retrieving them
-    sessionStorage.removeItem("comparisonResults");
-
-    // Transform comparison results into the format expected by renderMetadata
-    const results = JSON.parse(storedResults);
-    return transformComparisonResults(results);
+    const compareData = JSON.parse(storedData);
+    return transformComparisonResults(compareData);
   }
 
   // Otherwise, fetch from API (existing file in database)
   const res = await fetch(`/api/file/${fileId}`);
   if (!res.ok) {
-    throw new Error(`Failed to fetch file data: ${res.status}`);
+    throw new Error(`Failed to fetch file data: ${res.statusText}`);
   }
   const data = await res.json();
 
@@ -72,7 +66,6 @@ function transformDatabaseResponse(dbData) {
       tlsh: dbData.hashes?.tlsh || "N/A",
       ssdeep: dbData.hashes?.ssdeep || "N/A",
     },
-    // Use the transformed similar array
     similar: similar,
   };
 }
@@ -189,17 +182,12 @@ function renderMetadata(meta) {
     Description: meta.desc || "No description",
   };
 
-  // Create grid row with tooltip
+  // Create grid row with scrollable value container
   const createGridRow = (key, value) => {
-    const isHash = key in hashFields;
-    const needsTooltip = isHash && value && value.length > 20;
-
-    const dataAttr = needsTooltip ? `data-full="${value}"` : "";
-    const valueDiv = `<div class="value-container" ${dataAttr}>${
-      value || "N/A"
-    }</div>`;
-
-    return `<div><strong>${key}</strong></div>${valueDiv}`;
+    return `
+      <div><strong>${key}</strong></div>
+      <div class="value-container">${value || "N/A"}</div>
+    `;
   };
 
   // Render Hashes
