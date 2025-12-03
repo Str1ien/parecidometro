@@ -117,12 +117,12 @@ Excelente para documentos, scripts, PDF, y binarios medianos.
 ## Despliegue
 
 ## Generar base de datos
-
-```bash
-python3 app.py samples/
+Para generar una base de datos nueva (fichero `file_db.json`) se debe usar el script [`json_parser.py`](./db/json_parser.py). Para ello, se debe lanzar el script y pasar como parámetro el directorio donde se encuentran los ficheros que compondrán la nueva base de datos. Por ejemplo:
+```
+$ python3 db/json_parser.py test_files/
 ```
 
-Procesa todos los ficheros del directorio.
+Este comando procesa todos los ficheros del directorio `test_files` y genera un nuevo `file_db.json` en el directorio desde el que se ha lanzado.
 
 # **Cómo funciona** (PENDIENTE DE REESCRIBIR)
 
@@ -138,7 +138,7 @@ Procesa todos los ficheros del directorio.
 4. Puedes generar un índice de similitud para búsquedas rápidas.
 
 # **Contenido del repositorio**
-- [`db`](./db): Script Python y fichero .JSON a modo de base de datos.
+- [`db`](./db): Script Python para generar base de datos y fichero .JSON a modo de ejemplo de base de datos.
 - [`managers`](./managers): Scripts Python auxiliares para gestión de ficheros y generación de hashes.
 - [`static`](./static) y [`templates`](./templates): Ficheros relacionados con la interfaz web (*front end*).
 - [`test_files`](./test_files): Ficheros de prueba para verificar el comportamiento de Pareciómetro.
