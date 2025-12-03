@@ -116,7 +116,7 @@ Excelente para documentos, scripts, PDF, y binarios medianos.
 
 ## Despliegue
 
-## Crear base de datos
+## Generar base de datos
 
 ```bash
 python3 similarityscan.py samples/
@@ -138,11 +138,10 @@ Procesa todos los ficheros del directorio.
 4. Puedes generar un índice de similitud para búsquedas rápidas.
 
 # **Contenido del repositorio**
-- [`src`](./src):
-- [`test`](./test):
-- [`static`](./static):
-- [`templates`](./templates):
-- [`managers`](./managers)
+- [`db`](./db): Script Python y fichero .JSON a modo de base de datos.
+- [`managers`](./managers): Scripts Python auxiliares para gestión de ficheros y generación de hashes.
+- [`static`](./static) y [`templates`](./templates): Ficheros relacionados con la interfaz web (*front end*).
+- [`test_files`](./test_files): Ficheros de prueba para verificar el comportamiento de Pareciómetro.
 
 # **Estructura de la base de datos**
 
