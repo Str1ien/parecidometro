@@ -147,7 +147,7 @@ Cada entrada se organiza así:
 
 ![Landing page](./img/landing_page.png)
 
-![Resultados](./img/results.png)
+![Resultados](./img/result_page.png)
 
 # Autores 
 - [Alain "Str1ien" Villagrasa](https://github.com/Str1ien)
