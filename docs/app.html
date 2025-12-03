@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>app API documentation</title>
+<meta name="description" content="═══════════════════════════════════════════════════════════════════════════
+PARECIDÓMETRO
+Similarity …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>app</code></h1>
+</header>
+<section id="section-intro">
+<p>═══════════════════════════════════════════════════════════════════════════
+PARECIDÓMETRO
+Similarity Detection System
+CyberArena Hackathon 2025
+═══════════════════════════════════════════════════════════════════════════</p>
+<h2 id="description">Description</h2>
+<p>Web application for comparing files using fuzzy hashing algorithms
+(TLSH and ssdeep) to detect binaries, documents, and malware variants.</p>
+<p>Supported file types:
+• Executables (PE/ELF)
+• PDF documents
+• Microsoft Word (DOCX)
+• Generic files</p>
+<h2 id="authors">Authors</h2>
+<ul>
+<li>Alain "Str1ien" Villagrasa</li>
+<li>Daniel "Kifixo" Huici</li>
+<li>Razvan "Razvi" Raducu</li>
+</ul>
+<p>License: MIT License
+Date: December 2025</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="app.api_file"><code class="name flex">
+<span>def <span class="ident">api_file</span></span>(<span>file_sha256)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/api/file/&lt;file_sha256&gt;&#34;)
+def api_file(file_sha256):
+    &#34;&#34;&#34;
+    Get file information by SHA256 hash and calculate similarities.
+
+    This endpoint retrieves a file from the database and performs on-the-fly
+    similarity calculations against all other files in the database.
+
+    Args:
+        file_sha256 (str): SHA256 hash of the file to retrieve
+
+    Returns:
+        Response: JSON response containing:
+            - sha256 (str): File&#39;s SHA256 hash
+            - name (list): List of filenames associated with this hash
+            - size (int): File size in bytes
+            - file_type (str): MIME type
+            - hashes (dict): All calculated hashes
+            - similar (list): Array of similar files with scores
+
+        Status Codes:
+            200: Success
+            404: File not found in database
+
+    Example Response:
+        {
+            &#34;sha256&#34;: &#34;abc123...&#34;,
+            &#34;name&#34;: [&#34;malware.exe&#34;],
+            &#34;size&#34;: 12345,
+            &#34;file_type&#34;: &#34;application/x-dosexec&#34;,
+            &#34;hashes&#34;: {
+                &#34;sha256&#34;: &#34;abc123...&#34;,
+                &#34;md5&#34;: &#34;def456...&#34;,
+                &#34;tlsh&#34;: &#34;T1...&#34;,
+                &#34;ssdeep&#34;: &#34;192:...&#34;
+            },
+            &#34;similar&#34;: [
+                {
+                    &#34;sha256&#34;: &#34;xyz789...&#34;,
+                    &#34;name&#34;: [&#34;variant.exe&#34;],
+                    &#34;family&#34;: &#34;Trojan&#34;,
+                    &#34;file_type&#34;: &#34;application/x-dosexec&#34;,
+                    &#34;tags&#34;: [&#34;malware&#34;],
+                    &#34;tlsh_score&#34;: 95.0,
+                    &#34;ssdeep_score&#34;: 85
+                }
+            ]
+        }
+    &#34;&#34;&#34;
+    file_entry = database.get(file_sha256)
+
+    if not file_entry:
+        logger.warning(f&#34;File not found: {file_sha256}&#34;)
+        return jsonify({&#34;error&#34;: &#34;File not found&#34;}), 404
+
+    logger.info(f&#34;File info requested: {file_sha256}&#34;)
+
+    # Get hashes from database entry
+    hashes = file_entry.get(&#34;hashes&#34;, {})
+    tlsh_hash = hashes.get(&#34;tlsh&#34;)
+    ssdeep_hash = hashes.get(&#34;ssdeep&#34;)
+
+    # Initialize hash manager for comparison
+    hash_manager = HashManager(database, similarity_index)
+
+    # Build similar array by comparing against database
+    similar = []
+
+    # Find TLSH matches if hash exists
+    if tlsh_hash:
+        tlsh_matches = hash_manager.find_matches_tlsh(tlsh_hash, top_n=TOP_MATCHES)
+        for match in tlsh_matches[&#34;top_matches&#34;]:
+            # Don&#39;t skip self-match anymore - include it!
+            similar_entry = {
+                &#34;sha256&#34;: match[&#34;sha256&#34;],
+                &#34;name&#34;: match[&#34;name&#34;],
+                &#34;family&#34;: match.get(&#34;family&#34;, &#34;Unknown&#34;),
+                &#34;file_type&#34;: match.get(&#34;file_type&#34;, &#34;Unknown&#34;),
+                &#34;tags&#34;: match.get(&#34;tags&#34;, []),
+                &#34;tlsh_score&#34;: max(0, 100 - match[&#34;distance&#34;]),
+                &#34;ssdeep_score&#34;: 0,
+            }
+            similar.append(similar_entry)
+
+    # Find ssdeep matches if hash exists and add/update scores
+    if ssdeep_hash:
+        ssdeep_matches = hash_manager.find_matches_ssdeep(
+            ssdeep_hash, top_n=TOP_MATCHES
+        )
+
+        # Create a map for efficient lookup
+        similar_map = {s[&#34;sha256&#34;]: s for s in similar}
+
+        for match in ssdeep_matches[&#34;top_matches&#34;]:
+            # Don&#39;t skip self-match anymore - include it!
+            if match[&#34;sha256&#34;] in similar_map:
+                # Update existing entry with ssdeep score
+                similar_map[match[&#34;sha256&#34;]][&#34;ssdeep_score&#34;] = match[&#34;similarity&#34;]
+            else:
+                # Add new entry
+                similar_entry = {
+                    &#34;sha256&#34;: match[&#34;sha256&#34;],
+                    &#34;name&#34;: match[&#34;name&#34;],
+                    &#34;family&#34;: match.get(&#34;family&#34;, &#34;Unknown&#34;),
+                    &#34;file_type&#34;: match.get(&#34;file_type&#34;, &#34;Unknown&#34;),
+                    &#34;tags&#34;: match.get(&#34;tags&#34;, []),
+                    &#34;tlsh_score&#34;: 0,
+                    &#34;ssdeep_score&#34;: match[&#34;similarity&#34;],
+                }
+                similar.append(similar_entry)
+                similar_map[match[&#34;sha256&#34;]] = similar_entry
+
+    # Add similar array to response
+    response = {&#34;sha256&#34;: file_sha256, **file_entry, &#34;similar&#34;: similar}
+
+    logger.info(f&#34;Returning file info with {len(similar)} similar files&#34;)
+    return jsonify(response)</code></pre>
+</details>
+<div class="desc"><p>Get file information by SHA256 hash and calculate similarities.</p>
+<p>This endpoint retrieves a file from the database and performs on-the-fly
+similarity calculations against all other files in the database.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file_sha256</code></strong> :&ensp;<code>str</code></dt>
+<dd>SHA256 hash of the file to retrieve</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Response</code></dt>
+<dd>JSON response containing:
+- sha256 (str): File's SHA256 hash
+- name (list): List of filenames associated with this hash
+- size (int): File size in bytes
+- file_type (str): MIME type
+- hashes (dict): All calculated hashes
+- similar (list): Array of similar files with scores</dd>
+<dt>Status Codes:</dt>
+<dt><code>
+200</code></dt>
+<dd>Success
+404: File not found in database</dd>
+</dl>
+<p>Example Response:
+{
+"sha256": "abc123&hellip;",
+"name": ["malware.exe"],
+"size": 12345,
+"file_type": "application/x-dosexec",
+"hashes": {
+"sha256": "abc123&hellip;",
+"md5": "def456&hellip;",
+"tlsh": "T1&hellip;",
+"ssdeep": "192:&hellip;"
+},
+"similar": [
+{
+"sha256": "xyz789&hellip;",
+"name": ["variant.exe"],
+"family": "Trojan",
+"file_type": "application/x-dosexec",
+"tags": ["malware"],
+"tlsh_score": 95.0,
+"ssdeep_score": 85
+}
+]
+}</p></div>
+</dd>
+<dt id="app.compare_binary"><code class="name flex">
+<span>def <span class="ident">compare_binary</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/api/compare&#34;, methods=[&#34;POST&#34;])
+def compare_binary():
+    &#34;&#34;&#34;
+    Main endpoint for comparing files using TLSH and ssdeep.
+
+    This endpoint processes an uploaded file, calculates all hashes (traditional
+    and similarity), compares it against the database, and optionally saves it.
+
+    Form Parameters:
+        file (FileStorage): The uploaded file (required)
+        save_to_db (str): &#34;true&#34; to save the file to database, &#34;false&#34; otherwise
+                         (optional, default: &#34;false&#34;)
+
+    Returns:
+        Response: JSON response containing:
+            - uploaded_file (dict): Information about the uploaded file
+                - filename (str): Original filename
+                - file_type (str): Detected MIME type
+                - content_size_bytes (int): Processed content size
+                - sha256 (str): SHA256 hash
+                - exists_in_database (bool): Whether file exists in DB
+                - saved_to_database (bool): Whether file was saved to DB
+                - hashes (dict): All calculated hashes
+            - tlsh (dict): TLSH comparison results
+                - best_match (dict): Best matching file
+                - similarity_score (int): Distance to best match
+                - top_N_matches (list): Top N similar files
+                - total_comparisons (int): Number of files compared
+            - ssdeep (dict): ssdeep comparison results (same structure as tlsh)
+
+        Status Codes:
+            200: Success
+            400: Invalid request (no file, empty file, processing failed)
+            413: File too large
+
+    Processing Steps:
+        1. Validates file upload
+        2. Calculates SHA256 and MD5 on raw data
+        3. Processes file content (extracts text from PDFs/DOCX if applicable)
+        4. Calculates TLSH and ssdeep on processed content
+        5. Finds similar files in database
+        6. Optionally saves new file to database
+
+    Example Request:
+        POST /api/compare
+        Content-Type: multipart/form-data
+
+        file=@malware.exe
+        save_to_db=true
+
+    Example Response:
+        {
+            &#34;uploaded_file&#34;: {
+                &#34;filename&#34;: &#34;malware.exe&#34;,
+                &#34;file_type&#34;: &#34;application/x-dosexec&#34;,
+                &#34;content_size_bytes&#34;: 12345,
+                &#34;sha256&#34;: &#34;abc123...&#34;,
+                &#34;exists_in_database&#34;: false,
+                &#34;saved_to_database&#34;: true,
+                &#34;hashes&#34;: {
+                    &#34;sha256&#34;: &#34;abc123...&#34;,
+                    &#34;md5&#34;: &#34;def456...&#34;,
+                    &#34;tlsh&#34;: &#34;T1...&#34;,
+                    &#34;ssdeep&#34;: &#34;192:...&#34;
+                }
+            },
+            &#34;tlsh&#34;: {
+                &#34;best_match&#34;: {
+                    &#34;sha256&#34;: &#34;xyz789...&#34;,
+                    &#34;name&#34;: [&#34;variant.exe&#34;],
+                    &#34;distance&#34;: 15
+                },
+                &#34;similarity_score&#34;: 15,
+                &#34;top_10_matches&#34;: [...],
+                &#34;total_comparisons&#34;: 150
+            },
+            &#34;ssdeep&#34;: {
+                &#34;best_match&#34;: null,
+                &#34;similarity_score&#34;: 0,
+                &#34;top_10_matches&#34;: [],
+                &#34;total_comparisons&#34;: 120
+            }
+        }
+    &#34;&#34;&#34;
+
+    if &#34;file&#34; not in request.files:
+        return jsonify({&#34;error&#34;: &#34;No file provided&#34;}), 400
+
+    file = request.files[&#34;file&#34;]
+
+    if file.filename == &#34;&#34;:
+        return jsonify({&#34;error&#34;: &#34;No file selected&#34;}), 400
+
+    # Check if we should save the file to database (optional parameter)
+    save_to_db = request.form.get(&#34;save_to_db&#34;, &#34;false&#34;).lower() == &#34;true&#34;
+
+    file_data = file.read()
+    file_size = len(file_data)
+
+    logger.info(
+        f&#34;File upload: {file.filename} ({file_size} bytes, save_to_db={save_to_db})&#34;
+    )
+
+    # Validar tamaño del archivo
+    if file_size &gt; MAX_FILE_SIZE:
+        logger.warning(f&#34;File too large: {file.filename} ({file_size} bytes)&#34;)
+        return (
+            jsonify(
+                {
+                    &#34;error&#34;: &#34;File too large&#34;,
+                    &#34;filename&#34;: file.filename,
+                    &#34;file_size_bytes&#34;: file_size,
+                    &#34;max_size_bytes&#34;: MAX_FILE_SIZE,
+                    &#34;max_size_mb&#34;: MAX_FILE_SIZE / (1024 * 1024),
+                }
+            ),
+            413,
+        )
+
+    # 1. Calculate traditional hashes on RAW data
+    sha256_hash = hashlib.sha256(file_data).hexdigest()
+    md5_hash = hashlib.md5(file_data).hexdigest()
+
+    logger.info(f&#34;Hashes calculated - SHA256: {sha256_hash}, MD5: {md5_hash}&#34;)
+
+    # Check if file already exists in database
+    existing_file = database.get(sha256_hash)
+
+    # 2. Procesar archivo según tipo
+    processor = FileProcessor(file_data, file.filename)
+    file_type = processor.get_file_type()
+    logger.info(f&#34;File type detected: {file_type}&#34;)
+
+    success, file_content = processor.process()
+
+    if not success:
+        logger.error(f&#34;File processing failed: {file.filename} - {file_content}&#34;)
+        return (
+            jsonify(
+                {
+                    &#34;error&#34;: &#34;File processing failed&#34;,
+                    &#34;filename&#34;: file.filename,
+                    &#34;detected_type&#34;: file_type,
+                    &#34;details&#34;: file_content,
+                }
+            ),
+            400,
+        )
+
+    # 3. Calcular similarity hashes (TLSH + ssdeep) on PROCESSED content
+    hash_manager = HashManager(database, similarity_index)
+    success, result = hash_manager.compare_file(
+        file_content, top_n=TOP_MATCHES, use_ssdeep=True
+    )
+
+    if not success:
+        logger.error(f&#34;Hash calculation failed: {file.filename} - {result}&#34;)
+        return (
+            jsonify(
+                {
+                    &#34;error&#34;: &#34;Hash calculation failed&#34;,
+                    &#34;filename&#34;: file.filename,
+                    &#34;file_type&#34;: file_type,
+                    &#34;details&#34;: result,
+                }
+            ),
+            400,
+        )
+
+    logger.info(
+        f&#34;Similarity hashes calculated - TLSH: {result[&#39;tlsh&#39;].get(&#39;hash&#39;, &#39;N/A&#39;)[:16]}..., ssdeep: {result[&#39;ssdeep&#39;].get(&#39;hash&#39;, &#39;N/A&#39;)[:16]}...&#34;
+    )
+
+    # Prepare all hashes
+    all_hashes = {
+        &#34;sha256&#34;: sha256_hash,
+        &#34;md5&#34;: md5_hash,
+        &#34;tlsh&#34;: result[&#34;tlsh&#34;].get(&#34;hash&#34;, &#34;&#34;),
+        &#34;ssdeep&#34;: result[&#34;ssdeep&#34;].get(&#34;hash&#34;, &#34;&#34;),
+    }
+
+    # 4. Save to database if requested and not already exists
+    saved_to_db = False
+    if save_to_db and not existing_file:
+        saved_to_db = save_file_to_database(
+            sha256_hash, file.filename, file_size, file_type, all_hashes
+        )
+
+    # 5. Build response
+    response = {
+        &#34;uploaded_file&#34;: {
+            &#34;filename&#34;: file.filename,
+            &#34;file_type&#34;: file_type,
+            &#34;content_size_bytes&#34;: result[&#34;content_size&#34;],
+            &#34;sha256&#34;: sha256_hash,
+            &#34;exists_in_database&#34;: existing_file is not None or saved_to_db,
+            &#34;saved_to_database&#34;: saved_to_db,
+            &#34;hashes&#34;: all_hashes,
+        },
+        &#34;tlsh&#34;: {
+            &#34;best_match&#34;: None,
+            &#34;similarity_score&#34;: result[&#34;tlsh&#34;][&#34;matches&#34;][&#34;min_distance&#34;],
+            f&#34;top_{TOP_MATCHES}_matches&#34;: result[&#34;tlsh&#34;][&#34;matches&#34;][&#34;top_matches&#34;],
+            &#34;total_comparisons&#34;: result[&#34;tlsh&#34;][&#34;matches&#34;][&#34;all_matches_count&#34;],
+        },
+    }
+
+    # Add TLSH best_match if exists
+    if result[&#34;tlsh&#34;][&#34;matches&#34;][&#34;best_match&#34;]:
+        best_sha256 = result[&#34;tlsh&#34;][&#34;matches&#34;][&#34;best_match_sha256&#34;]
+        logger.info(
+            f&#34;TLSH best match found: {best_sha256} (distance: {result[&#39;tlsh&#39;][&#39;matches&#39;][&#39;min_distance&#39;]})&#34;
+        )
+        response[&#34;tlsh&#34;][&#34;best_match&#34;] = {
+            &#34;sha256&#34;: best_sha256,
+            **result[&#34;tlsh&#34;][&#34;matches&#34;][&#34;best_match&#34;],
+        }
+
+    # Add ssdeep results
+    if &#34;matches&#34; in result[&#34;ssdeep&#34;]:
+        response[&#34;ssdeep&#34;] = {
+            &#34;best_match&#34;: None,
+            &#34;similarity_score&#34;: result[&#34;ssdeep&#34;][&#34;matches&#34;][&#34;max_similarity&#34;],
+            f&#34;top_{TOP_MATCHES}_matches&#34;: result[&#34;ssdeep&#34;][&#34;matches&#34;][&#34;top_matches&#34;],
+            &#34;total_comparisons&#34;: result[&#34;ssdeep&#34;][&#34;matches&#34;][&#34;all_matches_count&#34;],
+        }
+
+        if result[&#34;ssdeep&#34;][&#34;matches&#34;][&#34;best_match&#34;]:
+            best_sha256_ssdeep = result[&#34;ssdeep&#34;][&#34;matches&#34;][&#34;best_match_sha256&#34;]
+            logger.info(
+                f&#34;ssdeep best match found: {best_sha256_ssdeep} (similarity: {result[&#39;ssdeep&#39;][&#39;matches&#39;][&#39;max_similarity&#39;]}%)&#34;
+            )
+            response[&#34;ssdeep&#34;][&#34;best_match&#34;] = {
+                &#34;sha256&#34;: best_sha256_ssdeep,
+                **result[&#34;ssdeep&#34;][&#34;matches&#34;][&#34;best_match&#34;],
+            }
+    elif &#34;error&#34; in result[&#34;ssdeep&#34;]:
+        logger.warning(f&#34;ssdeep calculation failed: {result[&#39;ssdeep&#39;][&#39;error&#39;]}&#34;)
+        response[&#34;ssdeep&#34;] = {&#34;error&#34;: result[&#34;ssdeep&#34;][&#34;error&#34;]}
+
+    return jsonify(response)</code></pre>
+</details>
+<div class="desc"><p>Main endpoint for comparing files using TLSH and ssdeep.</p>
+<p>This endpoint processes an uploaded file, calculates all hashes (traditional
+and similarity), compares it against the database, and optionally saves it.</p>
+<p>Form Parameters:
+file (FileStorage): The uploaded file (required)
+save_to_db (str): "true" to save the file to database, "false" otherwise
+(optional, default: "false")</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Response</code></dt>
+<dd>JSON response containing:
+- uploaded_file (dict): Information about the uploaded file
+- filename (str): Original filename
+- file_type (str): Detected MIME type
+- content_size_bytes (int): Processed content size
+- sha256 (str): SHA256 hash
+- exists_in_database (bool): Whether file exists in DB
+- saved_to_database (bool): Whether file was saved to DB
+- hashes (dict): All calculated hashes
+- tlsh (dict): TLSH comparison results
+- best_match (dict): Best matching file
+- similarity_score (int): Distance to best match
+- top_N_matches (list): Top N similar files
+- total_comparisons (int): Number of files compared
+- ssdeep (dict): ssdeep comparison results (same structure as tlsh)</dd>
+<dt>Status Codes:</dt>
+<dt><code>
+200</code></dt>
+<dd>Success
+400: Invalid request (no file, empty file, processing failed)
+413: File too large</dd>
+</dl>
+<p>Processing Steps:
+1. Validates file upload
+2. Calculates SHA256 and MD5 on raw data
+3. Processes file content (extracts text from PDFs/DOCX if applicable)
+4. Calculates TLSH and ssdeep on processed content
+5. Finds similar files in database
+6. Optionally saves new file to database</p>
+<p>Example Request:
+POST /api/compare
+Content-Type: multipart/form-data</p>
+<pre><code>file=@malware.exe
+save_to_db=true
+</code></pre>
+<p>Example Response:
+{
+"uploaded_file": {
+"filename": "malware.exe",
+"file_type": "application/x-dosexec",
+"content_size_bytes": 12345,
+"sha256": "abc123&hellip;",
+"exists_in_database": false,
+"saved_to_database": true,
+"hashes": {
+"sha256": "abc123&hellip;",
+"md5": "def456&hellip;",
+"tlsh": "T1&hellip;",
+"ssdeep": "192:&hellip;"
+}
+},
+"tlsh": {
+"best_match": {
+"sha256": "xyz789&hellip;",
+"name": ["variant.exe"],
+"distance": 15
+},
+"similarity_score": 15,
+"top_10_matches": [&hellip;],
+"total_comparisons": 150
+},
+"ssdeep": {
+"best_match": null,
+"similarity_score": 0,
+"top_10_matches": [],
+"total_comparisons": 120
+}
+}</p></div>
+</dd>
+<dt id="app.health"><code class="name flex">
+<span>def <span class="ident">health</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/api/health&#34;, methods=[&#34;GET&#34;])
+def health():
+    &#34;&#34;&#34;
+    Health check endpoint for monitoring.
+
+    Returns system status and statistics about the database and indices.
+    Useful for monitoring tools and load balancers.
+
+    Returns:
+        Response: JSON response containing:
+            - status (str): &#34;ok&#34; if system is healthy
+            - database_size (int): Number of files in database
+            - tlsh_index_size (int): Number of TLSH hashes indexed
+            - ssdeep_index_size (int): Number of ssdeep hashes indexed
+            - version (str): Application version
+
+        Status Codes:
+            200: Always returns 200 if server is running
+
+    Example Response:
+        {
+            &#34;status&#34;: &#34;ok&#34;,
+            &#34;database_size&#34;: 150,
+            &#34;tlsh_index_size&#34;: 145,
+            &#34;ssdeep_index_size&#34;: 120,
+            &#34;version&#34;: &#34;1.0.0&#34;
+        }
+    &#34;&#34;&#34;
+    return jsonify(
+        {
+            &#34;status&#34;: &#34;ok&#34;,
+            &#34;database_size&#34;: len(database),
+            &#34;tlsh_index_size&#34;: len(similarity_index.get(&#34;tlsh&#34;, {})),
+            &#34;ssdeep_index_size&#34;: len(similarity_index.get(&#34;ssdeep&#34;, {})),
+            &#34;version&#34;: &#34;1.0.0&#34;,
+        }
+    )</code></pre>
+</details>
+<div class="desc"><p>Health check endpoint for monitoring.</p>
+<p>Returns system status and statistics about the database and indices.
+Useful for monitoring tools and load balancers.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Response</code></dt>
+<dd>JSON response containing:
+- status (str): "ok" if system is healthy
+- database_size (int): Number of files in database
+- tlsh_index_size (int): Number of TLSH hashes indexed
+- ssdeep_index_size (int): Number of ssdeep hashes indexed
+- version (str): Application version</dd>
+<dt>Status Codes:</dt>
+<dt><code>
+200</code></dt>
+<dd>Always returns 200 if server is running</dd>
+</dl>
+<p>Example Response:
+{
+"status": "ok",
+"database_size": 150,
+"tlsh_index_size": 145,
+"ssdeep_index_size": 120,
+"version": "1.0.0"
+}</p></div>
+</dd>
+<dt id="app.initialize_app"><code class="name flex">
+<span>def <span class="ident">initialize_app</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialize_app():
+    &#34;&#34;&#34;
+    Initialize the database and similarity index.
+
+    Loads the JSON database from disk and builds an in-memory similarity
+    index for fast TLSH and ssdeep lookups.
+
+    Global Variables Modified:
+        database (dict): Complete file database {sha256: {metadata}}
+        similarity_index (dict): Index for fast similarity lookups
+                                {tlsh: {hash: sha256}, ssdeep: {hash: sha256}}
+    &#34;&#34;&#34;
+    global database, similarity_index
+
+    logger.info(f&#34;Loading database from {DB_PATH}...&#34;)
+    database = load_db(DB_PATH)
+    logger.info(f&#34;Database loaded: {len(database)} entries&#34;)
+
+    logger.info(&#34;Building similarity index...&#34;)
+    similarity_index = build_similarity_index(database)
+    logger.info(
+        f&#34;Index built: {len(similarity_index[&#39;tlsh&#39;])} TLSH, {len(similarity_index[&#39;ssdeep&#39;])} ssdeep&#34;
+    )</code></pre>
+</details>
+<div class="desc"><p>Initialize the database and similarity index.</p>
+<p>Loads the JSON database from disk and builds an in-memory similarity
+index for fast TLSH and ssdeep lookups.</p>
+<p>Global Variables Modified:
+database (dict): Complete file database {sha256: {metadata}}
+similarity_index (dict): Index for fast similarity lookups
+{tlsh: {hash: sha256}, ssdeep: {hash: sha256}}</p></div>
+</dd>
+<dt id="app.landing"><code class="name flex">
+<span>def <span class="ident">landing</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/&#34;)
+def landing():
+    &#34;&#34;&#34;
+    Render the landing page.
+
+    Returns:
+        str: Rendered HTML template for the file upload page
+    &#34;&#34;&#34;
+    return render_template(&#34;landing.html&#34;)</code></pre>
+</details>
+<div class="desc"><p>Render the landing page.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Rendered HTML template for the file upload page</dd>
+</dl></div>
+</dd>
+<dt id="app.reload_database"><code class="name flex">
+<span>def <span class="ident">reload_database</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/api/reload&#34;, methods=[&#34;POST&#34;])
+def reload_database():
+    &#34;&#34;&#34;
+    Reload the database without restarting the server.
+
+    This endpoint allows administrators to reload the file database and
+    rebuild the similarity index after manual changes to the database file.
+
+    Returns:
+        Response: JSON response containing:
+            - status (str): &#34;success&#34; or &#34;error&#34;
+            - message (str): Status message
+            - database_size (int): Number of files in database
+            - tlsh_index_size (int): Number of TLSH hashes indexed
+            - ssdeep_index_size (int): Number of ssdeep hashes indexed
+
+        Status Codes:
+            200: Success
+            500: Error reloading database
+
+    Example Response:
+        {
+            &#34;status&#34;: &#34;success&#34;,
+            &#34;message&#34;: &#34;Database reloaded&#34;,
+            &#34;database_size&#34;: 150,
+            &#34;tlsh_index_size&#34;: 145,
+            &#34;ssdeep_index_size&#34;: 120
+        }
+    &#34;&#34;&#34;
+    try:
+        logger.info(&#34;Database reload requested&#34;)
+        initialize_app()
+        return jsonify(
+            {
+                &#34;status&#34;: &#34;success&#34;,
+                &#34;message&#34;: &#34;Database reloaded&#34;,
+                &#34;database_size&#34;: len(database),
+                &#34;tlsh_index_size&#34;: len(similarity_index.get(&#34;tlsh&#34;, {})),
+                &#34;ssdeep_index_size&#34;: len(similarity_index.get(&#34;ssdeep&#34;, {})),
+            }
+        )
+    except Exception as e:
+        logger.error(f&#34;Error reloading database: {e}&#34;)
+        return jsonify({&#34;status&#34;: &#34;error&#34;, &#34;message&#34;: str(e)}), 500</code></pre>
+</details>
+<div class="desc"><p>Reload the database without restarting the server.</p>
+<p>This endpoint allows administrators to reload the file database and
+rebuild the similarity index after manual changes to the database file.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Response</code></dt>
+<dd>JSON response containing:
+- status (str): "success" or "error"
+- message (str): Status message
+- database_size (int): Number of files in database
+- tlsh_index_size (int): Number of TLSH hashes indexed
+- ssdeep_index_size (int): Number of ssdeep hashes indexed</dd>
+<dt>Status Codes:</dt>
+<dt><code>
+200</code></dt>
+<dd>Success
+500: Error reloading database</dd>
+</dl>
+<p>Example Response:
+{
+"status": "success",
+"message": "Database reloaded",
+"database_size": 150,
+"tlsh_index_size": 145,
+"ssdeep_index_size": 120
+}</p></div>
+</dd>
+<dt id="app.save_file_to_database"><code class="name flex">
+<span>def <span class="ident">save_file_to_database</span></span>(<span>sha256, filename, file_size, file_type, hashes)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_file_to_database(sha256, filename, file_size, file_type, hashes):
+    &#34;&#34;&#34;
+    Save a new file to the database.
+
+    Creates a new database entry for the file and persists it to disk.
+    Automatically rebuilds the similarity index to include the new file.
+
+    Args:
+        sha256 (str): SHA256 hash of the file
+        filename (str): Original filename
+        file_size (int): File size in bytes
+        file_type (str): MIME type of the file
+        hashes (dict): Dictionary containing all calculated hashes:
+            - sha256 (str): SHA256 hash
+            - md5 (str): MD5 hash
+            - tlsh (str): TLSH similarity hash
+            - ssdeep (str): ssdeep similarity hash
+
+    Returns:
+        bool: True if saved successfully, False if file already exists
+
+    Global Variables Modified:
+        database (dict): Updated with new file entry
+        similarity_index (dict): Rebuilt to include new file
+
+    Side Effects:
+        - Writes updated database to disk (file_db.json)
+        - Rebuilds similarity index in memory
+        - Logs operation status
+
+    Example:
+        &gt;&gt;&gt; hashes = {
+        ...     &#34;sha256&#34;: &#34;abc123...&#34;,
+        ...     &#34;md5&#34;: &#34;def456...&#34;,
+        ...     &#34;tlsh&#34;: &#34;T1...&#34;,
+        ...     &#34;ssdeep&#34;: &#34;192:...&#34;
+        ... }
+        &gt;&gt;&gt; save_file_to_database(&#34;abc123...&#34;, &#34;malware.exe&#34;, 12345,
+        ...                       &#34;application/x-dosexec&#34;, hashes)
+        True
+    &#34;&#34;&#34;
+    global database, similarity_index
+
+    # Check if already exists
+    if sha256 in database:
+        logger.info(f&#34;File already in database: {sha256}&#34;)
+        return False
+
+    # Create new entry
+    now_iso = datetime.utcnow().isoformat() + &#34;Z&#34;
+
+    database[sha256] = {
+        &#34;name&#34;: [filename],
+        &#34;size&#34;: file_size,
+        &#34;file_type&#34;: file_type,
+        &#34;first_upload_date&#34;: now_iso,
+        &#34;last_upload_date&#34;: now_iso,
+        &#34;desc&#34;: &#34;&#34;,
+        &#34;hashes&#34;: {
+            &#34;sha256&#34;: hashes.get(&#34;sha256&#34;, sha256),
+            &#34;md5&#34;: hashes.get(&#34;md5&#34;, &#34;&#34;),
+            &#34;tlsh&#34;: hashes.get(&#34;tlsh&#34;, &#34;&#34;),
+            &#34;ssdeep&#34;: hashes.get(&#34;ssdeep&#34;, &#34;&#34;),
+        },
+    }
+
+    # Save to disk
+    try:
+        save_db(database, DB_PATH)
+        logger.info(f&#34;File saved to database: {sha256} ({filename})&#34;)
+
+        # Rebuild similarity index to include new file
+        similarity_index = build_similarity_index(database)
+        logger.info(
+            f&#34;Similarity index rebuilt: {len(similarity_index[&#39;tlsh&#39;])} TLSH, {len(similarity_index[&#39;ssdeep&#39;])} ssdeep&#34;
+        )
+
+        return True
+    except Exception as e:
+        logger.error(f&#34;Error saving file to database: {e}&#34;)
+        # Rollback - remove from in-memory database
+        del database[sha256]
+        return False</code></pre>
+</details>
+<div class="desc"><p>Save a new file to the database.</p>
+<p>Creates a new database entry for the file and persists it to disk.
+Automatically rebuilds the similarity index to include the new file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>sha256</code></strong> :&ensp;<code>str</code></dt>
+<dd>SHA256 hash of the file</dd>
+<dt><strong><code>filename</code></strong> :&ensp;<code>str</code></dt>
+<dd>Original filename</dd>
+<dt><strong><code>file_size</code></strong> :&ensp;<code>int</code></dt>
+<dd>File size in bytes</dd>
+<dt><strong><code>file_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>MIME type of the file</dd>
+<dt><strong><code>hashes</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary containing all calculated hashes:
+- sha256 (str): SHA256 hash
+- md5 (str): MD5 hash
+- tlsh (str): TLSH similarity hash
+- ssdeep (str): ssdeep similarity hash</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True if saved successfully, False if file already exists</dd>
+</dl>
+<p>Global Variables Modified:
+database (dict): Updated with new file entry
+similarity_index (dict): Rebuilt to include new file</p>
+<p>Side Effects:
+- Writes updated database to disk (file_db.json)
+- Rebuilds similarity index in memory
+- Logs operation status</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; hashes = {
+...     &quot;sha256&quot;: &quot;abc123...&quot;,
+...     &quot;md5&quot;: &quot;def456...&quot;,
+...     &quot;tlsh&quot;: &quot;T1...&quot;,
+...     &quot;ssdeep&quot;: &quot;192:...&quot;
+... }
+&gt;&gt;&gt; save_file_to_database(&quot;abc123...&quot;, &quot;malware.exe&quot;, 12345,
+...                       &quot;application/x-dosexec&quot;, hashes)
+True
+</code></pre></div>
+</dd>
+<dt id="app.visualize"><code class="name flex">
+<span>def <span class="ident">visualize</span></span>(<span>file_id)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/visualize/&lt;file_id&gt;&#34;)
+def visualize(file_id):
+    &#34;&#34;&#34;
+    Render the visualization page for a specific file.
+
+    Args:
+        file_id (str): SHA256 hash of the file to visualize, or &#34;new&#34; for
+                      newly uploaded files
+
+    Returns:
+        str: Rendered HTML template with file visualization
+    &#34;&#34;&#34;
+    return render_template(&#34;visualize.html&#34;, file_id=file_id)</code></pre>
+</details>
+<div class="desc"><p>Render the visualization page for a specific file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>SHA256 hash of the file to visualize, or "new" for
+newly uploaded files</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Rendered HTML template with file visualization</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="app.api_file" href="#app.api_file">api_file</a></code></li>
+<li><code><a title="app.compare_binary" href="#app.compare_binary">compare_binary</a></code></li>
+<li><code><a title="app.health" href="#app.health">health</a></code></li>
+<li><code><a title="app.initialize_app" href="#app.initialize_app">initialize_app</a></code></li>
+<li><code><a title="app.landing" href="#app.landing">landing</a></code></li>
+<li><code><a title="app.reload_database" href="#app.reload_database">reload_database</a></code></li>
+<li><code><a title="app.save_file_to_database" href="#app.save_file_to_database">save_file_to_database</a></code></li>
+<li><code><a title="app.visualize" href="#app.visualize">visualize</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
