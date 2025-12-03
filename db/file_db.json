@@ -1,15 +1,31 @@
 {
+    "2801cb83904ff70808c93c5175c4ec2d2aadf31e198b08a8e95fa4e6297553c4": {
+        "desc": "",
+        "file_type": "application/x-msdos-program",
+        "first_upload_date": "2025-12-03T15:06:36.081901Z",
+        "hashes": {
+            "md5": "b3e96dfb416691005593116f6dd2cd4e",
+            "sha256": "2801cb83904ff70808c93c5175c4ec2d2aadf31e198b08a8e95fa4e6297553c4",
+            "ssdeep": "3072:gqZyBC1dgzZDcmMgvNimL1/6TpTBoZ1URUiJ0JPw00bQ+uAg0FujqDhvej74rP83:cBCwZ+gYmLCp9oZkJcLJAOFYrP83",
+            "tlsh": "T1D7249D1075D1C432E87315334AF89BB99A3DFD200B5669EB63D80FAE8F306D1AB31566"
+        },
+        "last_upload_date": "2025-12-03T15:06:36.081901Z",
+        "name": [
+            "CreateFile2.exe"
+        ],
+        "size": 220672
+    },
     "2c1a1a89a63bbaa842306f6bfb57f5712de7e48710b317ca5776585a2a7dd995": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T11:50:28.505934Z",
+        "first_upload_date": "2025-12-03T15:06:36.173945Z",
         "hashes": {
             "md5": "76aaa8143dbc3fe599e88b9e624e1b3e",
             "sha256": "2c1a1a89a63bbaa842306f6bfb57f5712de7e48710b317ca5776585a2a7dd995",
-            "ssdeep": "",
-            "tlsh": ""
+            "ssdeep": "24576:S3/q1ck4LN1ZSJPv9oCKTW0NN1xyi/Rz41XXQctgdOOqQlZ18jd:S3PTZs2CQW0NXxx41HXOzZWjd",
+            "tlsh": "T197553368AA6D22BDE29A43B03A3811CD07CDE133759445586CDD4BC5F5F810AFE6378E"
         },
-        "last_upload_date": "2025-12-03T11:59:12.619196Z",
+        "last_upload_date": "2025-12-03T15:06:36.173945Z",
         "name": [
             "drylab.pdf"
         ],
@@ -18,46 +34,110 @@
     "60b30efa1048900833d1758440247fe8ac85a3134f2327388dcb24e07d814c89": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T11:50:28.572755Z",
+        "first_upload_date": "2025-12-03T15:06:36.117035Z",
         "hashes": {
             "md5": "965509571cfbd4fed8c649a37f43b5aa",
             "sha256": "60b30efa1048900833d1758440247fe8ac85a3134f2327388dcb24e07d814c89",
-            "ssdeep": "",
-            "tlsh": ""
+            "ssdeep": "49152:QxXOC6TTPdEDdbxDciEIfezq62twDYmOurbHB:QmmrdtwVbh",
+            "tlsh": "T191D50A94E58BCDDDE5924FD460277678820EB2B7A5DB388106E48F232211F9F6643ED3"
         },
-        "last_upload_date": "2025-12-03T11:59:12.639144Z",
+        "last_upload_date": "2025-12-03T15:06:36.117035Z",
         "name": [
             "rfc9110.pdf"
         ],
         "size": 2858365
     },
+    "629de29f11595915f5fa833c3a0d42c0e63ac0f91a24910f3d43e6ebaf2aa706": {
+        "desc": "",
+        "file_type": "application/x-msdos-program",
+        "first_upload_date": "2025-12-03T15:06:36.181822Z",
+        "hashes": {
+            "md5": "55c096d02193fbf2a5cc5b646431b8f6",
+            "sha256": "629de29f11595915f5fa833c3a0d42c0e63ac0f91a24910f3d43e6ebaf2aa706",
+            "ssdeep": "6144:Wp3y0GButrnhlGS2Z3bbNc6/waAOOritdo:WByhBkDhlGS0Ntdo",
+            "tlsh": "T121248E1075D1C032D8B315324EF8DBB99A3DBD20076659EF53E80FBE8F246D1A631A66"
+        },
+        "last_upload_date": "2025-12-03T15:06:36.181822Z",
+        "name": [
+            "SuspendThread.exe"
+        ],
+        "size": 221696
+    },
     "696674099c55a09227c9c9f716bad406bb69686cf45e68f8c972c0766e45616b": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T11:50:28.522914Z",
+        "first_upload_date": "2025-12-03T15:06:36.123511Z",
         "hashes": {
             "md5": "ff1791d62ef20223699dbc2a226ef934",
             "sha256": "696674099c55a09227c9c9f716bad406bb69686cf45e68f8c972c0766e45616b",
-            "ssdeep": "",
-            "tlsh": ""
+            "ssdeep": "3072:UI+KT0F01uy+mtaF14BQd+9+S0LoBG/BYNJd4MrY2WtUkSoVFsui:UI9T59skids+SGJBYzeMrYlnRVFsui",
+            "tlsh": "T1ABE3CF64DACD48DCBC03C85C913775AD4B2EF2FAB4D478808D2C47B3A962488DF5BA56"
         },
-        "last_upload_date": "2025-12-03T11:59:12.621217Z",
+        "last_upload_date": "2025-12-03T15:06:36.123511Z",
         "name": [
             "invoicesample.pdf"
         ],
         "size": 149568
     },
+    "6ea9de8a44372d5539a2c8892b8c1637c7a3f3017318c81c0e9aebb053a22fbf": {
+        "desc": "",
+        "file_type": "application/x-msdos-program",
+        "first_upload_date": "2025-12-03T15:06:36.084375Z",
+        "hashes": {
+            "md5": "3f6dce5b5a374c7a0df1520fff9809a9",
+            "sha256": "6ea9de8a44372d5539a2c8892b8c1637c7a3f3017318c81c0e9aebb053a22fbf",
+            "ssdeep": "3072:Zn5fJ4BiVRc3Zmkq0gvNGmLfaKPpTB01J0JQGSnyaSm/OwHxuAg0Fuj+DhSOx1iW:x5CBiEcygMmLdp901ASnCAOMDiDIv",
+            "tlsh": "T165248D1075D0C432D47315334AF89BB99A3DBD200B5669EF63E80FAE8F706D1AB31566"
+        },
+        "last_upload_date": "2025-12-03T15:06:36.084375Z",
+        "name": [
+            "CopyFileEx.exe"
+        ],
+        "size": 220672
+    },
+    "908d3440b6430a08d91671d25660b9b639b20b84d9d66e883eb506e08abb93fe": {
+        "desc": "",
+        "file_type": "application/x-msdos-program",
+        "first_upload_date": "2025-12-03T15:06:36.179428Z",
+        "hashes": {
+            "md5": "6245956a01fae434d811da3d71a6f132",
+            "sha256": "908d3440b6430a08d91671d25660b9b639b20b84d9d66e883eb506e08abb93fe",
+            "ssdeep": "3072:IAQxA59QFJ+OjkaUnzmBLcbyBIWUy7EhNsyxKWt4sVOAg0FujzKNIc:xUAKJ+baUzaLcb3y7sAAO3wIc",
+            "tlsh": "T137047C1474D2C032D973153209F4DBB89A7DB8600BA65DFF67D80F6E4F312D1AA31AA6"
+        },
+        "last_upload_date": "2025-12-03T15:06:36.179428Z",
+        "name": [
+            "CreateFile.exe"
+        ],
+        "size": 183808
+    },
+    "94c246203b066a6c82b1da52bd1cbbba4376271f8905daab722bd423630304d3": {
+        "desc": "",
+        "file_type": "application/x-7z-compressed",
+        "first_upload_date": "2025-12-03T15:06:36.159696Z",
+        "hashes": {
+            "md5": "92c531f44de425b2d7284ab8616a012d",
+            "sha256": "94c246203b066a6c82b1da52bd1cbbba4376271f8905daab722bd423630304d3",
+            "ssdeep": "98304:HEv6Xhimlqhax1FDi87ooqmqR+obMzvDQ:k7Nhaxvi87oNv6DQ",
+            "tlsh": "T128E5338D9BBBB0F952CB04F318716ED996C9D42153385B0D04A9E6C426F01AF3C7B96E"
+        },
+        "last_upload_date": "2025-12-03T15:06:36.159696Z",
+        "name": [
+            "test_files.7z"
+        ],
+        "size": 3241986
+    },
     "d47287f479f3492357ffa9dd5008ecb39730c62c691334c1756313541c906aa5": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T11:50:28.481001Z",
+        "first_upload_date": "2025-12-03T15:06:36.121922Z",
         "hashes": {
             "md5": "d14556f6466ff8ed3473939717251a8e",
             "sha256": "d47287f479f3492357ffa9dd5008ecb39730c62c691334c1756313541c906aa5",
-            "ssdeep": "",
-            "tlsh": ""
+            "ssdeep": "12288:fLkiNj2JIYpSC3tE54l+tWClumc0+QxbklV/Ve:jkSj2pzvlKb5wCbC/A",
+            "tlsh": "T18494D007A4185A8BF8289676BE573CEC2E1C3A34D2D536CE04314CDBFB943554DAE4AE"
         },
-        "last_upload_date": "2025-12-03T11:59:12.611244Z",
+        "last_upload_date": "2025-12-03T15:06:36.121922Z",
         "name": [
             "20211216_OWASP-MSP_OWASP_Top_Ten_2021.pdf"
         ],
@@ -66,49 +146,65 @@
     "e26281327092ad2481d177d616c57466b74dbf3da38e9aed71b46ddbd904bd7d": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T11:50:28.587742Z",
+        "first_upload_date": "2025-12-03T15:06:36.177523Z",
         "hashes": {
             "md5": "4b19183f0d6c81f7f12431c758333742",
             "sha256": "e26281327092ad2481d177d616c57466b74dbf3da38e9aed71b46ddbd904bd7d",
-            "ssdeep": "",
-            "tlsh": ""
+            "ssdeep": "768:yJIykqa0+M54x8xIF7I2GP2vMGoLHqSYLSbQqb9G9DkN8DbAv66AxYeRC/sNdoDZ:4ttak3uRSTyABAzAv6fxYeRCsoDoHbO5",
+            "tlsh": "T11233CF98D84C3CCEE38697910FAF391D746EB61265D4560037BCCBD21BA1ABE5D9240F"
         },
-        "last_upload_date": "2025-12-03T11:59:12.640140Z",
+        "last_upload_date": "2025-12-03T15:06:36.177523Z",
         "name": [
             "sample_pdf_modified.pdf"
         ],
         "size": 51332
     },
-    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": {
+    "eaecb0a7bd76cf1ab8886033d37b2bd3b0af747d4a46445f71629e4c58d11850": {
         "desc": "",
-        "file_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        "first_upload_date": "2025-12-03T11:50:28.587742Z",
+        "file_type": "application/x-msdos-program",
+        "first_upload_date": "2025-12-03T15:06:36.176339Z",
         "hashes": {
-            "md5": "d41d8cd98f00b204e9800998ecf8427e",
-            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "ssdeep": "",
-            "tlsh": ""
+            "md5": "237d8daddc7288dba4c8351d034c59a0",
+            "sha256": "eaecb0a7bd76cf1ab8886033d37b2bd3b0af747d4a46445f71629e4c58d11850",
+            "ssdeep": "3072:UUa/J4ZF+hYlJ0WcsheP2RhqatB0sJ/9NqXO6D4tueuAg0Fuj8Xx54ktS:eiZF6YlKqhk2Xqa30sIXO0AOQByks",
+            "tlsh": "T1CB248D1075D1C033E87315324AF89BBD9A3DBD200B5659EF53E80FBE8F246D1A631A66"
         },
-        "last_upload_date": "2025-12-03T11:59:12.640140Z",
+        "last_upload_date": "2025-12-03T15:06:36.176339Z",
         "name": [
-            "sample_pdf_original.docx"
+            "VirtualProtectEx.exe"
         ],
-        "size": 0
+        "size": 221696
     },
     "ebc93d4b8e8a6af18cfaf232704965377a126a5e9183537c81caafbb5062ae3d": {
         "desc": "",
         "file_type": "application/pdf",
-        "first_upload_date": "2025-12-03T11:50:28.602701Z",
+        "first_upload_date": "2025-12-03T15:06:36.176957Z",
         "hashes": {
             "md5": "c7ebae18617b47f2821022a1db424de2",
             "sha256": "ebc93d4b8e8a6af18cfaf232704965377a126a5e9183537c81caafbb5062ae3d",
-            "ssdeep": "",
-            "tlsh": ""
+            "ssdeep": "1536:fWq169NtAv6wqnIWmzK3qItGmLpJypFjf6XK:uqC8qgKjbLQjS6",
+            "tlsh": "T1EE43C040881D7DCEE6A927E31F5F380F701D715AA1C8959632BDCB870720FAF952791A"
         },
-        "last_upload_date": "2025-12-03T11:59:12.641137Z",
+        "last_upload_date": "2025-12-03T15:06:36.176957Z",
         "name": [
             "sample_pdf_original.pdf"
         ],
         "size": 56909
+    },
+    "f841938155e1f72133647a737c61d6ddfafa63d278c3eb25d1ed8e0be03cce8b": {
+        "desc": "",
+        "file_type": "text/markdown",
+        "first_upload_date": "2025-12-03T15:06:36.123549Z",
+        "hashes": {
+            "md5": "53690736cbb56757778ceba88e566084",
+            "sha256": "f841938155e1f72133647a737c61d6ddfafa63d278c3eb25d1ed8e0be03cce8b",
+            "ssdeep": "12:PsBiiQMvyVw+ezc08uYKTDHekAcERIh8jqp/bbWbo9EzKymwvt:UBiiQMBLz8nKTzekArS8jqp/wqEOEl",
+            "tlsh": "T174F002240C710A80D061C7B5D2579D4D6803C297C064111578DE82D43FCEBFCE9C51B6"
+        },
+        "last_upload_date": "2025-12-03T15:06:36.123549Z",
+        "name": [
+            "README.md"
+        ],
+        "size": 636
     }
 }
