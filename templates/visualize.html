@@ -1,22 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Visualization</title>
+    <title>File Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script> 
 </head>
-<body>
-    <h2>Similarity Visualization</h2>
 
-    <div id="chartContainer"></div>
+<body class="visualization">
 
-    <script>
-        fetch(`/api/file/{{ file_id }}`)
-            .then(r => r.json())
-            .then(data => {
-                // aquí generar chart o tabla
-                console.log(data);
-            });
-    </script>
+<div class="main-container">
+
+    <h1 class="page-title">File Analysis</h1>
+
+    <div class="dashboard-grid">
+        
+        <div class="col-metadata">
+            
+            <section class="card metadata-card">
+                <h2>Hashes</h2>
+                <div id="metadataHashes" class="metadata-grid hashes-grid"></div>
+            </section>
+
+            <section class="card metadata-card">
+                <h2>File Metadata</h2>
+                <div id="metadataMain" class="metadata-grid"></div>
+            </section>
+
+        </div>
+
+        <div class="col-chart">
+    	<section class="card chart-card">
+        <h2>Similarity Ranking</h2>
+        <div class="select-wrapper">
+            <select id="simMethod" class="neon-select">
+                <option value="tlsh">TLSH (default)</option>
+                <option value="ssdeep">ssdeep</option>
+            </select>
+        </div>
+        <div class="chart-container">
+            <canvas id="similarityChart"></canvas>
+            <canvas id="similarityChart2" style="display:none; margin-top: 30px;"></canvas>
+        </div>
+    	</section>
+    	</div>
+    </div>
+</div>
+
+<script>
+    const fileId = "{{ file_id }}";
+</script>
+<script src="{{ url_for('static', filename='visualize.js') }}"></script>
+
 </body>
 </html>
-
