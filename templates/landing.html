@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Similarity Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="landing">
+
+<div class="container">
+    <h1>Parecidómetro</h1>
+
+    <p class="subtitle">
+        Upload a file and instantly visualize its similarity against our database.
+    </p>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" id="fileInput" style="display:none">
+        <button type="button" id="uploadButton" class="cta-button">Upload File</button>
+    </form>
+
+    <p id="status" class="status"></p>
+</div>
+
+<script src="{{ url_for('static', filename='landing.js') }}"></script>
+
+</body>
+</html>

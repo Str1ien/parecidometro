@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Visualization</title>
+</head>
+<body>
+    <h2>Similarity Visualization</h2>
+
+    <div id="chartContainer"></div>
+
+    <script>
+        fetch(`/api/file/{{ file_id }}`)
+            .then(r => r.json())
+            .then(data => {
+                // aquí generar chart o tabla
+                console.log(data);
+            });
+    </script>
+</body>
+</html>
+
