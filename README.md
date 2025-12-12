@@ -155,3 +155,8 @@ Cada entrada se organiza así:
 - [Razvan "Razvi" Raducu](https://github.com/RazviOverflow)
 
 Este proyecto se ha desarrollado durante el [Hackathon Cyber Arena](https://eupt.unizar.es/noticia/hackaton-de-incibe) organizado como parte del Proyecto Estratégico C077.23 de INCIBE, desarrollado junto a la Universidad de Zaragoza y financiado por los fondos Next Generation EU.
+
+Tras la revisión y deliberación del jurado del certamen, este proyecto obtuvo el 1er puesto 🏆. ¡Gracias a la organización y al resto de participantes!  
+<p align="center">
+  <img width="530" height="255" alt="image" src="https://github.com/user-attachments/assets/e49d3f5c-0d4f-4ad5-9da6-0b98f2717c45" />
+</p>
